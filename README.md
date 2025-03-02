@@ -2,8 +2,8 @@
 ![Image](https://github.com/user-attachments/assets/4dbf3e88-7b99-4b4b-8dd8-42a788385429)
 
 ## Sobre mi
-Hola, soy Daniela Triador 👋
-Estudiante de Ingeniería en Sistemas con una gran pasión por la ciberseguridad y el análisis de datos. Aunque mi carrera me proporciona un enfoque en el desarrollo de software, me siento más atraída por temas como la protección de la información, la detección de vulnerabilidades y el uso de datos para la toma de decisiones. Me considero una persona curiosa y entusiasta, siempre buscando aprender y aplicar nuevos conocimientos. 🚀
+_Hola, soy Daniela Triador_ 👋
+_Estudiante de Ingeniería en Sistemas con una gran pasión por la ciberseguridad y el análisis de datos. Aunque mi carrera me proporciona un enfoque en el desarrollo de software, me siento más atraída por temas como la protección de la información, la detección de vulnerabilidades y el uso de datos para la toma de decisiones. Me considero una persona curiosa y entusiasta, siempre buscando aprender y aplicar nuevos conocimientos._ 🚀
 
 💡 Intereses: Ciberseguridad, análisis de datos, inteligencia artificial.
 
@@ -36,7 +36,15 @@ Estudiante de Ingeniería en Sistemas con una gran pasión por la ciberseguridad
 
 ## Podes encontrarme en:
 
-<a href="[https://www.linkedin.com/in/absphreak](https://www.linkedin.com/in/dtriador)" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-<a href="https://www.instagram.com/danitriador" target="_blank"><img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?&style=flat-square&logo=instagram&logoColor=white" alt="Instagram"></a>
-[![Gmail Badge](https://img.shields.io/badge/-Gmail-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:shuklaraghav321.com)](mailto:danielatriador92@gmail.com)
+<a href="https://www.linkedin.com/in/dtriador" target="_blank">
+  <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn">
+</a>
+
+
+<a href="https://www.instagram.com/danitriador" target="_blank">
+  <img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?&style=flat-square&logo=instagram&logoColor=white" alt="Instagram">
+</a>
+
+[![Gmail Badge](https://img.shields.io/badge/-Gmail-c14438?style=flat-square&logo=Gmail&logoColor=white)](mailto:danielatriador92@gmail.com)
+
 
