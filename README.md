@@ -14,6 +14,8 @@ _Estudiante de Ingeniería en Sistemas con una gran pasión por la cibersegurida
 ![C](http://img.shields.io/badge/-C-A8B9CC?style=flat-square&logo=c&logoColor=ffffff)
 ![Python](http://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=ffffff)
 ![JavaScript](https://img.shields.io/badge/-JavaScript-%23F7DF1C?style=flat-square&logo=javascript&logoColor=000000&labelColor=%23F7DF1C&color=%23FFCE5A)
+![Prolog](https://img.shields.io/badge/Prolog-782D19?style=flat-square&logo=prolog&logoColor=white)
+![Haskell](https://img.shields.io/badge/Haskell-5E5086?style=flat-square&logo=haskell&logoColor=white)
 ![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=ffffff)
 ![HTML5](https://img.shields.io/badge/-HTML5-%23E44D27?style=flat-square&logo=html5&logoColor=ffffff)
 ![CSS3](https://img.shields.io/badge/-CSS3-%231572B6?style=flat-square&logo=css3)
@@ -31,6 +33,8 @@ _Estudiante de Ingeniería en Sistemas con una gran pasión por la cibersegurida
 ![Oracle Cloud](https://img.shields.io/badge/Oracle_Cloud-F80000?style=flat-square&logo=oracle&logoColor=white)
 ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=flat-square&logo=powerbi&logoColor=black)
 ![Project Manager](https://img.shields.io/badge/Project_Manager-0076A3?style=flat-square&logo=task-manager&logoColor=white)
+![Autopsy](https://img.shields.io/badge/Autopsy-3A3A3A?style=flat-square&logo=autopsy&logoColor=white)
+![EnCase](https://img.shields.io/badge/EnCase-0058A3?style=flat-square&logo=encase&logoColor=white)
 ![Windows](https://img.shields.io/badge/Windows-0078D6?style=flat-square&logo=windows&logoColor=white)
 ![Linux](https://img.shields.io/badge/-Linux-222222?style=flat&logo=linux&logoColor=FCC624)
 
