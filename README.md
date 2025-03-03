@@ -45,10 +45,6 @@ _Estudiante de Ingeniería en Sistemas con una gran pasión por la cibersegurida
 </a>
 
 
-<a href="https://www.instagram.com/danitriador" target="_blank">
-  <img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?&style=flat-square&logo=instagram&logoColor=white" alt="Instagram">
-</a>
-
 [![Gmail Badge](https://img.shields.io/badge/-Gmail-c14438?style=flat-square&logo=Gmail&logoColor=white)](mailto:danielatriador92@gmail.com)
 
 
