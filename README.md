@@ -32,6 +32,12 @@ _Estudiante de Ingeniería en Sistemas con una gran pasión por la cibersegurida
 ![Windows](https://img.shields.io/badge/Windows-0078D6?style=flat-square&logo=windows&logoColor=white)
 ![Linux](https://img.shields.io/badge/-Linux-222222?style=flat&logo=linux&logoColor=FCC624)
 
+## Proyectos de Power BI:
+
+<a href="https://drive.google.com/drive/folders/1dqAxC-t4SA1rNaNZHWFqTGjucgwpaBeq?usp=sharing" target="_blank">
+    <img src="https://img.icons8.com/color/48/000000/google-drive.png" alt="Google Drive">
+</a>
+
 ## Podes encontrarme en:
 
 <a href="https://www.linkedin.com/in/dtriador" target="_blank">
@@ -40,5 +46,6 @@ _Estudiante de Ingeniería en Sistemas con una gran pasión por la cibersegurida
 
 
 [![Gmail Badge](https://img.shields.io/badge/-Gmail-c14438?style=flat-square&logo=Gmail&logoColor=white)](mailto:danielatriador92@gmail.com)
+
 
 
