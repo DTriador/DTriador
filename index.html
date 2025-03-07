@@ -4,58 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch&family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            background-color: #d9b3ad; /* Fondo color solicitado */
+            font-family: 'Source Sans Pro', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
             text-align: center;
         }
-        header {
-            background: #333;
-            color: white;
-            padding: 20px;
+        h1 {
+            font-family: 'Cabin Sketch', cursive;
+            color: #50332e; /* Título color solicitado */
+            font-size: 70pt;
+            margin-top: 50px;
         }
-        section {
-            padding: 20px;
+        .intro {
+            color: #72534e; /* Texto color solicitado */
+            font-size: 18px;
             max-width: 800px;
-            margin: auto;
+            margin: 30px auto;
+            line-height: 1.6;
         }
-        .proyecto {
-            background: white;
-            margin: 10px;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        .intereses, .tecnologias, .proyectos, .contacto {
+            margin-top: 40px;
+            font-size: 18px;
+            color: #50332e;
         }
-        footer {
-            background: #333;
-            color: white;
-            padding: 10px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+        a {
+            color: #50332e;
+            text-decoration: none;
+        }
+        img {
+            margin-top: 10px;
+        }
+        .iconos {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .iconos a {
+            margin: 0 10px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Mi Portfolio</h1>
-        <p>Desarrollador | Analista de Datos | Ciberseguridad</p>
-    </header>
-    <section>
-        <h2>Sobre mí</h2>
-        <p>Hola, soy Daniela Triador, estudiante de sistemas apasionada por la tecnología.</p>
-        
-        <h2>Proyectos</h2>
-        <div class="proyecto">
-            <h3>Proyecto 1</h3>
-            <p>Descripción breve de tu proyecto.</p>
+
+    <h1>Mi Portfolio</h1>
+    
+    <div class="intro">
+        <p>Bienvenido a mi perfil, soy Daniela Triador 👋 Estudiante de Ingeniería en Sistemas con una gran pasión por la ciberseguridad y el análisis de datos. Aunque mi carrera me proporciona un enfoque en el desarrollo de software, me siento más atraída por temas como la protección de la información, la detección de vulnerabilidades y el uso de datos para la toma de decisiones. Me considero una persona curiosa y entusiasta, siempre buscando aprender y aplicar nuevos conocimientos.</p>
+    </div>
+
+    <div class="intereses">
+        <p>💡 Intereses: Ciberseguridad, análisis de datos, inteligencia artificial.</p>
+    </div>
+
+    <div class="tecnologias">
+        <p>🛠 Tecnologías y lenguajes:</p>
+        <p>Java, C, Python, Prolog, Haskell, Git, GitLab, GitHub, Visual Studio Code, Eclipse-IDE, Jupyter, IntelliJ IDEA, Geany, Google Colab, Oracle Cloud, Power BI, Project Manager, Autopsy, EnCase, Windows, Linux</p>
+    </div>
+
+    <div class="proyectos">
+        <p><strong>Proyectos de Power BI:</strong></p>
+        <a href="https://drive.google.com/drive/folders/1dqAxC-t4SA1rNaNZHWFqTGjucgwpaBeq?usp=sharing" target="_blank">
+            <img src="https://img.icons8.com/color/48/000000/google-drive.png" alt="Google Drive">
+        </a>
+    </div>
+
+    <div class="contacto">
+        <p><strong>Podes encontrarme en:</strong></p>
+        <div class="iconos">
+            <a href="https://www.linkedin.com/in/dtriador" target="_blank">
+                <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn">
+            </a>
+            <a href="mailto:danielatriador92@gmail.com">
+                <img src="https://img.shields.io/badge/-Gmail-c14438?style=flat-square&logo=Gmail&logoColor=white" alt="Gmail">
+            </a>
         </div>
-    </section>
-    <footer>
-        <p>Contacto: <a href="mailto:danielatriador92@gmail.com">danielatriador92@gmail.com</a></p>
-    </footer>
+    </div>
+
 </body>
 </html>
