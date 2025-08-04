@@ -3,131 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <title>Daniela Triador | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <style>
         body {
-            background: url('https://postimg.cc/5X76TfDz') no-repeat center center fixed;
-            background-size: contain; 
-            background-color: #d9b3ad; 
-            background-position: center; 
+            background-color: #d9b3ad;
             font-family: 'Source Sans Pro', sans-serif;
             margin: 0;
             padding: 0;
+            color: #50332e;
+        }
+        header {
             text-align: center;
+            padding: 40px 20px 20px;
         }
-        h1 {
-            font-family: 'Cabin Sketch', cursive;
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 60px;
             color: #50332e;
-            font-size: 70pt; 
-            margin-top: 30px;
+            margin: 0;
         }
-        .proyectos-title {
-            font-family: 'Cabin Sketch', cursive;
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        section h2 {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 26px;
             color: #50332e;
-            font-size: 30pt;
-            margin-top: 10px;
-            margin-bottom: 5px;
+            border-bottom: 2px solid #50332e;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
         }
-        .intro {
-            color: #72534e;
+        section p, section ul {
             font-size: 16px;
-            max-width: 800px;
-            margin: 15px auto;
-            line-height: 1.4;
+            line-height: 1.6;
         }
-        .proyectos {
-            margin-top: 20px;
-            font-size: 18px;
-            color: #50332e;
+        .proyecto {
+            margin-bottom: 15px;
         }
-        .proyectos p {
-            line-height: 1.2;
-            margin-top: 5px;
-            margin-bottom: 10px;
-        }
-        a {
+        .proyecto a {
             color: #50332e;
             text-decoration: none;
         }
-        img {
-            margin-top: 5px;
-        }
-        .iconos {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-        }
-        .iconos a {
-            margin: 0 5px;
+        .contacto a {
+            color: #50332e;
+            text-decoration: none;
+            margin-right: 10px;
         }
     </style>
 </head>
 <body>
 
-    <h1>Mi Portfolio</h1>
-    
-    <div class="intro">
-        <p>Bienvenido a mi perfil, soy Daniela Triador 👋 Estudiante de Ingeniería en Sistemas con una gran pasión por la ciberseguridad y el análisis de datos. Me considero una persona curiosa y entusiasta, siempre buscando aprender y aplicar nuevos conocimientos.</p>
-    </div>
+    <header>
+        <h1>Daniela Andrea Triador</h1>
+    </header>
 
-    <div class="proyectos">
-        <p class="proyectos-title">Proyectos de Power BI:</p>
-        <p style="color: #50332e; font-size: 18px; max-width: 600px; margin: auto;">
-           En la siguiente carpeta se encuentran archivos con extensión .pbix donde se detalla qué tipo de análisis se realizó en cada uno de ellos
-        </p>
-        <a href="https://drive.google.com/drive/folders/1dqAxC-t4SA1rNaNZHWFqTGjucgwpaBeq?usp=sharing" target="_blank">
-            <img src="https://img.icons8.com/color/48/000000/google-drive.png" alt="Google Drive">
-        </a>
-    </div>
-    <div class="proyectos">
-        <p class="proyectos-title">Proyecto Billetera Virtual:</p>
-        <p style="color: #50332e; font-size: 18px; max-width: 600px; margin: auto;">
-           Backend de una billetera virtual utilizando Java en IntellIj, Springboot, principios SOLID y Clean Architecture
-        </p>
-        <a href="https://gitlab.com/jdj2/pesopay" target="_blank">
-            <img src="https://img.icons8.com/color/48/000000/java-coffee-cup-logo.png" alt="Java">
-        </a>
-    </div>
-    <div class="proyectos">
-        <p class="proyectos-title">Proyecto Billetera Virtual con Jupyter:</p>
-        <p style="color: #50332e; font-size: 18px; max-width: 600px; margin: auto;">
-           Backend de una billetera virtual utilizando Jupyter, Anaconda en Python
-        </p>
-        <a href="https://gitlab.com/DTriador/basededatosii" target="_blank">
-            <img src="https://img.icons8.com/color/48/000000/python.png" alt="Python">
-        </a>
-    </div>
-    <div class="proyectos">
-        <p class="proyectos-title">Centro Médico:</p>
-        <p style="color: #50332e; font-size: 18px; max-width: 600px; margin: auto;">
-           Backend de un centro médico utilizando Java en IntellIj, Springboot, principios SOLID y Clean Architecture
-        </p>
-        <a href="https://gitlab.com/t8871/consultorio" target="_blank">
-            <img src="https://img.icons8.com/color/48/000000/java-coffee-cup-logo.png" alt="Java">
-        </a>
-    </div>
-    <div class="proyectos">
-        <p class="proyectos-title">Proyecto Ponelapava - Recomendador de Música</p>
-        <p style="color: #50332e; font-size: 18px; max-width: 600px; margin: auto;">
-       Sistema de recomendación musical en Python basado en la API de Spotify. Permite analizar tus hábitos de escucha, artistas y géneros favoritos en cualquier periodo del año, similar a “Spotify Wrapped”.
-    </p>
-    <a href="https://github.com/DTriador/ponelapava" target="_blank">
-        <img src="https://img.icons8.com/color/48/000000/spotify.png" alt="Spotify">
-    </a>
-    </div>
+    <main>
+        <section id="presentacion">
+            <h2>Presentación</h2>
+            <p>Soy estudiante de Ingeniería en Sistemas con un fuerte interés en ciberseguridad y análisis de datos. Me apasiona aprender, experimentar y desarrollar soluciones prácticas basadas en datos y tecnología.</p>
+        </section>
 
-    <div class="contacto">
-        <p><strong>Puedes encontrarme en:</strong></p>
-        <div class="iconos">
-            <a href="https://www.linkedin.com/in/dtriador" target="_blank">
-                <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn">
-            </a>
-            <a href="mailto:danielatriador92@gmail.com">
-                <img src="https://img.shields.io/badge/-Gmail-c14438?style=flat-square&logo=Gmail&logoColor=white" alt="Gmail">
-            </a>
-        </div>
-    </div>
+        <section id="intereses">
+            <h2>Áreas de interés</h2>
+            <ul>
+                <li>Ciberseguridad</li>
+                <li>Análisis de datos</li>
+                <li>Inteligencia artificial</li>
+                <li>Machine Learning</li>
+            </ul>
+        </section>
+
+        <section id="tecnologias">
+            <h2>Tecnologías</h2>
+            <ul>
+                <li>Python, Pandas, Matplotlib</li>
+                <li>Power BI</li>
+                <li>SQL</li>
+                <li>Java + Spring Boot</li>
+                <li>Jupyter Notebook</li>
+                <li>Git y GitHub</li>
+            </ul>
+        </section>
+
+        <section id="proyectos">
+            <h2>Proyectos</h2>
+
+            <div class="proyecto">
+                <strong>📌 Pone la pava - Recomendador de Música</strong><br>
+                <p>Recomendador musical con Python utilizando la API de Spotify. Analiza tus hábitos de escucha durante el año, similar a “Spotify Wrapped”.</p>
+                <a href="https://github.com/DTriador/ponelapava" target="_blank">Ver en GitHub</a>
+            </div>
+
+            <div class="proyecto">
+                <strong>📌 Proyectos de Power BI</strong><br>
+                <p>Dashboards interactivos desarrollados con Power BI para análisis de datos de diferentes sectores.</p>
+                <a href="https://drive.google.com/drive/folders/1dqAxC-t4SA1rNaNZHWFqTGjucgwpaBeq?usp=sharing" target="_blank">Ver en Google Drive</a>
+            </div>
+
+            <div class="proyecto">
+                <strong>📌 Billetera Virtual (Java + Spring Boot)</strong><br>
+                <p>Backend de una billetera virtual utilizando principios SOLID y Clean Architecture.</p>
+                <a href="https://gitlab.com/jdj2/pesopay" target="_blank">Ver en GitLab</a>
+            </div>
+
+            <div class="proyecto">
+                <strong>📌 Centro Médico (Java)</strong><br>
+                <p>Aplicación de backend para gestión médica, desarrollada con Spring Boot y buenas prácticas de diseño.</p>
+                <a href="https://gitlab.com/t8871/consultorio" target="_blank">Ver en GitLab</a>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p class="contacto">
+                <a href="https://www.linkedin.com/in/dtriador" target="_blank">LinkedIn</a> |
+                <a href="mailto:danielatriador92@gmail.com">danielatriador92@gmail.com</a>
+            </p>
+        </section>
+    </main>
 
 </body>
 </html>
