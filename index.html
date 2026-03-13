@@ -1,145 +1,521 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniela Triador | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Source+Sans+Pro&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background-color: #d9b3ad;
-            font-family: 'Source Sans Pro', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #50332e;
-        }
-        header {
-            text-align: center;
-            padding: 40px 20px 20px;
-        }
-        header h1 {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 60px;
-            color: #50332e;
-            margin: 0;
-        }
-        main {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        section {
-            margin-bottom: 40px;
-        }
-        section h2 {
-            font-family: 'Source Sans Pro', sans-serif;
-            font-size: 26px;
-            color: #50332e;
-            border-bottom: 2px solid #50332e;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-        }
-        section p, section ul {
-            font-size: 16px;
-            line-height: 1.6;
-        }
-        .proyecto {
-            margin-bottom: 15px;
-        }
-        .proyecto a {
-            color: #50332e;
-            text-decoration: none;
-        }
-        .contacto a {
-            color: #50332e;
-            text-decoration: none;
-            margin-right: 10px;
-        }
-    </style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Daniela Triador | Data Analyst</title>
+
+<link rel="icon" href="favicon.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+padding:40px;
+font-family:'Source Sans Pro',sans-serif;
+color:#50332e;
+
+/* NUEVO FONDO MODERNO */
+
+background:linear-gradient(135deg,#ffd6d6,#ffe9e9,#ffd6e7);
+
+background-size:400% 400%;
+animation:gradientMove 12s ease infinite;
+
+}
+
+/* ANIMACION DEL GRADIENTE */
+
+@keyframes gradientMove{
+
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+
+}
+
+/* NAVBAR */
+
+.navbar{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+
+background:rgba(255,255,255,0.6);
+backdrop-filter:blur(10px);
+
+border-bottom:1px solid rgba(0,0,0,0.1);
+
+padding:12px;
+text-align:center;
+
+z-index:1000;
+
+}
+
+.navbar a{
+margin:0 15px;
+text-decoration:none;
+color:#50332e;
+font-weight:600;
+}
+
+/* CONTENEDOR PRINCIPAL */
+
+.frame{
+
+border-radius:20px;
+
+padding:60px;
+
+max-width:1100px;
+margin:80px auto;
+
+/* GLASS EFFECT */
+
+background:rgba(255,255,255,0.65);
+
+backdrop-filter:blur(12px);
+
+box-shadow:0 20px 50px rgba(0,0,0,0.15);
+
+}
+
+/* HERO */
+
+header{
+text-align:center;
+margin-bottom:70px;
+}
+
+header h1{
+font-family:'Playfair Display',serif;
+font-size:64px;
+margin:0;
+}
+
+.subtitle{
+font-size:20px;
+margin-top:10px;
+font-weight:600;
+}
+
+.stack{
+margin-top:6px;
+opacity:0.8;
+}
+
+/* BOTONES */
+
+.btn{
+
+display:inline-block;
+
+margin-top:20px;
+margin-right:10px;
+
+padding:10px 18px;
+
+border:1px solid #50332e;
+
+text-decoration:none;
+color:#50332e;
+
+border-radius:6px;
+
+transition:.25s;
+
+font-weight:600;
+
+}
+
+.btn:hover{
+
+background:#50332e;
+color:white;
+
+transform:translateY(-2px);
+
+}
+
+/* SECCIONES */
+
+section{
+margin-bottom:70px;
+opacity:0;
+transform:translateY(30px);
+transition:all .6s ease;
+}
+
+section.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+h2{
+border-bottom:2px solid #50332e;
+padding-bottom:6px;
+margin-bottom:25px;
+}
+
+/* CARDS */
+
+.card-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
+}
+
+.card{
+
+background:white;
+
+padding:25px;
+
+border-radius:12px;
+
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+
+transition:.3s;
+
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* PROCESO */
+
+.proceso{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+}
+
+/* PROYECTOS */
+
+.proyecto{
+
+display:grid;
+grid-template-columns:220px 1fr;
+
+gap:20px;
+
+border-left:6px solid #50332e;
+
+border-radius:10px;
+
+background:white;
+
+padding:18px;
+margin-bottom:25px;
+
+transition:.25s;
+
+}
+
+.proyecto:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+
+}
+
+.proyecto img{
+
+width:100%;
+border-radius:6px;
+
+}
+
+/* CONTACTO */
+
+.contacto a{
+
+color:#50332e;
+text-decoration:none;
+margin-right:12px;
+font-weight:600;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.frame{
+padding:30px;
+}
+
+header h1{
+font-size:42px;
+}
+
+.proyecto{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
 
-    <header>
-        <h1>Daniela Andrea Triador</h1>
-    </header>
+<nav class="navbar">
 
-    <main>
-        <section id="presentacion">
-            <h2>Presentación</h2>
-            <p>Soy estudiante de Ingeniería en Sistemas con un fuerte interés en ciberseguridad y análisis de datos. Me apasiona aprender, experimentar y desarrollar soluciones prácticas basadas en datos y tecnología.</p>
-        </section>
+<a href="#sobre">Sobre mí</a>
+<a href="#destacado">Proyecto destacado</a>
+<a href="#proceso">Cómo trabajo</a>
+<a href="#valor">Valor con datos</a>
+<a href="#stack">Stack</a>
+<a href="#proyectos">Proyectos</a>
+<a href="#contacto">Contacto</a>
 
-        <section id="intereses">
-            <h2>Áreas de interés</h2>
-            <ul>
-                <li>Ciberseguridad</li>
-                <li>Análisis de datos</li>
-                <li>Inteligencia artificial</li>
-                <li>Machine Learning</li>
-            </ul>
-        </section>
+</nav>
 
-        <section id="tecnologias">
-            <h2>Tecnologías</h2>
-            <ul>
-                <li>Python, Pandas, Matplotlib</li>
-                <li>Power BI</li>
-                <li>SQL</li>
-                <li>Java + Spring Boot</li>
-                <li>Jupyter Notebook</li>
-                <li>Git y GitHub</li>
-            </ul>
-        </section>
+<div class="frame">
 
-        <section id="proyectos">
-            <h2>Proyectos</h2>
+<header>
 
-            <div class="proyecto">
-                <strong>📌 Pone la pava - Recomendador de Música</strong><br>
-                <p>Recomendador musical con Python utilizando la API de Spotify. Analiza tus hábitos de escucha durante el año, similar a “Spotify Wrapped”.</p>
-                <a href="https://github.com/DTriador/ponelapava" target="_blank">Ver en GitHub</a>
-            </div>
+<h1>Daniela Andrea Triador</h1>
 
-            <div class="proyecto">
-                <strong>📌 Proyectos de Power BI</strong><br>
-                <p>Dashboards interactivos desarrollados con Power BI para análisis de datos de diferentes sectores.</p>
-                <a href="https://drive.google.com/drive/folders/1dqAxC-t4SA1rNaNZHWFqTGjucgwpaBeq?usp=sharing" target="_blank">Ver en Google Drive</a>
-            </div>
+<div class="subtitle">
+Data Analyst | Data Scientist
+</div>
 
-            <div class="proyecto">
-                <strong>📌 Billetera Virtual (Java + Spring Boot)</strong><br>
-                <p>Backend de una billetera virtual utilizando principios SOLID y Clean Architecture.</p>
-                <a href="https://gitlab.com/jdj2/pesopay" target="_blank">Ver en GitLab</a>
-            </div>
-            <div class="proyecto">
-                <strong>📌 Automatizacion con Python</strong><br>
-                <p>Este repositorio contiene un modelo de Simulación de Eventos Discretos (DES) desarrollado en Python para la cátedra de Modelos y Simulación. 
-                    El proyecto automatiza el control de un lavadero con demanda mixta (autos y camiones) para evaluar su eficiencia operativa.</p>
-                <a href="https://github.com/DTriador/AutomatizacionLavadero" target="_blank">Ver en GitHub</a>
-            </div>
+<div class="stack">
+Python • SQL • Power BI • Machine Learning
+</div>
 
-            <div class="proyecto">
-                <strong>📌 Centro Médico (Java)</strong><br>
-                <p>Aplicación de backend para gestión médica, desarrollada con Spring Boot y buenas prácticas de diseño.</p>
-                <a href="https://gitlab.com/t8871/consultorio" target="_blank">Ver en GitLab</a>
-            </div>
-            <div class="proyecto">
-                <strong>📌 Alura Store</strong><br>
-                <p>Analisis de 4 tiendas Alure, utilizando Python y Google Colab</p>
-                <a href="https://github.com/DTriador/Alura_Store" target="_blank">Ver en GitLab</a>
-            </div>
-        </section>
+<a class="btn" href="cv.pdf" target="_blank">Descargar CV</a>
+<a class="btn" href="https://github.com/DTriador" target="_blank">GitHub</a>
+<a class="btn" href="https://www.linkedin.com/in/dtriador" target="_blank">LinkedIn</a>
 
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <p class="contacto">
-                <a href="https://www.linkedin.com/in/dtriador" target="_blank">LinkedIn</a> |
-                <a href="mailto:danielatriador92@gmail.com">danielatriador92@gmail.com</a>
-            </p>
-        </section>
-    </main>
+</header>
+
+<section id="sobre">
+
+<h2>Sobre mí</h2>
+
+<p>
+
+Analista de Datos y Data Scientist con formación en Ingeniería en Sistemas (en finalización) y experiencia práctica en análisis exploratorio de datos, desarrollo de pipelines ETL y modelado predictivo utilizando Python, SQL y Power BI.
+
+Especializado en transformar datos complejos en insights accionables que apoyan la toma de decisiones basadas en datos.
+
+</p>
+
+</section>
+
+<section id="destacado">
+
+<h2>Proyecto destacado</h2>
+
+<div class="card">
+
+<h3>Análisis de Evasión de Clientes (Churn) – TelecomX</h3>
+
+<p>
+
+Modelo de Machine Learning para identificar clientes con alto riesgo de abandono utilizando técnicas de balanceo de datos y análisis exploratorio.
+
+</p>
+
+<p>
+
+<strong>Tecnologías:</strong>
+
+Python, Pandas, NumPy, Scikit-Learn, SMOTE, Matplotlib, Seaborn
+
+</p>
+
+<a class="btn" href="https://github.com/DTriador/Challenge_Alura" target="_blank">
+Ver proyecto
+</a>
+
+</div>
+
+</section>
+
+<section id="proyectos">
+
+<h2>Proyectos</h2>
+
+<div class="proyecto">
+
+<img src="proyectos/lavadero.png">
+
+<div>
+
+<h3>Simulación Lavadero</h3>
+
+<p>
+
+Modelo de simulación de eventos discretos para analizar eficiencia operativa de un lavadero con demanda mixta.
+
+</p>
+
+<a href="https://github.com/DTriador/AutomatizacionLavadero" target="_blank">
+Ver en GitHub
+</a>
+
+</div>
+
+</div>
+
+
+<div class="proyecto">
+
+<img src="proyectos/consultorio.png">
+
+<div>
+
+<h3>Centro Médico (Java)</h3>
+
+<p>
+
+Aplicación backend para gestión médica desarrollada con Java y Spring Boot.
+
+</p>
+
+<a href="https://gitlab.com/t8871/consultorio" target="_blank">
+Ver en GitLab
+</a>
+
+</div>
+
+</div>
+
+
+<div class="proyecto">
+
+<img src="proyectos/alura.png">
+
+<div>
+
+<h3>Alura Store</h3>
+
+<p>
+
+Análisis de ventas de cuatro tiendas utilizando Python y Google Colab.
+
+</p>
+
+<a href="https://github.com/DTriador/Alura_Store" target="_blank">
+Ver en GitHub
+</a>
+
+</div>
+
+</div>
+
+
+<div class="proyecto">
+
+<img src="proyectos/powerbi.png">
+
+<div>
+
+<h3>Dashboards Power BI</h3>
+
+<p>
+
+Dashboards interactivos desarrollados para análisis visual de indicadores de negocio.
+
+</p>
+
+<a href="https://drive.google.com/drive/folders/1dqAxC-t4SA1rNaNZHWFqTGjucgwpaBeq" target="_blank">
+Ver dashboards
+</a>
+
+</div>
+
+</div>
+
+
+<div class="proyecto">
+
+<img src="proyectos/ponepava.png">
+
+<div>
+
+<h3>Pone la Pava – Recomendador de Música</h3>
+
+<p>
+
+Sistema de recomendación musical utilizando la API de Spotify.
+
+</p>
+
+<a href="https://github.com/DTriador/ponelapava" target="_blank">
+Ver en GitHub
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contacto">
+
+<h2>Contacto</h2>
+
+<p class="contacto">
+
+<a href="mailto:danielatriador92@gmail.com">Email</a>
+
+<a href="https://www.linkedin.com/in/dtriador" target="_blank">LinkedIn</a>
+
+<a href="https://github.com/DTriador" target="_blank">GitHub</a>
+
+</p>
+
+</section>
+
+</div>
+
+<script>
+
+const sections=document.querySelectorAll("section");
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+entry.target.classList.add("visible");
+}
+
+});
+
+});
+
+sections.forEach(section=>{
+observer.observe(section);
+});
+
+</script>
 
 </body>
-</html>
 
+</html>
