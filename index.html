@@ -7,18 +7,16 @@
     <title>Daniela Triador | Data Analyst</title>
     <link rel="icon" href="favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
+        /* --- 1. BASE Y NAVEGACIÓN --- */
+        html { scroll-behavior: smooth; }
+        
         body {
-            margin: 0;
-            padding: 40px;
+            margin: 0; padding: 0;
             font-family: 'Source Sans Pro', sans-serif;
             color: #50332e;
-            /* FONDO DINÁMICO */
             background: linear-gradient(135deg, #ffd6d6, #ffe9e9, #ffd6e7);
             background-size: 400% 400%;
             animation: gradientMove 12s ease infinite;
@@ -30,272 +28,452 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* NAVBAR */
         .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            padding: 12px;
-            text-align: center;
-            z-index: 1000;
+            position: fixed; top: 0; left: 0; width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(80, 51, 46, 0.1);
+            padding: 15px 0; text-align: center; z-index: 1000;
         }
 
         .navbar a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #50332e;
-            font-weight: 600;
+            position: relative;
+            margin: 0 18px; text-decoration: none;
+            color: #50332e; font-weight: 600;
+            transition: opacity 0.3s;
         }
 
-        /* CONTENEDOR PRINCIPAL - Mejora de opacidad aplicada */
+        .navbar a::after {
+            content: ''; position: absolute;
+            width: 0; height: 3px; bottom: -8px; left: 0;
+            background-color: #50332e;
+            transition: width 0.3s ease;
+        }
+
+        .navbar a:hover::after,
+        .navbar a.active::after { width: 100%; }
+
+        /* --- 2. ESTRUCTURA --- */
         .frame {
-            border-radius: 20px;
-            padding: 60px;
-            max-width: 1100px;
-            margin: 80px auto;
-            background: rgba(255, 255, 255, 0.8); /* Subida de 0.65 a 0.8 para mejor lectura */
-            backdrop-filter: blur(12px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            border-radius: 30px;
+            padding: 60px; max-width: 1050px;
+            margin: 100px auto 50px auto;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 15px 45px rgba(80, 51, 46, 0.12);
         }
 
-        header {
-            text-align: center;
-            margin-bottom: 70px;
+        header { 
+            text-align: center; 
+            margin-bottom: 70px; 
+            position: relative; 
         }
-
-        header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 64px;
-            margin: 0;
-        }
-
-        .subtitle {
-            font-size: 20px;
-            margin-top: 10px;
-            font-weight: 600;
-        }
-
-        .stack-info {
-            margin-top: 6px;
-            opacity: 0.8;
-        }
-
-        .btn {
+        header h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 64px; 
+            margin: 0; 
+            position: relative;
             display: inline-block;
-            margin-top: 20px;
-            margin-right: 10px;
-            padding: 10px 18px;
-            border: 1px solid #50332e;
-            text-decoration: none;
-            color: #50332e;
-            border-radius: 6px;
-            transition: .25s;
-            font-weight: 600;
         }
 
-        .btn:hover {
-            background: #50332e;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        section {
-            margin-bottom: 70px;
+        /* --- EFECTO FLORES FLOTANTES (🌸 y 🌺) --- */
+        .flower {
+            position: absolute;
+            font-size: 14px;
             opacity: 0;
-            transform: translateY(30px);
-            transition: all .6s ease;
+            animation: floatingFlowers 5s linear infinite;
+            pointer-events: none;
         }
 
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
+        /* Creamos 15 flores con posiciones y retrasos aleatorios */
+        .flower:nth-child(1) { top: -20px; left: 10%; animation-delay: 0.5s; }
+        .flower:nth-child(2) { top: 0px; left: 25%; animation-delay: 1.2s; }
+        .flower:nth-child(3) { top: -15px; left: 40%; animation-delay: 2.1s; }
+        .flower:nth-child(4) { top: 10px; left: 55%; animation-delay: 3s; }
+        .flower:nth-child(5) { top: -25px; left: 70%; animation-delay: 0.8s; }
+        .flower:nth-child(6) { top: 5px; left: 85%; animation-delay: 1.5s; }
+        
+        .flower:nth-child(7) { bottom: -20px; left: 15%; animation-delay: 2.7s; }
+        .flower:nth-child(8) { bottom: 0px; left: 30%; animation-delay: 3.2s; }
+        .flower:nth-child(9) { bottom: -15px; left: 45%; animation-delay: 0.2s; }
+        .flower:nth-child(10) { bottom: 10px; left: 60%; animation-delay: 1.9s; }
+        .flower:nth-child(11) { bottom: -25px; left: 75%; animation-delay: 2.5s; }
+        .flower:nth-child(12) { bottom: 5px; left: 90%; animation-delay: 3.8s; }
+
+        .flower:nth-child(13) { top: 20px; right: -20px; animation-delay: 1s; }
+        .flower:nth-child(14) { bottom: 15px; left: -25px; animation-delay: 2.3s; }
+        .flower:nth-child(15) { top: 35px; left: 50%; transform: translateX(-50%); animation-delay: 3.5s; }
+
+        @keyframes floatingFlowers {
+            0% { transform: translateY(10px) rotate(0deg) scale(0.5); opacity: 0; }
+            20% { opacity: 0.7; }
+            50% { transform: translateY(-20px) rotate(180deg) scale(1.1); opacity: 0.2; }
+            100% { transform: translateY(-40px) rotate(360deg) scale(0.5); opacity: 0; }
         }
 
-        h2 {
-            border-bottom: 2px solid #50332e;
-            padding-bottom: 6px;
-            margin-bottom: 25px;
+        .subtitle { font-size: 20px; margin-top: 10px; font-weight: 600; }
+
+        section { margin-bottom: 80px; opacity: 0; transform: translateY(30px); transition: all 0.7s ease-out; }
+        section.visible { opacity: 1; transform: translateY(0); }
+        h2 { border-bottom: 2px solid #50332e; padding-bottom: 8px; margin-bottom: 30px; display: inline-block; }
+
+        /* Tarjeta Sobre Mí con Movimiento */
+        .sobre-mi-box {
+            background: white; padding: 30px; border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            border-left: 8px solid #50332e; line-height: 1.6;
+            transition: 0.4s ease;
+        }
+        .sobre-mi-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(80, 51, 46, 0.15);
         }
 
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            transition: .3s;
-            margin-bottom: 30px;
+        /* --- 3. HABILIDADES --- */
+        .skills-category { margin-bottom: 30px; }
+        .skills-category h4 { margin: 0 0 15px 0; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9; }
+        .skills-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 12px; width: 100%;
         }
+        .skill-tag {
+            background: linear-gradient(90deg, #ff9a9e 0%, #fecfef 100%);
+            color: #50332e; padding: 15px; border-radius: 15px;
+            font-weight: 600; text-align: center;
+            display: flex; align-items: center; justify-content: center;
+            height: 50px; transition: 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        .skill-tag:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(80, 51, 46, 0.15); }
+
+        /* --- 4. EXPERIENCIA Y PROYECTOS --- */
+        .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+        .card-exp, .card {
+            background: white; padding: 25px; border-radius: 20px;
+            border-left: 8px solid #50332e; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            transition: 0.4s ease;
+        }
+        .card-exp:hover, .card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(80, 51, 46, 0.15); }
+
+        .btn-shine {
+            position: relative; overflow: hidden;
+            text-decoration: none; color: #50332e; font-weight: 600;
+            border: 2px solid #50332e; padding: 10px 20px; border-radius: 12px;
+            display: inline-block; transition: 0.3s ease; background: white;
+        }
+        .btn-shine::before {
+            content: ''; position: absolute; top: 0; left: -100%;
+            width: 50%; height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+            transition: all 0.5s;
+        }
+        .btn-shine:hover::before { left: 100%; }
+        .btn-shine:hover { color: #ec4899; transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
 
         .proyecto {
-            display: grid;
-            grid-template-columns: 220px 1fr;
-            gap: 20px;
-            border-left: 6px solid #50332e;
-            border-radius: 10px;
-            background: white;
-            padding: 18px;
-            margin-bottom: 25px;
-            transition: .25s;
+            display: grid; grid-template-columns: 220px 1fr; gap: 25px;
+            border-left: 8px solid #50332e; border-radius: 20px;
+            background: white; padding: 20px; margin-bottom: 25px; transition: 0.4s ease;
         }
+        .proyecto img { width: 100%; height: auto; border-radius: 12px; object-fit: cover; }
+        .proyecto:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(80, 51, 46, 0.15); }
 
-        .proyecto:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        /* --- 5. CERTIFICADOS CON CARRUSEL --- */
+        .certificados-wrapper { position: relative; width: 100%; display: flex; align-items: center; }
+        .certificados-container { 
+            display: flex; gap: 25px; overflow-x: auto; padding: 20px 10px; 
+            scroll-behavior: smooth; width: 100%;
+            scrollbar-width: none; -ms-overflow-style: none;
         }
+        .certificados-container::-webkit-scrollbar { display: none; }
 
-        .proyecto img {
-            width: 100%;
-            height: auto;
-            border-radius: 6px;
-            object-fit: cover;
+        .nav-btn {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            width: 45px; height: 45px; background: white; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer; z-index: 10;
+            border: none; color: #50332e; font-size: 18px; transition: 0.3s;
         }
+        .nav-btn:hover { background: #fdfdfd; transform: translateY(-50%) scale(1.1); }
+        .prev-btn { left: -25px; }
+        .next-btn { right: -25px; }
 
-        .contacto a {
-            color: #50332e;
-            text-decoration: none;
-            margin-right: 12px;
-            font-weight: 600;
+        .cert-card {
+            min-width: 300px; background: white; border-radius: 20px;
+            overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.4s ease; cursor: pointer; text-align: center;
+            border: 1px solid rgba(80, 51, 46, 0.05);
         }
+        .cert-card img { width: 100%; height: 180px; object-fit: contain; padding: 10px; }
+        .cert-card h3 { font-size: 15px; margin: 10px 0; color: #50332e; }
+
+        .dots-container { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
+        .dot { width: 10px; height: 10px; background: #cbd5e1; border-radius: 50%; transition: 0.3s; cursor: pointer; }
+        .dot.active { width: 25px; border-radius: 10px; background: linear-gradient(90deg, #7c3aed 0%, #ec4899 100%); }
+
+        /* --- 6. CONTACTO --- */
+        .contacto-container {
+            background: linear-gradient(90deg, #ff9a9e 0%, #fecfef 100%);
+            padding: 40px; border-radius: 25px;
+        }
+        .contacto-list-horizontal { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+        .contacto-item {
+            position: relative; overflow: hidden;
+            display: flex; align-items: center; justify-content: center;
+            background: white; padding: 18px; border-radius: 12px;
+            text-decoration: none; color: #50332e; font-weight: 600; transition: 0.3s ease;
+        }
+        .contacto-item::before {
+            content: ''; position: absolute; top: 0; left: -100%;
+            width: 50%; height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+            transition: all 0.5s;
+        }
+        .contacto-item:hover::before { left: 100%; }
+        .contacto-item:hover { color: #ec4899; transform: translateY(-8px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
+
+        .modal {
+            display: none; position: fixed; z-index: 2000;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(80, 51, 46, 0.9); backdrop-filter: blur(8px);
+            justify-content: center; align-items: center;
+        }
+        .modal-content { max-width: 85%; max-height: 85%; border-radius: 15px; }
+        .close-modal { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; cursor: pointer; }
 
         @media(max-width: 768px) {
             .frame { padding: 30px; }
-            header h1 { font-size: 42px; }
-            .proyecto { grid-template-columns: 1fr; }
+            .card-grid, .proyecto, .contacto-list-horizontal { grid-template-columns: 1fr; }
+            .nav-btn { display: none; }
         }
     </style>
 </head>
 
 <body>
 
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <a href="#sobre">Sobre mí</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#habilidades">Habilidades</a>
         <a href="#destacado">Destacado</a>
         <a href="#proyectos">Proyectos</a>
+        <a href="#certificados">Certificados</a>
         <a href="#contacto">Contacto</a>
     </nav>
 
+    <div id="certModal" class="modal">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="imgFull">
+    </div>
+
     <div class="frame">
         <header>
-            <h1>Daniela Andrea Triador</h1>
-            <div class="subtitle">Data Analyst | Data Scientist</div>
-            <div class="stack-info">Python • SQL • Power BI • Machine Learning • Excel • Google Sheets</div>
-            <a class="btn" href="cv.pdf" target="_blank">Descargar CV</a>
-            <a class="btn" href="https://github.com/DTriador" target="_blank">GitHub</a>
-            <a class="btn" href="https://www.linkedin.com/in/dtriador" target="_blank">LinkedIn</a>
+            <h1>
+                Daniela Andrea Triador
+                <span class="flower">🌸</span>
+                <span class="flower">🌺</span>
+                <span class="flower">🌸</span>
+                <span class="flower">🌺</span>
+                <span class="flower">🌸</span>
+                <span class="flower">🌺</span>
+                <span class="flower">🌸</span>
+                <span class="flower">🌺</span>
+                <span class="flower">🌸</span>
+                <span class="flower">🌺</span>
+                <span class="flower">🌸</span>
+                <span class="flower">🌺</span>
+                <span class="flower">🌸</span>
+                <span class="flower">🌺</span>
+                <span class="flower">🌸</span>
+            </h1>
+            <div class="subtitle">Data Analyst | Data Scientist | Estudiante de Ingenieria en Sistemas</div>
         </header>
 
         <section id="sobre">
             <h2>Sobre mí</h2>
-            <p>
-                Analista de Datos y Data Scientist con formación en Ingeniería en Sistemas (en finalización) y experiencia práctica en análisis exploratorio de datos, desarrollo de pipelines ETL y modelado predictivo utilizando Python, SQL y Power BI. Especializada en transformar datos complejos en insights accionables.
-            </p>
+            <div class="sobre-mi-box">
+                Analista de Datos y Data Scientist con formación en Ingeniería en Sistemas (en finalización) y experiencia práctica en análisis exploratorio de datos, desarrollo de pipelines ETL y modelado predictivo utilizando Python, SQL y Power BI.
+            </div>
+        </section>
+
+        <section id="experiencia">
+            <h2>Experiencia Profesional</h2>
+            <div class="card-grid">
+                <div class="card-exp"><h3>Becaria de Investigación</h3><p><b>UNdeC</b></p><p>Ago 2025 – Actualidad</p></div>
+                <div class="card-exp"><h3>Ayudante de Profesor</h3><p><b>Argentina Programa 4.0</b></p><p>Abr 2023 – Nov 2023</p></div>
+            </div>
+        </section>
+
+        <section id="habilidades">
+            <h2>Habilidades Técnicas</h2>
+            
+            <div class="skills-category">
+                <h4>IA Generativa (Especialización)</h4>
+                <div class="skills-grid">
+                    <div class="skill-tag">HeyGen / Sora</div>
+                    <div class="skill-tag">RunwayML / Veed</div>
+                    <div class="skill-tag">Clip Drop / Gamma</div>
+                    <div class="skill-tag">MidJourney / Tome</div>
+                    <div class="skill-tag">Canva AI / Beautiful.ai</div>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h4>Lenguajes & Análisis</h4>
+                <div class="skills-grid">
+                    <div class="skill-tag">Python</div>
+                    <div class="skill-tag">SQL</div>
+                    <div class="skill-tag">Java & C</div>
+                    <div class="skill-tag">Pandas & NumPy</div>
+                    <div class="skill-tag">Machine Learning</div>
+                    <div class="skill-tag">Scikit-Learn</div>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h4>Visualización & Herramientas</h4>
+                <div class="skills-grid">
+                    <div class="skill-tag">Power BI</div>
+                    <div class="skill-tag">Matplotlib / Seaborn</div>
+                    <div class="skill-tag">SQL Server / Oracle</div>
+                    <div class="skill-tag">Excel / Sheets</div>
+                    <div class="skill-tag">Git / GitHub / GitLab</div>
+                    <div class="skill-tag">Jupyter / Colab</div>
+                    <div class="skill-tag">Airflow / ETL</div>
+                </div>
+            </div>
         </section>
 
         <section id="destacado">
             <h2>Proyecto destacado</h2>
             <div class="card">
-                <h3>Análisis de Evasión de Clientes (Churn) – TelecomX</h3>
-                <p>Modelo de Machine Learning para identificar clientes con alto riesgo de abandono utilizando técnicas de balanceo de datos y análisis exploratorio.</p>
-                <p><strong>Tecnologías:</strong> Python, Pandas, Scikit-Learn, SMOTE, Seaborn.</p>
-                <a class="btn" href="https://github.com/DTriador/Challenge_Alura" target="_blank">Ver proyecto</a>
+                <h3>Análisis de Churn – TelecomX</h3>
+                <p>Modelo de ML para identificar clientes con alto riesgo de abandono. Tecnologías: Python, Pandas, Scikit-Learn.</p>
+                <a href="https://github.com/DTriador/Challenge_Alura" target="_blank" class="btn-shine" style="margin-top:15px;">Ver proyecto</a>
             </div>
         </section>
 
         <section id="proyectos">
             <h2>Proyectos</h2>
-
             <div class="proyecto">
-                <img src="proyectos/dashboard_page1_overview.png" alt="Boca Analytics">
-                <div>
-                    <h3>Análisis de rendimiento de futbolistas</h3>
-                    <p>Análisis de rendimiento de jugadores del Club Atlético Boca Juniors durante las temporadas 2014-2025.</p>
-                    <a href="https://github.com/DTriador/Boca-Juniors-Player-Analytics-2014-2025-" target="_blank">Ver en GitHub</a>
-                </div>
+                <img src="proyectos/dashboard_page1_overview.png" alt="Boca">
+                <div><h3>Rendimiento Boca Juniors</h3><p>Análisis 2014-2025.</p><a href="https://github.com/DTriador/Boca-Juniors-Player-Analytics-2014-2025-" target="_blank">GitHub</a></div>
             </div>
-
             <div class="proyecto">
-                <img src="proyectos/dashboard.png" alt="Fraude Financiero">
-                <div>
-                    <h3>Análisis Financiero de Fraude</h3>
-                    <p>Sistema Interactivo de Análisis Forense de Datos para detección de anomalías.</p>
-                    <a href="https://github.com/DTriador/Analisis-de-fraude-financiero" target="_blank">Ver en GitHub</a>
-                </div>
+                <img src="proyectos/dashboard.png" alt="Fraude">
+                <div><h3>Análisis de Fraude</h3><p>Detección anomalías.</p><a href="https://github.com/DTriador/Analisis-de-fraude-financiero" target="_blank">GitHub</a></div>
             </div>
-
             <div class="proyecto">
-                <img src="proyectos/lavadero.png" alt="Simulación Lavadero">
-                <div>
-                    <h3>Simulación Lavadero</h3>
-                    <p>Modelo de simulación de eventos discretos para analizar eficiencia operativa de un lavadero.</p>
-                    <a href="https://github.com/DTriador/AutomatizacionLavadero" target="_blank">Ver en GitHub</a>
-                </div>
+                <img src="proyectos/lavadero.png" alt="Lavadero">
+                <div><h3>Simulación Lavadero</h3><p>Eventos discretos.</p><a href="https://github.com/DTriador/AutomatizacionLavadero" target="_blank">GitHub</a></div>
             </div>
-
             <div class="proyecto">
-                <img src="proyectos/consultorio.png" alt="Centro Médico">
-                <div>
-                    <h3>Centro Médico (Java)</h3>
-                    <p>Aplicación backend para gestión médica desarrollada con Java y Spring Boot.</p>
-                    <a href="https://gitlab.com/t8871/consultorio" target="_blank">Ver en GitLab</a>
-                </div>
+                <img src="proyectos/consultorio.png" alt="Java">
+                <div><h3>Centro Médico</h3><p>Backend Spring Boot.</p><a href="https://gitlab.com/t8871/consultorio" target="_blank">GitLab</a></div>
             </div>
-
             <div class="proyecto">
-                <img src="proyectos/alura.png" alt="Alura Store">
-                <div>
-                    <h3>Alura Store</h3>
-                    <p>Análisis de ventas de cuatro tiendas utilizando Python y Google Colab.</p>
-                    <a href="https://github.com/DTriador/Alura_Store" target="_blank">Ver en GitHub</a>
-                </div>
+                <img src="proyectos/alura.png" alt="Store">
+                <div><h3>Alura Store</h3><p>Ventas Python.</p><a href="https://github.com/DTriador/Alura_Store" target="_blank">GitHub</a></div>
             </div>
-
             <div class="proyecto">
-                <img src="proyectos/powerbi.png" alt="Dashboards">
-                <div>
-                    <h3>Dashboards Power BI</h3>
-                    <p>Dashboards interactivos desarrollados para análisis visual de indicadores de negocio.</p>
-                    <a href="https://drive.google.com/drive/folders/1dqAxC-t4SA1rNaNZHWFqTGjucgwpaBeq" target="_blank">Ver dashboards</a>
-                </div>
+                <img src="proyectos/powerbi.png" alt="PBI">
+                <div><h3>Dashboards Power BI</h3><p>KPIs negocio.</p><a href="https://drive.google.com/drive/folders/1dqAxC-t4SA1rNaNZHWFqTGjucgwpaBeq" target="_blank">Ver</a></div>
             </div>
-
             <div class="proyecto">
-                <img src="proyectos/ponepava.png" alt="Pone la Pava">
-                <div>
-                    <h3>Pone la Pava – Recomendador de Música</h3>
-                    <p>Sistema de recomendación musical utilizando la API de Spotify.</p>
-                    <a href="https://github.com/DTriador/ponelapava" target="_blank">Ver en GitHub</a>
-                </div>
+                <img src="proyectos/ponepava.png" alt="Pava">
+                <div><h3>Pone la Pava</h3><p>Recomendador Spotify API.</p><a href="https://github.com/DTriador/ponelapava" target="_blank">GitHub</a></div>
             </div>
+        </section>
 
+        <section id="certificados">
+            <h2>Certificados</h2>
+            <div class="certificados-wrapper">
+                <button class="nav-btn prev-btn" onclick="scrollCert(-1)"><i class="fas fa-chevron-left"></i></button>
+                <div class="certificados-container" id="certContainer">
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/powerbi.png"><h3>Power BI</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/dataanalytics.png"><h3>Data Analytics</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/datascience.png"><h3>Data Science</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/sqlintermedio.png"><h3>SQL Intermedio</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/machinelearningavanzado.png"><h3>ML Avanzado</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/machinelearning.png"><h3>Machine Learning</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/iaaplicada.png"><h3>IA Aplicada</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/numpy.png"><h3>NumPy</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/pandas.png"><h3>Pandas</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/pandasmanipulacion.png"><h3>Pandas Manipulación</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/estadistica.png"><h3>Estadística</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/regresionlineal.png"><h3>Regresión Lineal</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/inglearn.png"><h3>Ingelearn</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/inglesnivel3.png"><h3>Inglés Nivel 3</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/inglesA2.png"><h3>Inglés A2</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/italianoA2.png"><h3>Italiano A2</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/gestiondtiempo.png"><h3>Gestión de Tiempo</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/comunicacionefectiva.png"><h3>Comunicación Efectiva</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/habilidadessocioemocionales.png"><h3>Socioemocionales</h3></div>
+                </div>
+                <button class="nav-btn next-btn" onclick="scrollCert(1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="dots-container" id="dotsContainer"></div>
         </section>
 
         <section id="contacto">
             <h2>Contacto</h2>
-            <p class="contacto">
-                <a href="mailto:danielatriador92@gmail.com">Email</a>
-                <a href="https://www.linkedin.com/in/dtriador" target="_blank">LinkedIn</a>
-                <a href="https://github.com/DTriador" target="_blank">GitHub</a>
-            </p>
+            <div class="contacto-container">
+                <div class="contacto-list-horizontal">
+                    <a href="mailto:danielatriador92@gmail.com" class="contacto-item"><i class="fa-regular fa-envelope"></i> Email</a>
+                    <a href="https://www.linkedin.com/in/dtriador" target="_blank" class="contacto-item"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+                    <a href="https://github.com/DTriador" target="_blank" class="contacto-item"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <a href="cv.pdf" target="_blank" class="contacto-item"><i class="fa-solid fa-file-arrow-down"></i> CV</a>
+                </div>
+            </div>
         </section>
     </div>
 
     <script>
         const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll('.navbar a');
+        
         const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
+        }, { threshold: 0.1 });
+        sections.forEach(s => observer.observe(s));
+
+        window.addEventListener('scroll', () => {
+            let fromTop = window.scrollY + 100;
+            sections.forEach(section => {
+                if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (section.getAttribute('id') === link.getAttribute('href').substring(1)) link.classList.add('active');
+                    });
                 }
             });
-        }, { threshold: 0.1 });
-
-        sections.forEach(section => {
-            observer.observe(section);
         });
+
+        const container = document.getElementById('certContainer');
+        const dotsContainer = document.getElementById('dotsContainer');
+        const cards = document.querySelectorAll('.cert-card');
+
+        cards.forEach((_, i) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            dot.onclick = () => { container.scrollLeft = i * (cards[0].offsetWidth + 25); };
+            dotsContainer.appendChild(dot);
+        });
+
+        container.onscroll = () => {
+            const index = Math.round(container.scrollLeft / (cards[0].offsetWidth + 25));
+            document.querySelectorAll('.dot').forEach((d, i) => { d.classList.toggle('active', i === index); });
+        };
+
+        function scrollCert(dir) { container.scrollLeft += dir * (cards[0].offsetWidth + 25); }
+
+        function openModal(card) {
+            document.getElementById("certModal").style.display = "flex";
+            document.getElementById("imgFull").src = card.querySelector('img').src;
+        }
+        function closeModal() { document.getElementById("certModal").style.display = "none"; }
+        window.onclick = function(e) { if (e.target == document.getElementById("certModal")) closeModal(); }
     </script>
 </body>
 </html>
