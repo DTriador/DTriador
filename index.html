@@ -1,266 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daniela Triador | Data Analyst</title>
     <link rel="icon" href="favicon.png">
+    
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <style>
-        /* --- 1. BASE Y NAVEGACIÓN --- */
-        html { scroll-behavior: smooth; }
-        
-        body {
-            margin: 0; padding: 0;
-            font-family: 'Source Sans Pro', sans-serif;
-            color: #50332e;
-            background: linear-gradient(135deg, #ffd6d6, #ffe9e9, #ffd6e7);
-            background-size: 400% 400%;
-            animation: gradientMove 12s ease infinite;
-        }
-
-        @keyframes gradientMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .navbar {
-            position: fixed; top: 0; left: 0; width: 100%;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(80, 51, 46, 0.1);
-            padding: 15px 0; text-align: center; z-index: 1000;
-        }
-
-        .navbar a {
-            position: relative;
-            margin: 0 18px; text-decoration: none;
-            color: #50332e; font-weight: 600;
-            transition: opacity 0.3s;
-        }
-
-        .navbar a::after {
-            content: ''; position: absolute;
-            width: 0; height: 3px; bottom: -8px; left: 0;
-            background-color: #50332e;
-            transition: width 0.3s ease;
-        }
-
-        .navbar a:hover::after,
-        .navbar a.active::after { width: 100%; }
-
-        /* --- 2. ESTRUCTURA --- */
-        .frame {
-            border-radius: 30px;
-            padding: 60px; max-width: 1050px;
-            margin: 100px auto 50px auto;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(15px);
-            box-shadow: 0 15px 45px rgba(80, 51, 46, 0.12);
-        }
-
-        header { 
-            text-align: center; 
-            margin-bottom: 70px; 
-            position: relative; 
-        }
-        header h1 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 64px; 
-            margin: 0; 
-            position: relative;
-            display: inline-block;
-        }
-
-      /* --- EFECTO ELEMENTOS DE DATOS FLOTANTES --- */
-            .data-icon {
-            position: absolute;
-            font-size: 16px; /* Un poquito más grandes para que se noten los gráficos */
-            opacity: 0;
-            animation: floatingIcons 5s linear infinite;
-            pointer-events: none;
-            }
-
-        /* Distribución de posiciones y retrasos */
-        .data-icon:nth-child(1) { top: -20px; left: 5%; animation-delay: 0.5s; }
-        .data-icon:nth-child(2) { top: 5px; left: 20%; animation-delay: 1.2s; }
-        .data-icon:nth-child(3) { top: -15px; left: 35%; animation-delay: 2.1s; }
-        .data-icon:nth-child(4) { top: 15px; left: 50%; animation-delay: 3s; }
-        .data-icon:nth-child(5) { top: -25px; left: 65%; animation-delay: 0.8s; }
-        .data-icon:nth-child(6) { top: 10px; left: 80%; animation-delay: 1.5s; }
-        .data-icon:nth-child(7) { top: -10px; left: 95%; animation-delay: 2.4s; }
-
-        .data-icon:nth-child(8) { bottom: -20px; left: 10%; animation-delay: 2.7s; }
-        .data-icon:nth-child(9) { bottom: 5px; left: 25%; animation-delay: 3.2s; }
-        .data-icon:nth-child(10) { bottom: -15px; left: 40%; animation-delay: 0.2s; }
-        .data-icon:nth-child(11) { bottom: 15px; left: 55%; animation-delay: 1.9s; }
-        .data-icon:nth-child(12) { bottom: -25px; left: 70%; animation-delay: 2.5s; }
-        .data-icon:nth-child(13) { bottom: 10px; left: 85%; animation-delay: 3.8s; }
-        .data-icon:nth-child(14) { top: 25px; right: -25px; animation-delay: 1.1s; }
-        .data-icon:nth-child(15) { bottom: 20px; left: -25px; animation-delay: 2.3s; }
-
-       @keyframes floatingIcons {
-         0% { 
-        transform: translateY(10px) rotate(0deg) scale(0.5); 
-        opacity: 0; 
-        }
-         20% { 
-        opacity: 0.6; 
-        }
-        50% { 
-        /* Rotación completa de 360 grados a mitad de camino */
-        transform: translateY(-25px) rotate(360deg) scale(1.1); 
-        opacity: 0.3; 
-        }
-        100% { 
-        /* Sigue rotando hasta los 720 grados para un efecto fluido */
-         transform: translateY(-50px) rotate(720deg) scale(0.5); 
-         opacity: 0; 
-         }
-        }
-
-        .subtitle { font-size: 20px; margin-top: 10px; font-weight: 600; }
-
-        section { margin-bottom: 80px; opacity: 0; transform: translateY(30px); transition: all 0.7s ease-out; }
-        section.visible { opacity: 1; transform: translateY(0); }
-        h2 { border-bottom: 2px solid #50332e; padding-bottom: 8px; margin-bottom: 30px; display: inline-block; }
-
-        /* Tarjeta Sobre Mí con Movimiento */
-        .sobre-mi-box {
-            background: white; padding: 30px; border-radius: 20px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-            border-left: 8px solid #50332e; line-height: 1.6;
-            transition: 0.4s ease;
-        }
-        .sobre-mi-box:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(80, 51, 46, 0.15);
-        }
-
-        /* --- 3. HABILIDADES --- */
-        .skills-category { margin-bottom: 30px; }
-        .skills-category h4 { margin: 0 0 15px 0; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9; }
-        .skills-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 12px; width: 100%;
-        }
-        .skill-tag {
-            background: linear-gradient(90deg, #ff9a9e 0%, #fecfef 100%);
-            color: #50332e; padding: 15px; border-radius: 15px;
-            font-weight: 600; text-align: center;
-            display: flex; align-items: center; justify-content: center;
-            height: 50px; transition: 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-        }
-        .skill-tag:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(80, 51, 46, 0.15); }
-
-        /* --- 4. EXPERIENCIA Y PROYECTOS --- */
-        .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
-        .card-exp, .card {
-            background: white; padding: 25px; border-radius: 20px;
-            border-left: 8px solid #50332e; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            transition: 0.4s ease;
-        }
-        .card-exp:hover, .card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(80, 51, 46, 0.15); }
-
-        .btn-shine {
-            position: relative; overflow: hidden;
-            text-decoration: none; color: #50332e; font-weight: 600;
-            border: 2px solid #50332e; padding: 10px 20px; border-radius: 12px;
-            display: inline-block; transition: 0.3s ease; background: white;
-        }
-        .btn-shine::before {
-            content: ''; position: absolute; top: 0; left: -100%;
-            width: 50%; height: 100%;
-            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
-            transition: all 0.5s;
-        }
-        .btn-shine:hover::before { left: 100%; }
-        .btn-shine:hover { color: #ec4899; transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-
-        .proyecto {
-            display: grid; grid-template-columns: 220px 1fr; gap: 25px;
-            border-left: 8px solid #50332e; border-radius: 20px;
-            background: white; padding: 20px; margin-bottom: 25px; transition: 0.4s ease;
-        }
-        .proyecto img { width: 100%; height: auto; border-radius: 12px; object-fit: cover; }
-        .proyecto:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(80, 51, 46, 0.15); }
-
-        /* --- 5. CERTIFICADOS CON CARRUSEL --- */
-        .certificados-wrapper { position: relative; width: 100%; display: flex; align-items: center; }
-        .certificados-container { 
-            display: flex; gap: 25px; overflow-x: auto; padding: 20px 10px; 
-            scroll-behavior: smooth; width: 100%;
-            scrollbar-width: none; -ms-overflow-style: none;
-        }
-        .certificados-container::-webkit-scrollbar { display: none; }
-
-        .nav-btn {
-            position: absolute; top: 50%; transform: translateY(-50%);
-            width: 45px; height: 45px; background: white; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer; z-index: 10;
-            border: none; color: #50332e; font-size: 18px; transition: 0.3s;
-        }
-        .nav-btn:hover { background: #fdfdfd; transform: translateY(-50%) scale(1.1); }
-        .prev-btn { left: -25px; }
-        .next-btn { right: -25px; }
-
-        .cert-card {
-            min-width: 300px; background: white; border-radius: 20px;
-            overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: 0.4s ease; cursor: pointer; text-align: center;
-            border: 1px solid rgba(80, 51, 46, 0.05);
-        }
-        .cert-card img { width: 100%; height: 180px; object-fit: contain; padding: 10px; }
-        .cert-card h3 { font-size: 15px; margin: 10px 0; color: #50332e; }
-
-        .dots-container { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
-        .dot { width: 10px; height: 10px; background: #cbd5e1; border-radius: 50%; transition: 0.3s; cursor: pointer; }
-        .dot.active { width: 25px; border-radius: 10px; background: linear-gradient(90deg, #7c3aed 0%, #ec4899 100%); }
-
-        /* --- 6. CONTACTO --- */
-        .contacto-container {
-            background: linear-gradient(90deg, #ff9a9e 0%, #fecfef 100%);
-            padding: 40px; border-radius: 25px;
-        }
-        .contacto-list-horizontal { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
-        .contacto-item {
-            position: relative; overflow: hidden;
-            display: flex; align-items: center; justify-content: center;
-            background: white; padding: 18px; border-radius: 12px;
-            text-decoration: none; color: #50332e; font-weight: 600; transition: 0.3s ease;
-        }
-        .contacto-item::before {
-            content: ''; position: absolute; top: 0; left: -100%;
-            width: 50%; height: 100%;
-            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
-            transition: all 0.5s;
-        }
-        .contacto-item:hover::before { left: 100%; }
-        .contacto-item:hover { color: #ec4899; transform: translateY(-8px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
-
-        .modal {
-            display: none; position: fixed; z-index: 2000;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(80, 51, 46, 0.9); backdrop-filter: blur(8px);
-            justify-content: center; align-items: center;
-        }
-        .modal-content { max-width: 85%; max-height: 85%; border-radius: 15px; }
-        .close-modal { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; cursor: pointer; }
-
-        @media(max-width: 768px) {
-            .frame { padding: 30px; }
-            .card-grid, .proyecto, .contacto-list-horizontal { grid-template-columns: 1fr; }
-            .nav-btn { display: none; }
-        }
-    </style>
+    
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
     <nav class="navbar" id="navbar">
@@ -279,29 +29,21 @@
     </div>
 
     <div class="frame">
-       <header>
-    <h1>
-        Daniela Andrea Triador
-        <span class="data-icon">📊</span>
-        <span class="data-icon">📈</span>
-        <span class="data-icon">📉</span>
-        <span class="data-icon">🧮</span>
-        <span class="data-icon">💱</span>
-        <span class="data-icon">🔢</span>
-        <span class="data-icon">💡</span>
-        <span class="data-icon">🔍</span>
-        <span class="data-icon">📟</span>
-        <span class="data-icon">📊</span>
-        <span class="data-icon">📈</span>
-        <span class="data-icon">📉</span>
-        <span class="data-icon">🧮</span>
-        <span class="data-icon">💱</span>
-        <span class="data-icon">💡</span>
-        <span class="data-icon">🔍</span>
-        <span class="data-icon">📟</span>
-    </h1>
-    <div class="subtitle">Data Analyst | Data Scientist | Estudiante de Ingeniería en Sistemas</div>
-</header>
+        <header>
+            <h1>
+                Daniela Andrea Triador
+                <span class="data-icon">📊</span><span class="data-icon">📈</span>
+                <span class="data-icon">📉</span><span class="data-icon">🧮</span>
+                <span class="data-icon">💱</span><span class="data-icon">🔢</span>
+                <span class="data-icon">💡</span><span class="data-icon">🔍</span>
+                <span class="data-icon">📟</span><span class="data-icon">📊</span>
+                <span class="data-icon">📈</span><span class="data-icon">📉</span>
+                <span class="data-icon">🧮</span><span class="data-icon">💱</span>
+                <span class="data-icon">💡</span><span class="data-icon">🔍</span>
+                <span class="data-icon">📟</span>
+            </h1>
+            <div class="subtitle">Data Analyst | Data Scientist | Estudiante de Ingeniería en Sistemas</div>
+        </header>
 
         <section id="sobre">
             <h2>Sobre mí</h2>
@@ -320,7 +62,6 @@
 
         <section id="habilidades">
             <h2>Habilidades Técnicas</h2>
-            
             <div class="skills-category">
                 <h4>IA Generativa (Especialización)</h4>
                 <div class="skills-grid">
@@ -356,6 +97,7 @@
                     <div class="skill-tag">Airflow / ETL</div>
                 </div>
             </div>
+
             <div class="skills-category">
                 <h4>Seguridad & Infraestructura</h4>
                 <div class="skills-grid">
@@ -444,51 +186,99 @@
     </div>
 
     <script>
-        const sections = document.querySelectorAll("section");
-        const navLinks = document.querySelectorAll('.navbar a');
-        
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
-        }, { threshold: 0.1 });
-        sections.forEach(s => observer.observe(s));
+    // --- 1. Animación de Secciones al hacer scroll ---
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll('.navbar a');
+    
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
+    }, { threshold: 0.1 });
+    sections.forEach(s => observer.observe(s));
 
-        window.addEventListener('scroll', () => {
-            let fromTop = window.scrollY + 100;
-            sections.forEach(section => {
-                if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (section.getAttribute('id') === link.getAttribute('href').substring(1)) link.classList.add('active');
-                    });
-                }
-            });
+    // --- 2. Link Activo en la Navbar al hacer scroll ---
+    window.addEventListener('scroll', () => {
+        let fromTop = window.scrollY + 150;
+        sections.forEach(section => {
+            if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (section.getAttribute('id') === link.getAttribute('href').substring(1)) link.classList.add('active');
+                });
+            }
         });
+    });
 
-        const container = document.getElementById('certContainer');
-        const dotsContainer = document.getElementById('dotsContainer');
-        const cards = document.querySelectorAll('.cert-card');
+    // --- 3. Carrusel Cinemático de Certificados ---
+    const container = document.getElementById('certContainer');
+    const dotsContainer = document.getElementById('dotsContainer');
+    const cards = document.querySelectorAll('.cert-card');
 
-        cards.forEach((_, i) => {
-            const dot = document.createElement('div');
-            dot.classList.add('dot');
-            if (i === 0) dot.classList.add('active');
-            dot.onclick = () => { container.scrollLeft = i * (cards[0].offsetWidth + 25); };
-            dotsContainer.appendChild(dot);
-        });
+    // Estado del carrusel para el scroll cinemático
+    let currentScrollPos = 0;
+    let targetScrollPos = 0;
+    const scrollSpeedCoefficient = 0.05; // Cuanto menor, más lento y suave (cinemático)
 
-        container.onscroll = () => {
-            const index = Math.round(container.scrollLeft / (cards[0].offsetWidth + 25));
-            document.querySelectorAll('.dot').forEach((d, i) => { d.classList.toggle('active', i === index); });
+    // Crear Dots (puntos)
+    cards.forEach((_, i) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        // Usamos scrollTo nativo con suavidad del CSS
+        dot.onclick = () => {
+            container.scrollTo({ left: i * (cards[0].offsetWidth + 40), behavior: 'smooth' });
         };
+        dotsContainer.appendChild(dot);
+    });
 
-        function scrollCert(dir) { container.scrollLeft += dir * (cards[0].offsetWidth + 25); }
+    // Actualizar dots activos al deslizar con el dedo
+    container.onscroll = () => {
+        const index = Math.round(container.scrollLeft / (cards[0].offsetWidth + 40));
+        document.querySelectorAll('.dot').forEach((d, i) => { d.classList.toggle('active', i === index); });
+    };
 
-        function openModal(card) {
-            document.getElementById("certModal").style.display = "flex";
-            document.getElementById("imgFull").src = card.querySelector('img').src;
+    // Función principal para los botones (scroll cinemático)
+    function scrollCert(dir) {
+        const cardWidth = cards[0].offsetWidth;
+        const gap = 40; // Gap del CSS
+        const scrollAmount = cardWidth + gap;
+
+        // Definimos la nueva posición objetivo
+        targetScrollPos = container.scrollLeft + (dir * scrollAmount);
+
+        // Lógica de bucle para animación suave (Smooth Animation Loop)
+        function smoothAnimationLoop() {
+            // Calculamos la distancia restante
+            const diff = targetScrollPos - currentScrollPos;
+
+            // Si la distancia es mínima, nos detenemos para evitar vibraciones
+            if (Math.abs(diff) < 1) {
+                currentScrollPos = targetScrollPos;
+                container.scrollLeft = currentScrollPos;
+                return;
+            }
+
+            // Movemos la posición actual un pequeño porcentaje de la diferencia (Cinemático)
+            currentScrollPos += diff * scrollSpeedCoefficient;
+            container.scrollLeft = currentScrollPos;
+
+            // Pedimos el siguiente frame de animación
+            requestAnimationFrame(smoothAnimationLoop);
         }
-        function closeModal() { document.getElementById("certModal").style.display = "none"; }
-        window.onclick = function(e) { if (e.target == document.getElementById("certModal")) closeModal(); }
+
+        // Inicializamos la posición actual antes de empezar la animación
+        currentScrollPos = container.scrollLeft;
+        
+        // Iniciamos el bucle cinemático
+        requestAnimationFrame(smoothAnimationLoop);
+    }
+
+    // --- 4. Modal para Certificados ---
+         function openModal(card) {
+        document.getElementById("certModal").style.display = "flex";
+        document.getElementById("imgFull").src = card.querySelector('img').src;
+     }
+     function closeModal() { document.getElementById("certModal").style.display = "none"; }
+      window.onclick = function(e) { if (e.target == document.getElementById("certModal")) closeModal(); }
     </script>
 </body>
 </html>
