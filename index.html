@@ -5,22 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daniela Triador | Data Analyst</title>
     <link rel="icon" href="favicon.png">
-    
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav class="navbar" id="navbar">
-        <a href="#sobre">Sobre mí</a>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#habilidades">Habilidades</a>
-        <a href="#destacado">Destacado</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#certificados">Certificados</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#sobre" data-section="nav-about">Sobre mí</a>
+        <a href="#experiencia" data-section="nav-exp">Experiencia</a>
+        <a href="#habilidades" data-section="nav-skills">Habilidades</a>
+        <a href="#destacado" data-section="nav-featured">Destacado</a>
+        <a href="#proyectos" data-section="nav-projects">Proyectos</a>
+        <a href="#certificados" data-section="nav-certs">Certificados</a>
+        <a href="#contacto" data-section="nav-contact">Contacto</a>
+        
+        <div class="nav-controls">
+            <select id="languageSelect" class="lang-select">
+                <option value="es">ES</option>
+                <option value="en">EN</option>
+            </select>
+            <button id="darkModeToggle" class="dark-mode-btn">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
     </nav>
 
     <div id="certModal" class="modal">
@@ -39,118 +47,117 @@
                 <span class="data-icon">📟</span><span class="data-icon">📊</span>
                 <span class="data-icon">📈</span><span class="data-icon">📉</span>
                 <span class="data-icon">🧮</span><span class="data-icon">💱</span>
-                <span class="data-icon">💡</span><span class="data-icon">🔍</span>
-                <span class="data-icon">📟</span>
+                <span class="data-icon">💡</span>
             </h1>
-            <div class="subtitle">Data Analyst | Data Scientist | Estudiante de Ingeniería en Sistemas</div>
+            <div class="subtitle" data-section="header-subtitle">Data Analyst | Data Scientist | Estudiante de Ingeniería en Sistemas</div>
         </header>
 
         <section id="sobre">
-            <h2>Sobre mí</h2>
-            <div class="sobre-mi-box">
+            <h2 data-section="title-about">Sobre mí</h2>
+            <div class="sobre-mi-box" data-section="content-about">
                 Analista de Datos y Data Scientist con formación en Ingeniería en Sistemas (en finalización) y experiencia práctica en análisis exploratorio de datos, desarrollo de pipelines ETL y modelado predictivo utilizando Python, SQL y Power BI.
             </div>
         </section>
 
         <section id="experiencia">
-            <h2>Experiencia Profesional</h2>
+            <h2 data-section="title-exp">Experiencia Profesional</h2>
             <div class="card-grid">
-                <div class="card-exp"><h3>Becaria de Investigación</h3><p><b>UNdeC</b></p><p>Ago 2025 – Actualidad</p></div>
-                <div class="card-exp"><h3>Ayudante de Profesor</h3><p><b>Argentina Programa 4.0</b></p><p>Abr 2023 – Nov 2023</p></div>
+                <div class="card-exp">
+                    <h3 data-section="exp-becaria-title">Becaria de Investigación</h3>
+                    <p><b>UNdeC</b></p>
+                    <p data-section="exp-becaria-date">Ago 2025 – Actualidad</p>
+                </div>
+                <div class="card-exp">
+                    <h3 data-section="exp-ayudante-title">Ayudante de Profesor</h3>
+                    <p><b>Argentina Programa 4.0</b></p>
+                    <p data-section="exp-ayudante-date">Abr 2023 – Nov 2023</p>
+                </div>
             </div>
         </section>
 
         <section id="habilidades">
-            <h2>Habilidades Técnicas</h2>
+            <h2 data-section="title-skills">Habilidades Técnicas</h2>
+            
             <div class="skills-category">
-                <h4>IA Generativa (Especialización)</h4>
+                <h4 data-section="skill-cat-1">IA Generativa (Especialización)</h4>
                 <div class="skills-grid">
-                    <div class="skill-tag">HeyGen / Sora</div>
-                    <div class="skill-tag">RunwayML / Veed</div>
-                    <div class="skill-tag">Clip Drop / Gamma</div>
-                    <div class="skill-tag">MidJourney / Tome</div>
+                    <div class="skill-tag">HeyGen / Sora</div><div class="skill-tag">RunwayML / Veed</div>
+                    <div class="skill-tag">Clip Drop / Gamma</div><div class="skill-tag">MidJourney / Tome</div>
                     <div class="skill-tag">Canva AI / Beautiful.ai</div>
                 </div>
             </div>
 
             <div class="skills-category">
-                <h4>Lenguajes & Análisis</h4>
+                <h4 data-section="skill-cat-2">Lenguajes & Análisis</h4>
                 <div class="skills-grid">
-                    <div class="skill-tag">Python</div>
-                    <div class="skill-tag">SQL</div>
-                    <div class="skill-tag">Java & C</div>
-                    <div class="skill-tag">Pandas & NumPy</div>
-                    <div class="skill-tag">Machine Learning</div>
-                    <div class="skill-tag">Scikit-Learn</div>
+                    <div class="skill-tag">Python</div><div class="skill-tag">SQL</div>
+                    <div class="skill-tag">Java & C</div><div class="skill-tag">Pandas & NumPy</div>
+                    <div class="skill-tag">Machine Learning</div><div class="skill-tag">Scikit-Learn</div>
                 </div>
             </div>
 
             <div class="skills-category">
-                <h4>Visualización & Herramientas</h4>
+                <h4 data-section="skill-cat-3">Visualización & Herramientas</h4>
                 <div class="skills-grid">
-                    <div class="skill-tag">Power BI</div>
-                    <div class="skill-tag">Matplotlib / Seaborn</div>
-                    <div class="skill-tag">SQL Server / Oracle</div>
-                    <div class="skill-tag">Excel / Sheets</div>
-                    <div class="skill-tag">Git / GitHub / GitLab</div>
-                    <div class="skill-tag">Jupyter / Colab</div>
+                    <div class="skill-tag">Power BI</div><div class="skill-tag">Matplotlib / Seaborn</div>
+                    <div class="skill-tag">SQL Server / Oracle</div><div class="skill-tag">Excel / Sheets</div>
+                    <div class="skill-tag">Git / GitHub / GitLab</div><div class="skill-tag">Jupyter / Colab</div>
                     <div class="skill-tag">Airflow / ETL</div>
                 </div>
             </div>
 
             <div class="skills-category">
-                <h4>Seguridad & Infraestructura</h4>
+                <h4 data-section="skill-cat-4">Seguridad & Infraestructura</h4>
                 <div class="skills-grid">
-                    <div class="skill-tag">Ciberseguridad</div>
-                    <div class="skill-tag">Gestión de Riesgos</div>
+                    <div class="skill-tag">Ciberseguridad</div><div class="skill-tag">Gestión de Riesgos</div>
                     <div class="skill-tag">Linux (NDG Cisco)</div>
                 </div>
             </div>
         </section>
 
         <section id="destacado">
-            <h2>Proyecto destacado</h2>
+            <h2 data-section="title-featured">Proyecto destacado</h2>
             <div class="card">
-                <h3>Análisis de Churn – TelecomX</h3>
-                <p>Modelo de ML para identificar clientes con alto riesgo de abandono. Tecnologías: Python, Pandas, Scikit-Learn.</p>
-                <a href="https://github.com/DTriador/Challenge_Alura" target="_blank" class="btn-shine" style="margin-top:15px;">Ver proyecto</a>
+                <h3 data-section="feat-project-title">Análisis de Churn – TelecomX</h3>
+                <p data-section="feat-project-desc">Modelo de ML para identificar clientes con alto riesgo de abandono. Tecnologías: Python, Pandas, Scikit-Learn.</p>
+                <a href="https://github.com/DTriador/Challenge_Alura" target="_blank" class="btn-shine" data-section="btn-view">Ver proyecto</a>
             </div>
         </section>
 
         <section id="proyectos">
-            <h2>Proyectos</h2>
+            <h2 data-section="title-projects">Proyectos</h2>
             <div class="proyecto">
                 <img src="proyectos/dashboard_page1_overview.png" alt="Boca">
-                <div><h3>Rendimiento Boca Juniors</h3><p>Análisis 2014-2025.</p><a href="https://github.com/DTriador/Boca-Juniors-Player-Analytics-2014-2025-" target="_blank">GitHub</a></div>
+                <div><h3 data-section="proj-boca-title">Rendimiento Boca Juniors</h3><p data-section="proj-boca-desc">Análisis 2014-2025.</p><a href="https://github.com/DTriador/Boca-Juniors-Player-Analytics-2014-2025-" target="_blank">GitHub</a></div>
             </div>
             <div class="proyecto">
                 <img src="proyectos/dashboard.png" alt="Fraude">
-                <div><h3>Análisis de Fraude</h3><p>Detección anomalías.</p><a href="https://github.com/DTriador/Analisis-de-fraude-financiero" target="_blank">GitHub</a></div>
+                <div><h3 data-section="proj-fraude-title">Análisis de Fraude</h3><p data-section="proj-fraude-desc">Detección anomalías.</p><a href="https://github.com/DTriador/Analisis-de-fraude-financiero" target="_blank">GitHub</a></div>
             </div>
             <div class="proyecto">
                 <img src="proyectos/lavadero.png" alt="Lavadero">
-                <div><h3>Simulación Lavadero</h3><p>Eventos discretos.</p><a href="https://github.com/DTriador/AutomatizacionLavadero" target="_blank">GitHub</a></div>
+                <div><h3 data-section="proj-lavadero-title">Simulación Lavadero</h3><p data-section="proj-lavadero-desc">Eventos discretos.</p><a href="https://github.com/DTriador/AutomatizacionLavadero" target="_blank">GitHub</a></div>
             </div>
             <div class="proyecto">
                 <img src="proyectos/consultorio.png" alt="Java">
-                <div><h3>Centro Médico</h3><p>Backend Spring Boot.</p><a href="https://gitlab.com/t8871/consultorio" target="_blank">GitLab</a></div>
+                <div><h3 data-section="proj-medico-title">Centro Médico</h3><p data-section="proj-medico-desc">Backend Spring Boot.</p><a href="https://gitlab.com/t8871/consultorio" target="_blank">GitLab</a></div>
             </div>
             <div class="proyecto">
                 <img src="proyectos/alura.png" alt="Store">
-                <div><h3>Alura Store</h3><p>Ventas Python.</p><a href="https://github.com/DTriador/Alura_Store" target="_blank">GitHub</a></div>
+                <div><h3 data-section="proj-alura-title">Alura Store</h3><p data-section="proj-alura-desc">Ventas Python.</p><a href="https://github.com/DTriador/Alura_Store" target="_blank">GitHub</a></div>
             </div>
             <div class="proyecto">
                 <img src="proyectos/powerbi.png" alt="PBI">
-                <div><h3>Dashboards Power BI</h3><p>KPIs negocio.</p><a href="https://drive.google.com/drive/folders/1dqAxC-t4SA1rNaNZHWFqTGjucgwpaBeq" target="_blank">Ver</a></div>
+                <div><h3 data-section="proj-pbi-title">Dashboards Power BI</h3><p data-section="proj-pbi-desc">KPIs negocio.</p><a href="https://drive.google.com/drive/folders/1dqAxC-t4SA1rNaNZHWFqTGjucgwpaBeq" target="_blank">Ver</a></div>
             </div>
             <div class="proyecto">
                 <img src="proyectos/ponepava.png" alt="Pava">
-                <div><h3>Pone la Pava</h3><p>Recomendador Spotify API.</p><a href="https://github.com/DTriador/ponelapava" target="_blank">GitHub</a></div>
+                <div><h3 data-section="proj-pava-title">Pone la Pava</h3><p data-section="proj-pava-desc">Recomendador Spotify API.</p><a href="https://github.com/DTriador/ponelapava" target="_blank">GitHub</a></div>
             </div>
         </section>
 
         <section id="certificados">
-            <h2>Certificados</h2>
+            <h2 data-section="title-certs">Certificados</h2>
             <div class="certificados-wrapper">
                 <button class="nav-btn prev-btn" onclick="scrollCert(-1)"><i class="fas fa-chevron-left"></i></button>
                 <div class="certificados-container" id="certContainer">
@@ -173,7 +180,7 @@
         </section>
 
         <section id="contacto">
-            <h2>Contacto</h2>
+            <h2 data-section="title-contact">Contacto</h2>
             <div class="contacto-container">
                 <div class="contacto-list-horizontal">
                     <a href="mailto:danielatriador92@gmail.com" class="contacto-item"><i class="fa-regular fa-envelope"></i> Email</a>
@@ -186,99 +193,83 @@
     </div>
 
     <script>
-    // --- 1. Animación de Secciones al hacer scroll ---
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll('.navbar a');
-    
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
-    }, { threshold: 0.1 });
-    sections.forEach(s => observer.observe(s));
-
-    // --- 2. Link Activo en la Navbar al hacer scroll ---
-    window.addEventListener('scroll', () => {
-        let fromTop = window.scrollY + 150;
-        sections.forEach(section => {
-            if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (section.getAttribute('id') === link.getAttribute('href').substring(1)) link.classList.add('active');
-                });
+        // --- 1. DICCIONARIO COMPLETO ---
+        const translations = {
+            es: {
+                "nav-about": "Sobre mí", "nav-exp": "Experiencia", "nav-skills": "Habilidades",
+                "nav-featured": "Destacado", "nav-projects": "Proyectos", "nav-certs": "Certificados", "nav-contact": "Contacto",
+                "header-subtitle": "Data Analyst | Data Scientist | Estudiante de Ingeniería en Sistemas",
+                "title-about": "Sobre mí", "content-about": "Analista de Datos y Data Scientist con formación en Ingeniería en Sistemas (en finalización) y experiencia práctica en análisis exploratorio de datos, desarrollo de pipelines ETL y modelado predictivo utilizando Python, SQL y Power BI.",
+                "title-exp": "Experiencia Profesional", "exp-becaria-title": "Becaria de Investigación", "exp-becaria-date": "Ago 2025 – Actualidad", "exp-ayudante-title": "Ayudante de Profesor", "exp-ayudante-date": "Abr 2023 – Nov 2023",
+                "title-skills": "Habilidades Técnicas", "skill-cat-1": "IA Generativa", "skill-cat-2": "Lenguajes & Análisis", "skill-cat-3": "Visualización", "skill-cat-4": "Seguridad",
+                "title-featured": "Proyecto destacado", "feat-project-title": "Análisis de Churn – TelecomX", "feat-project-desc": "Modelo de ML para identificar clientes con alto riesgo de abandono. Tecnologías: Python, Pandas, Scikit-Learn.", "btn-view": "Ver proyecto",
+                "title-projects": "Proyectos", "proj-boca-title": "Rendimiento Boca Juniors", "proj-boca-desc": "Análisis 2014-2025.", "proj-fraude-title": "Análisis de Fraude", "proj-fraude-desc": "Detección anomalías.", "proj-lavadero-title": "Simulación Lavadero", "proj-lavadero-desc": "Eventos discretos.", "proj-medico-title": "Centro Médico", "proj-medico-desc": "Backend Spring Boot.", "proj-alura-title": "Alura Store", "proj-alura-desc": "Ventas Python.", "proj-pbi-title": "Dashboards Power BI", "proj-pbi-desc": "KPIs negocio.", "proj-pava-title": "Pone la Pava", "proj-pava-desc": "Recomendador Spotify.",
+                "title-certs": "Certificados", "title-contact": "Contacto"
+            },
+            en: {
+                "nav-about": "About Me", "nav-exp": "Experience", "nav-skills": "Skills",
+                "nav-featured": "Featured", "nav-projects": "Projects", "nav-certs": "Certificates", "nav-contact": "Contact",
+                "header-subtitle": "Data Analyst | Data Scientist | Systems Engineering Student",
+                "title-about": "About Me", "content-about": "Data Analyst and Data Scientist with a background in Systems Engineering (finalizing) and hands-on experience in exploratory data analysis, ETL pipeline development, and predictive modeling using Python, SQL, and Power BI.",
+                "title-exp": "Professional Experience", "exp-becaria-title": "Research Fellow", "exp-becaria-date": "Aug 2025 – Present", "exp-ayudante-title": "Teaching Assistant", "exp-ayudante-date": "Apr 2023 – Nov 2023",
+                "title-skills": "Technical Skills", "skill-cat-1": "Generative AI", "skill-cat-2": "Languages & Analytics", "skill-cat-3": "Visualization", "skill-cat-4": "Security",
+                "title-featured": "Featured Project", "feat-project-title": "Churn Analysis – TelecomX", "feat-project-desc": "ML model to identify high-risk churn customers. Technologies: Python, Pandas, Scikit-Learn.", "btn-view": "View project",
+                "title-projects": "Projects", "proj-boca-title": "Boca Juniors Performance", "proj-boca-desc": "2014-2025 Analysis.", "proj-fraude-title": "Fraud Analysis", "proj-fraude-desc": "Anomaly detection.", "proj-lavadero-title": "Laundry Simulation", "proj-lavadero-desc": "Discrete events.", "proj-medico-title": "Medical Center", "proj-medico-desc": "Spring Boot Backend.", "proj-alura-title": "Alura Store", "proj-alura-desc": "Python Sales.", "proj-pbi-title": "Power BI Dashboards", "proj-pbi-desc": "Business KPIs.", "proj-pava-title": "Pone la Pava", "proj-pava-desc": "Spotify Recommender.",
+                "title-certs": "Certificates", "title-contact": "Contact"
             }
-        });
-    });
-
-    // --- 3. Carrusel Cinemático de Certificados ---
-    const container = document.getElementById('certContainer');
-    const dotsContainer = document.getElementById('dotsContainer');
-    const cards = document.querySelectorAll('.cert-card');
-
-    // Estado del carrusel para el scroll cinemático
-    let currentScrollPos = 0;
-    let targetScrollPos = 0;
-    const scrollSpeedCoefficient = 0.05; // Cuanto menor, más lento y suave (cinemático)
-
-    // Crear Dots (puntos)
-    cards.forEach((_, i) => {
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
-        if (i === 0) dot.classList.add('active');
-        // Usamos scrollTo nativo con suavidad del CSS
-        dot.onclick = () => {
-            container.scrollTo({ left: i * (cards[0].offsetWidth + 40), behavior: 'smooth' });
         };
-        dotsContainer.appendChild(dot);
-    });
 
-    // Actualizar dots activos al deslizar con el dedo
-    container.onscroll = () => {
-        const index = Math.round(container.scrollLeft / (cards[0].offsetWidth + 40));
-        document.querySelectorAll('.dot').forEach((d, i) => { d.classList.toggle('active', i === index); });
-    };
+        // --- 2. MODO OSCURO ---
+        const btnDarkMode = document.getElementById('darkModeToggle');
+        const darkIcon = btnDarkMode.querySelector('i');
+        const toggleDarkMode = () => {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            darkIcon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        };
+        btnDarkMode.addEventListener('click', toggleDarkMode);
+        if (localStorage.getItem('theme') === 'dark') { document.body.classList.add('dark-mode'); darkIcon.className = 'fa-solid fa-sun'; }
 
-    // Función principal para los botones (scroll cinemático)
-    function scrollCert(dir) {
-        const cardWidth = cards[0].offsetWidth;
-        const gap = 40; // Gap del CSS
-        const scrollAmount = cardWidth + gap;
+        // --- 3. IDIOMAS ---
+        const langSelect = document.getElementById('languageSelect');
+        const changeLanguage = (lang) => {
+            document.querySelectorAll("[data-section]").forEach(el => {
+                const key = el.dataset.section;
+                if(translations[lang][key]) el.textContent = translations[lang][key];
+            });
+            localStorage.setItem('lang', lang);
+        };
+        langSelect.addEventListener('change', (e) => changeLanguage(e.target.value));
+        const savedLang = localStorage.getItem('lang') || 'es';
+        langSelect.value = savedLang; changeLanguage(savedLang);
 
-        // Definimos la nueva posición objetivo
-        targetScrollPos = container.scrollLeft + (dir * scrollAmount);
-
-        // Lógica de bucle para animación suave (Smooth Animation Loop)
-        function smoothAnimationLoop() {
-            // Calculamos la distancia restante
-            const diff = targetScrollPos - currentScrollPos;
-
-            // Si la distancia es mínima, nos detenemos para evitar vibraciones
-            if (Math.abs(diff) < 1) {
-                currentScrollPos = targetScrollPos;
-                container.scrollLeft = currentScrollPos;
-                return;
-            }
-
-            // Movemos la posición actual un pequeño porcentaje de la diferencia (Cinemático)
-            currentScrollPos += diff * scrollSpeedCoefficient;
-            container.scrollLeft = currentScrollPos;
-
-            // Pedimos el siguiente frame de animación
-            requestAnimationFrame(smoothAnimationLoop);
+        // --- 4. SCROLL CINEMÁTICO ---
+        const container = document.getElementById('certContainer');
+        const cards = document.querySelectorAll('.cert-card');
+        let targetPos = 0; let currentPos = 0;
+        function scrollCert(dir) {
+            const step = cards[0].offsetWidth + 40;
+            targetPos = Math.max(0, Math.min(container.scrollWidth - container.clientWidth, container.scrollLeft + (dir * step)));
+            const animate = () => {
+                const diff = targetPos - currentPos;
+                if (Math.abs(diff) < 1) { container.scrollLeft = targetPos; return; }
+                currentPos += diff * 0.05;
+                container.scrollLeft = currentPos;
+                requestAnimationFrame(animate);
+            };
+            currentPos = container.scrollLeft; requestAnimationFrame(animate);
         }
 
-        // Inicializamos la posición actual antes de empezar la animación
-        currentScrollPos = container.scrollLeft;
-        
-        // Iniciamos el bucle cinemático
-        requestAnimationFrame(smoothAnimationLoop);
-    }
+        // --- 5. OBSERVER & MODAL ---
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll("section").forEach(s => observer.observe(s));
 
-    // --- 4. Modal para Certificados ---
-         function openModal(card) {
-        document.getElementById("certModal").style.display = "flex";
-        document.getElementById("imgFull").src = card.querySelector('img').src;
-     }
-     function closeModal() { document.getElementById("certModal").style.display = "none"; }
-      window.onclick = function(e) { if (e.target == document.getElementById("certModal")) closeModal(); }
+        function openModal(card) { document.getElementById("certModal").style.display = "flex"; document.getElementById("imgFull").src = card.querySelector('img').src; }
+        function closeModal() { document.getElementById("certModal").style.display = "none"; }
+        window.onclick = function(e) { if (e.target == document.getElementById("certModal")) closeModal(); }
     </script>
 </body>
 </html>

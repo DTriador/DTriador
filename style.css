@@ -1,19 +1,44 @@
-/* --- VARIABLES Y CONFIGURACIÓN BASE --- */
+/* --- 1. VARIABLES Y CONFIGURACIÓN --- */
 :root {
-    --primary-color: #50332e;    /* Marrón café */
-    --accent-color: #ec4899;     /* Rosa detalles */
+    --primary-color: #50332e;
+    --accent-color: #ec4899;
     --bg-gradient: linear-gradient(135deg, #ffd6d6, #ffe9e9, #ffd6e7);
     --glass-bg: rgba(255, 255, 255, 0.85);
     --shadow-standard: 0 15px 35px rgba(80, 51, 46, 0.15);
+    --transition-smooth: cubic-bezier(0.2, 0.8, 0.2, 1);
     --transition-speed: 0.4s;
-    --transition-smooth: cubic-bezier(0.2, 0.8, 0.2, 1); /* Curva de ingeniería para suavidad */
 }
 
-html { 
-    /* Smooth scroll nativo (ayuda al JS) */
-    scroll-behavior: smooth; 
+/* --- 2. MODO OSCURO --- */
+body.dark-mode {
+    --primary-color: #fce7f3;
+    --accent-color: #fb7185;
+    --bg-gradient: linear-gradient(135deg, #1a100f, #2d1b19, #1a100f);
+    --glass-bg: rgba(45, 27, 25, 0.9);
 }
 
+body.dark-mode .sobre-mi-box, 
+body.dark-mode .card-exp, 
+body.dark-mode .card, 
+body.dark-mode .proyecto, 
+body.dark-mode .cert-card,
+body.dark-mode .contacto-item,
+body.dark-mode .skill-tag {
+    background: #3d2522;
+    color: var(--primary-color);
+    border-left-color: var(--accent-color);
+}
+
+body.dark-mode .lang-select, 
+body.dark-mode .dark-mode-btn, 
+body.dark-mode .nav-btn {
+    background: #3d2522;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* --- 3. BASE Y ANIMACIÓN DE FONDO --- */
+html { scroll-behavior: smooth; }
 body {
     margin: 0; padding: 0;
     font-family: 'Source Sans Pro', sans-serif;
@@ -21,6 +46,7 @@ body {
     background: var(--bg-gradient);
     background-size: 400% 400%;
     animation: gradientMove 12s ease infinite;
+    transition: background 0.5s ease, color 0.5s ease;
 }
 
 @keyframes gradientMove {
@@ -29,7 +55,7 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* --- NAVEGACIÓN --- */
+/* --- 4. NAVEGACIÓN Y CONTROLES --- */
 .navbar {
     position: fixed; top: 0; left: 0; width: 100%;
     background: var(--glass-bg);
@@ -39,9 +65,8 @@ body {
 }
 
 .navbar a {
-    position: relative; margin: 0 18px; text-decoration: none;
-    color: var(--primary-color); font-weight: 600;
-    transition: var(--transition-speed) var(--transition-smooth);
+    position: relative; margin: 0 15px; text-decoration: none;
+    color: var(--primary-color); font-weight: 600; transition: 0.3s;
 }
 
 .navbar a::after {
@@ -52,7 +77,18 @@ body {
 
 .navbar a:hover::after, .navbar a.active::after { width: 100%; }
 
-/* --- CONTENEDOR PRINCIPAL --- */
+.nav-controls {
+    position: absolute; right: 20px; top: 50%;
+    transform: translateY(-50%); display: flex; gap: 12px;
+}
+
+.dark-mode-btn, .lang-select {
+    background: none; border: 1px solid var(--primary-color);
+    color: var(--primary-color); border-radius: 8px; cursor: pointer;
+    font-weight: 600; padding: 5px; transition: 0.3s;
+}
+
+/* --- 5. ESTRUCTURA Y CABECERA --- */
 .frame {
     border-radius: 30px; padding: 60px; max-width: 1050px;
     margin: 100px auto 50px auto; background: var(--glass-bg);
@@ -60,23 +96,14 @@ body {
 }
 
 header { text-align: center; margin-bottom: 70px; position: relative; }
+header h1 { font-family: 'Playfair Display', serif; font-size: 64px; position: relative; display: inline-block; margin: 0; }
 
-header h1 { 
-    font-family: 'Playfair Display', serif; font-size: 64px; 
-    margin: 0; position: relative; display: inline-block;
-}
-
-/* --- CABECERA Y EMOJIS (RECUPERADOS) --- */
+/* --- 6. EMOJIS FLOTANTES (TODAS LAS POSICIONES) --- */
 header h1 .data-icon {
-    position: absolute; 
-    font-size: 18px; 
-    opacity: 0;
-    animation: floatingIcons 5s linear infinite; 
-    pointer-events: none;
-    display: inline-block;
+    position: absolute; font-size: 18px; opacity: 0;
+    animation: floatingIcons 5s linear infinite; pointer-events: none;
 }
 
-/* Posiciones de los emojis (coordenadas originales) */
 .data-icon:nth-child(1) { top: -20px; left: 5%; animation-delay: 0.5s; }
 .data-icon:nth-child(2) { top: 5px; left: 20%; animation-delay: 1.2s; }
 .data-icon:nth-child(3) { top: -15px; left: 35%; animation-delay: 2.1s; }
@@ -95,14 +122,13 @@ header h1 .data-icon {
 
 @keyframes floatingIcons {
     0% { transform: translateY(10px) rotate(0deg) scale(0.5); opacity: 0; }
-    20% { opacity: 0.6; }
     50% { transform: translateY(-25px) rotate(360deg) scale(1.1); opacity: 0.3; }
     100% { transform: translateY(-50px) rotate(720deg) scale(0.5); opacity: 0; }
 }
 
 .subtitle { font-size: 20px; margin-top: 10px; font-weight: 600; }
 
-/* --- TÍTULOS DE SECCIÓN (SENTENCE CASE) --- */
+/* --- 7. TÍTULOS DE SECCIÓN (SENTENCE CASE) --- */
 section { 
     margin-bottom: 100px; opacity: 0; transform: translateY(30px); 
     transition: all 0.8s var(--transition-smooth); 
@@ -111,8 +137,7 @@ section.visible { opacity: 1; transform: translateY(0); }
 
 h2 {
     font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 700;
-    letter-spacing: 1px; text-transform: none; color: var(--primary-color);
-    margin: 60px 0 40px 0; display: flex; align-items: center; gap: 20px;
+    text-transform: none; margin: 60px 0 40px 0; display: flex; align-items: center; gap: 20px;
 }
 
 h2::after {
@@ -133,30 +158,25 @@ section#proyectos h2::before { content: '05'; }
 section#certificados h2::before { content: '06'; }
 section#contacto h2::before { content: '07'; }
 
-/* --- TARJETAS BASE (CORREGIDAS) --- */
+/* --- 8. TARJETAS Y CONTENIDO --- */
 .sobre-mi-box, .card-exp, .card, .proyecto {
     background: white; border-radius: 20px; border-left: 8px solid var(--primary-color);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); 
-    transition: var(--transition-speed) var(--transition-smooth);
-    padding: 25px 30px 25px 35px; overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); transition: 0.4s var(--transition-smooth);
+    padding: 25px 30px 25px 35px; margin-bottom: 20px;
 }
 
 .sobre-mi-box:hover, .card-exp:hover, .card:hover, .proyecto:hover {
     transform: translateY(-8px); box-shadow: var(--shadow-standard);
 }
 
-/* --- HABILIDADES (RECUPERADO EL MOVIMIENTO SUAVE) --- */
-.skills-grid { 
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; 
-}
+/* HABILIDADES (MOVIMIENTO RECUPERADO) */
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
 
 .skill-tag {
     background: linear-gradient(90deg, #ff9a9e 0%, #fecfef 100%);
     padding: 15px; border-radius: 15px; font-weight: 600; text-align: center;
     display: flex; align-items: center; justify-content: center; height: 50px;
-    
-    /* Recuperamos el movimiento suave idéntico al de los proyectos */
-    transition: var(--transition-speed) var(--transition-smooth);
+    transition: 0.4s var(--transition-smooth);
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
@@ -165,72 +185,54 @@ section#contacto h2::before { content: '07'; }
     box-shadow: 0 8px 15px rgba(80, 51, 46, 0.15);
 }
 
-/* --- CERTIFICADOS (LENTO, ZOOM Y ESPEJO) --- */
-.certificados-wrapper { position: relative; width: 100%; display: flex; align-items: center; }
-
-.certificados-container { 
-    display: flex; gap: 40px; overflow-x: auto; padding: 40px 40px 80px 40px; 
-    
-    /* Scroll ultra-suave nativo */
-    scroll-behavior: smooth; 
-    
-    width: 100%; scrollbar-width: none; -ms-overflow-style: none; scroll-snap-type: x mandatory;
-    
-    /* Efecto Fade Lateral */
-    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-}
-.certificados-container::-webkit-scrollbar { display: none; }
-
-.cert-card {
-    min-width: 320px; background: white; border-radius: 20px;
-    scroll-snap-align: center; 
-    text-align: center; border: 1px solid rgba(80, 51, 46, 0.05); padding: 15px;
-    
-    /* Transición lenta para el zoom */
-    transition: 0.6s var(--transition-smooth);
-    
-    /* EFECTO ESPEJO (REFLEJO) */
-    -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, rgba(255, 255, 255, 0.2));
-}
-
-/* EFECTO ZOOM QUE TE GUSTA */
-.cert-card:hover {
-    transform: scale(1.08) translateY(-15px); /* Un zoom un poco más notable */
-    z-index: 10; /* Asegura que la tarjeta haga zoom por encima de las otras */
-}
-
-.cert-card img { width: 100%; height: 180px; object-fit: contain; }
-
-/* Botones de navegación actualizados para un look cinemático */
-.nav-btn {
-    position: absolute; top: 40%; transform: translateY(-50%);
-    width: 50px; height: 50px; background: white; border-radius: 50%;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2); cursor: pointer; z-index: 20;
-    border: none; color: var(--primary-color); display: flex; align-items: center; justify-content: center;
-    transition: 0.3s;
-}
-.nav-btn:hover { background: var(--primary-color); color: white; }
-.prev-btn { left: -10px; }
-.next-btn { right: -10px; }
-
-/* --- PROYECTOS GRID --- */
+/* --- 9. PROYECTOS --- */
 .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
 .proyecto { display: grid; grid-template-columns: 220px 1fr; gap: 25px; padding: 20px 25px; margin-bottom: 25px; }
 .proyecto img { width: 100%; border-radius: 12px; object-fit: cover; }
 
-/* --- CONTACTO --- */
+.btn-shine {
+    text-decoration: none; color: var(--primary-color); font-weight: 600;
+    border: 2px solid var(--primary-color); padding: 10px 20px; border-radius: 12px;
+    display: inline-block; transition: 0.3s ease; background: white;
+}
+.btn-shine:hover { color: var(--accent-color); transform: translateY(-5px); }
+
+/* --- 10. CERTIFICADOS (ZOOM + ESPEJO) --- */
+.certificados-wrapper { position: relative; width: 100%; display: flex; align-items: center; }
+
+.certificados-container { 
+    display: flex; gap: 40px; overflow-x: auto; padding: 40px 40px 80px 40px; 
+    scroll-behavior: smooth; width: 100%; scrollbar-width: none; -ms-overflow-style: none; scroll-snap-type: x mandatory;
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.cert-card {
+    min-width: 320px; background: white; border-radius: 20px;
+    scroll-snap-align: center; transition: 0.6s var(--transition-smooth); 
+    text-align: center; border: 1px solid rgba(80, 51, 46, 0.05); padding: 15px;
+    -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, rgba(255, 255, 255, 0.2));
+}
+
+.cert-card:hover { transform: scale(1.08) translateY(-15px); z-index: 10; }
+.cert-card img { width: 100%; height: 180px; object-fit: contain; }
+
+.nav-btn {
+    position: absolute; top: 40%; width: 50px; height: 50px; background: white; border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); cursor: pointer; z-index: 20; border: none; display: flex; align-items: center; justify-content: center;
+}
+.prev-btn { left: -10px; } .next-btn { right: -10px; }
+
+/* --- 11. CONTACTO Y MODAL --- */
 .contacto-container { background: linear-gradient(90deg, #ff9a9e 0%, #fecfef 100%); padding: 40px; border-radius: 25px; }
 .contacto-list-horizontal { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
-.contacto-item, .btn-shine {
+.contacto-item {
     background: white; padding: 18px; border-radius: 12px;
     text-decoration: none; color: var(--primary-color); font-weight: 600;
     display: flex; justify-content: center; transition: 0.3s ease;
 }
-.btn-shine { border: 2px solid var(--primary-color); padding: 10px 20px; display: inline-block; }
-.contacto-item:hover, .btn-shine:hover { color: var(--accent-color); transform: translateY(-5px); }
+.contacto-item:hover { color: var(--accent-color); transform: translateY(-5px); }
 
-/* --- MODAL Y DOTS --- */
 .modal {
     display: none; position: fixed; z-index: 2000; top: 0; left: 0;
     width: 100%; height: 100%; background: rgba(80, 51, 46, 0.9);
@@ -242,12 +244,13 @@ section#contacto h2::before { content: '07'; }
 .dot { width: 10px; height: 10px; background: #cbd5e1; border-radius: 50%; cursor: pointer; transition: 0.3s; }
 .dot.active { width: 25px; border-radius: 10px; background: linear-gradient(90deg, #7c3aed, var(--accent-color)); }
 
-/* --- RESPONSIVE --- */
+/* --- 12. RESPONSIVE --- */
 @media(max-width: 768px) {
     .frame { padding: 30px; }
+    .nav-controls { position: static; transform: none; margin-top: 10px; justify-content: center; }
     .card-grid, .proyecto, .contacto-list-horizontal { grid-template-columns: 1fr; }
     header h1 { font-size: 42px; }
     h2 { font-size: 24px; }
     h2::after { display: none; }
-    .cert-card { min-width: 260px; -webkit-box-reflect: none; } /* Quitamos reflejo en móvil */
+    .cert-card { -webkit-box-reflect: none; min-width: 260px; }
 }
