@@ -52,12 +52,28 @@
             <div class="subtitle" data-section="header-subtitle">Data Analyst | Data Scientist | Estudiante de Ingeniería en Sistemas</div>
         </header>
 
-        <section id="sobre">
-            <h2 data-section="title-about">Sobre mí</h2>
-            <div class="sobre-mi-box" data-section="content-about">
-                Analista de Datos y Data Scientist con formación en Ingeniería en Sistemas (en finalización) y experiencia práctica en análisis exploratorio de datos, desarrollo de pipelines ETL y modelado predictivo utilizando Python, SQL y Power BI.
-            </div>
-        </section>
+    <section id="sobre">
+    <h2 data-section="title-about">Sobre mí</h2>
+
+    <div class="sobre-mi-container">
+       <div class="sobre-mi-box" data-section="content-about">
+    <p>
+        Soy Analista de Datos en formación con base en Ingeniería en Sistemas, enfocada en trabajar con datos para entender problemas reales y aportar claridad en la toma de decisiones.
+
+        A lo largo de mis proyectos trabajé con Python, SQL y Power BI en análisis exploratorio, modelado de datos y visualización, desarrollando soluciones que van desde la preparación de datos hasta la generación de insights.
+
+        Me interesa especialmente el análisis orientado a negocio: entender qué está pasando, por qué sucede y cómo esa información puede utilizarse para mejorar procesos o tomar decisiones más informadas.
+
+        Mi perfil tiene un diferencial poco común en el área técnica: durante 3 años trabajé como periodista deportiva. Esa experiencia desarrolló mi capacidad para sintetizar información y comunicarla de forma clara.
+
+        Actualmente continúo mi formación en tecnologías cloud y en inglés, con el objetivo de desarrollarme en entornos de trabajo globales.
+    </p>
+</div>
+        <div class="sobre-mi-img">
+            <img src="sobremi.png" alt="Sobre mí">
+        </div>
+    </div>
+</section>
 
         <section id="experiencia">
             <h2 data-section="title-exp">Experiencia Profesional</h2>
@@ -199,7 +215,7 @@
                 "nav-about": "Sobre mí", "nav-exp": "Experiencia", "nav-skills": "Habilidades",
                 "nav-featured": "Destacado", "nav-projects": "Proyectos", "nav-certs": "Certificados", "nav-contact": "Contacto",
                 "header-subtitle": "Data Analyst | Data Scientist | Estudiante de Ingeniería en Sistemas",
-                "title-about": "Sobre mí", "content-about": "Analista de Datos y Data Scientist con formación en Ingeniería en Sistemas (en finalización) y experiencia práctica en análisis exploratorio de datos, desarrollo de pipelines ETL y modelado predictivo utilizando Python, SQL y Power BI.",
+                "title-about": "Sobre mí", "content-about": "Soy Analista de Datos en formación con base en Ingeniería en Sistemas, enfocada en trabajar con datos para entender problemas reales y aportar claridad en la toma de decisiones. \n\nA lo largo de mis proyectos trabajé con Python, SQL y Power BI en análisis exploratorio, modelado de datos y visualización, desarrollando soluciones que van desde la preparación de datos hasta la generación de insights. \n\nMe interesa especialmente el análisis orientado a negocio: entender qué está pasando, por qué sucede y cómo esa información puede utilizarse para mejorar procesos o tomar decisiones más informadas. \n\nMi perfil tiene un diferencial poco común en el área técnica: durante 3 años trabajé como periodista deportiva. Esa experiencia desarrolló mi capacidad para analizar información, sintetizarla y comunicarla de forma clara. Hoy aplico esas habilidades para traducir datos en resultados comprensibles para distintos perfiles. \n\nActualmente continúo mi formación en tecnologías cloud y en inglés, con el objetivo de desarrollarme en entornos de trabajo globales.",
                 "title-exp": "Experiencia Profesional", "exp-becaria-title": "Becaria de Investigación", "exp-becaria-date": "Ago 2025 – Actualidad", "exp-ayudante-title": "Ayudante de Profesor", "exp-ayudante-date": "Abr 2023 – Nov 2023",
                 "title-skills": "Habilidades Técnicas", "skill-cat-1": "IA Generativa", "skill-cat-2": "Lenguajes & Análisis", "skill-cat-3": "Visualización", "skill-cat-4": "Seguridad",
                 "title-featured": "Proyecto destacado", "feat-project-title": "Análisis de Churn – TelecomX", "feat-project-desc": "Modelo de ML para identificar clientes con alto riesgo de abandono. Tecnologías: Python, Pandas, Scikit-Learn.", "btn-view": "Ver proyecto",
@@ -210,7 +226,7 @@
                 "nav-about": "About Me", "nav-exp": "Experience", "nav-skills": "Skills",
                 "nav-featured": "Featured", "nav-projects": "Projects", "nav-certs": "Certificates", "nav-contact": "Contact",
                 "header-subtitle": "Data Analyst | Data Scientist | Systems Engineering Student",
-                "title-about": "About Me", "content-about": "Data Analyst and Data Scientist with a background in Systems Engineering (finalizing) and hands-on experience in exploratory data analysis, ETL pipeline development, and predictive modeling using Python, SQL, and Power BI.",
+                "title-about": "About Me", "content-about": "I am a Data Analyst in training with a background in Systems Engineering, focused on leveraging data to understand real-world problems and provide clarity in decision-making.\n\nThroughout my projects, I have worked with Python, SQL, and Power BI for exploratory data analysis, data modeling, and visualization, developing solutions ranging from data preparation to insight generation.\n\nI am particularly interested in business-oriented analysis: understanding what is happening, why it is happening, and how that information can be used to improve processes or make more informed decisions.\n\nMy profile has a unique edge in the technical field: for three years, I worked as a sports journalist. That experience developed my ability to analyze, synthesize, and communicate information clearly. Today, I apply those skills to translate data into understandable results for diverse stakeholders.\n\nCurrently, I am continuing my training in cloud technologies and English, with the goal of growing in global work environments.",
                 "title-exp": "Professional Experience", "exp-becaria-title": "Research Fellow", "exp-becaria-date": "Aug 2025 – Present", "exp-ayudante-title": "Teaching Assistant", "exp-ayudante-date": "Apr 2023 – Nov 2023",
                 "title-skills": "Technical Skills", "skill-cat-1": "Generative AI", "skill-cat-2": "Languages & Analytics", "skill-cat-3": "Visualization", "skill-cat-4": "Security",
                 "title-featured": "Featured Project", "feat-project-title": "Churn Analysis – TelecomX", "feat-project-desc": "ML model to identify high-risk churn customers. Technologies: Python, Pandas, Scikit-Learn.", "btn-view": "View project",
@@ -233,13 +249,15 @@
 
         // --- 3. IDIOMAS ---
         const langSelect = document.getElementById('languageSelect');
-        const changeLanguage = (lang) => {
-            document.querySelectorAll("[data-section]").forEach(el => {
-                const key = el.dataset.section;
-                if(translations[lang][key]) el.textContent = translations[lang][key];
-            });
-            localStorage.setItem('lang', lang);
-        };
+    const changeLanguage = (lang) => {
+    document.querySelectorAll("[data-section]").forEach(el => {
+        const key = el.dataset.section;
+        if(translations[lang][key]) {
+            el.innerText = translations[lang][key]; 
+        }
+    });
+    localStorage.setItem('lang', lang);
+};
         langSelect.addEventListener('change', (e) => changeLanguage(e.target.value));
         const savedLang = localStorage.getItem('lang') || 'es';
         langSelect.value = savedLang; changeLanguage(savedLang);
