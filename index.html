@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniela Triador | Data Analyst</title>
+    <link rel="icon" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+        <a href="#sobre" data-section="nav-about">Sobre mí</a>
+        <a href="#experiencia" data-section="nav-exp">Experiencia</a>
+        <a href="#habilidades" data-section="nav-skills">Habilidades</a>
+        <a href="#destacado" data-section="nav-featured">Destacado</a>
+        <a href="#proyectos" data-section="nav-projects">Proyectos</a>
+        <a href="#certificados" data-section="nav-certs">Certificados</a>
+        <a href="#contacto" data-section="nav-contact">Contacto</a>
+        
+        <div class="nav-controls">
+            <select id="languageSelect" class="lang-select">
+                <option value="es">ES</option>
+                <option value="en">EN</option>
+            </select>
+            <button id="darkModeToggle" class="dark-mode-btn">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div id="certModal" class="modal">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="imgFull">
+    </div>
+
+    <div class="frame">
+        <header>
+            <h1>
+                Daniela Andrea Triador
+                <span class="data-icon">📊</span><span class="data-icon">📈</span>
+                <span class="data-icon">📉</span><span class="data-icon">🧮</span>
+                <span class="data-icon">💱</span><span class="data-icon">🔢</span>
+                <span class="data-icon">💡</span><span class="data-icon">🔍</span>
+                <span class="data-icon">📟</span><span class="data-icon">📊</span>
+                <span class="data-icon">📈</span><span class="data-icon">📉</span>
+                <span class="data-icon">🧮</span><span class="data-icon">💱</span>
+                <span class="data-icon">💡</span>
+            </h1>
+            <div class="subtitle" data-section="header-subtitle">Data Analyst | Data Scientist | Estudiante de Ingeniería en Sistemas</div>
+        </header>
+
+    <section id="sobre">
+    <h2 data-section="title-about">Sobre mí</h2>
+
+    <div class="sobre-mi-container">
+       <div class="sobre-mi-box" data-section="content-about">
+    <p>
+        Soy Analista de Datos en formación con base en Ingeniería en Sistemas, enfocada en trabajar con datos para entender problemas reales y aportar claridad en la toma de decisiones.
+
+        A lo largo de mis proyectos trabajé con Python, SQL y Power BI en análisis exploratorio, modelado de datos y visualización, desarrollando soluciones que van desde la preparación de datos hasta la generación de insights.
+
+        Me interesa especialmente el análisis orientado a negocio: entender qué está pasando, por qué sucede y cómo esa información puede utilizarse para mejorar procesos o tomar decisiones más informadas.
+
+        Mi perfil tiene un diferencial poco común en el área técnica: durante 3 años trabajé como periodista deportiva. Esa experiencia desarrolló mi capacidad para sintetizar información y comunicarla de forma clara.
+
+        Actualmente continúo mi formación en tecnologías cloud y en inglés, con el objetivo de desarrollarme en entornos de trabajo globales.
+    </p>
+</div>
+        <div class="sobre-mi-img">
+            <img src="sobremi.png" alt="Sobre mí">
+        </div>
+    </div>
+</section>
+
+        <section id="experiencia">
+            <h2 data-section="title-exp">Experiencia Profesional</h2>
+            <div class="card-grid">
+                <div class="card-exp">
+                    <h3 data-section="exp-becaria-title">Becaria de Investigación</h3>
+                    <p><b>UNdeC</b></p>
+                    <p data-section="exp-becaria-date">Ago 2025 – Actualidad</p>
+                </div>
+                <div class="card-exp">
+                    <h3 data-section="exp-ayudante-title">Ayudante de Profesor</h3>
+                    <p><b>Argentina Programa 4.0</b></p>
+                    <p data-section="exp-ayudante-date">Abr 2023 – Nov 2023</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="habilidades">
+            <h2 data-section="title-skills">Habilidades Técnicas</h2>
+            
+            <div class="skills-category">
+                <h4 data-section="skill-cat-1">IA Generativa (Especialización)</h4>
+                <div class="skills-grid">
+                    <div class="skill-tag">HeyGen / Sora</div><div class="skill-tag">RunwayML / Veed</div>
+                    <div class="skill-tag">Clip Drop / Gamma</div><div class="skill-tag">MidJourney / Tome</div>
+                    <div class="skill-tag">Canva AI / Beautiful.ai</div>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h4 data-section="skill-cat-2">Lenguajes & Análisis</h4>
+                <div class="skills-grid">
+                    <div class="skill-tag">Python</div><div class="skill-tag">SQL</div>
+                    <div class="skill-tag">Java & C</div><div class="skill-tag">Pandas & NumPy</div>
+                    <div class="skill-tag">Machine Learning</div><div class="skill-tag">Scikit-Learn</div>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h4 data-section="skill-cat-3">Visualización & Herramientas</h4>
+                <div class="skills-grid">
+                    <div class="skill-tag">Power BI</div><div class="skill-tag">Matplotlib / Seaborn</div>
+                    <div class="skill-tag">SQL Server / Oracle</div><div class="skill-tag">Excel / Sheets</div>
+                    <div class="skill-tag">Git / GitHub / GitLab</div><div class="skill-tag">Jupyter / Colab</div>
+                    <div class="skill-tag">Airflow / ETL</div>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h4 data-section="skill-cat-4">Seguridad & Infraestructura</h4>
+                <div class="skills-grid">
+                    <div class="skill-tag">Ciberseguridad</div><div class="skill-tag">Gestión de Riesgos</div>
+                    <div class="skill-tag">Linux (NDG Cisco)</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="destacado">
+            <h2 data-section="title-featured">Proyecto destacado</h2>
+            <div class="card">
+                <h3 data-section="feat-project-title">Análisis de Churn – TelecomX</h3>
+                <p data-section="feat-project-desc">Modelo de ML para identificar clientes con alto riesgo de abandono. Tecnologías: Python, Pandas, Scikit-Learn.</p>
+                <a href="https://github.com/DTriador/Challenge_Alura" target="_blank" class="btn-shine" data-section="btn-view">Ver proyecto</a>
+            </div>
+        </section>
+
+        <section id="proyectos">
+            <h2 data-section="title-projects">Proyectos</h2>
+            <div class="proyecto">
+                <img src="proyectos/elan.png" alt="Élan - Plataforma de aprendizaje">
+                <div>
+                    <h3 data-section="proj-elan-title">Élan — Plataforma de aprendizaje</h3>
+                    <p data-section="proj-elan-desc">Plataforma web para explorar recursos de aprendizaje y formación autodidacta.</p>
+                    <a href="https://plataformaelan.netlify.app/#home" target="_blank" rel="noopener noreferrer">Ver plataforma</a>
+                </div>
+            </div>
+            <div class="proyecto">
+                <img src="proyectos/dashboard_page1_overview.png" alt="Boca">
+                <div><h3 data-section="proj-boca-title">Rendimiento Boca Juniors</h3><p data-section="proj-boca-desc">Análisis 2014-2025.</p><a href="https://github.com/DTriador/Boca-Juniors-Player-Analytics-2014-2025-" target="_blank">GitHub</a></div>
+            </div>
+            <div class="proyecto">
+                <img src="proyectos/dashboard.png" alt="Fraude">
+                <div><h3 data-section="proj-fraude-title">Análisis de Fraude</h3><p data-section="proj-fraude-desc">Detección anomalías.</p><a href="https://github.com/DTriador/Analisis-de-fraude-financiero" target="_blank">GitHub</a></div>
+            </div>
+            <div class="proyecto">
+                <img src="proyectos/lavadero.png" alt="Lavadero">
+                <div><h3 data-section="proj-lavadero-title">Simulación Lavadero</h3><p data-section="proj-lavadero-desc">Eventos discretos.</p><a href="https://github.com/DTriador/AutomatizacionLavadero" target="_blank">GitHub</a></div>
+            </div>
+            <div class="proyecto">
+                <img src="proyectos/billetera_oracle.png" alt="Oracle Database">
+             <div>
+             <h3 data-section="proj-wallet-title">Arquitectura de Billetera Virtual</h3>
+            <p data-section="proj-wallet-desc">Modelado relacional y despliegue en Oracle Cloud para gestión financiera.</p>
+            <a href="https://github.com/DTriador/IntegradorBDII" target="_blank">GitHub</a>
+             </div>
+            </div>
+            <div class="proyecto">
+                <img src="proyectos/consultorio.png" alt="Java">
+                <div><h3 data-section="proj-medico-title">Centro Médico</h3><p data-section="proj-medico-desc">Backend Spring Boot.</p><a href="https://gitlab.com/t8871/consultorio" target="_blank">GitLab</a></div>
+            </div>
+            <div class="proyecto">
+                <img src="proyectos/alura.png" alt="Store">
+                <div><h3 data-section="proj-alura-title">Alura Store</h3><p data-section="proj-alura-desc">Ventas Python.</p><a href="https://github.com/DTriador/Alura_Store" target="_blank">GitHub</a></div>
+            </div>
+            <div class="proyecto">
+                <img src="proyectos/powerbi.png" alt="PBI">
+                <div><h3 data-section="proj-pbi-title">Dashboards Power BI</h3><p data-section="proj-pbi-desc">KPIs negocio.</p><a href="https://drive.google.com/drive/folders/1dqAxC-t4SA1rNaNZHWFqTGjucgwpaBeq" target="_blank">Ver</a></div>
+            </div>
+            <div class="proyecto">
+                <img src="proyectos/ponepava.png" alt="Pava">
+                <div><h3 data-section="proj-pava-title">Pone la Pava</h3><p data-section="proj-pava-desc">Recomendador Spotify API.</p><a href="https://github.com/DTriador/ponelapava" target="_blank">GitHub</a></div>
+            </div>
+        </section>
+
+        <section id="certificados">
+            <h2 data-section="title-certs">Certificados</h2>
+            <div class="certificados-wrapper">
+                <button class="nav-btn prev-btn" onclick="scrollCert(-1)"><i class="fas fa-chevron-left"></i></button>
+                <div class="certificados-container" id="certContainer">
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/powerbi.png"><h3>Power BI</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/dataanalytics.png"><h3>Data Analytics</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/datascience.png"><h3>Data Science</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/sqlintermedio.png"><h3>SQL Intermedio</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/machinelearningavanzado.png"><h3>ML Avanzado</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/iaaplicada.png"><h3>IA Aplicada</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/estadistica.png"><h3>Estadística</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/inglearn.png"><h3>Ingelearn</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/inglesnivel3.png"><h3>Inglés Nivel 3</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/inglesA2.png"><h3>Inglés A2</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/italianoA2.png"><h3>Italiano A2</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/certificado.png"><h3>Gestión de Tiempo</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/kiro.png"><h3>Agentes con Kiro</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/seguridad-mujeres.png"><h3>Ciberseguridad para Mujeres</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/agilconia.png"><h3>Ágil con IA</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/datosseguridadgobernanza.png"><h3>Datos, Seguridad y Gobernanza</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/fundamentosyservicios.png"><h3>Fundamentos y Servicios</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/redesyprotocolo.png"><h3>Redes y Protocolos</h3></div>
+                </div>
+                <button class="nav-btn next-btn" onclick="scrollCert(1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="dots-container" id="dotsContainer"></div>
+        </section>
+
+        <section id="contacto">
+            <h2 data-section="title-contact">Contacto</h2>
+            <div class="contacto-container">
+                <div class="contacto-list-horizontal">
+                    <a href="mailto:danielatriador92@gmail.com" class="contacto-item"><i class="fa-regular fa-envelope"></i> Email</a>
+                    <a href="https://www.linkedin.com/in/dtriador" target="_blank" class="contacto-item"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+                    <a href="https://github.com/DTriador" target="_blank" class="contacto-item"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <a href="cv.pdf" target="_blank" class="contacto-item"><i class="fa-solid fa-file-arrow-down"></i> CV</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // --- 1. DICCIONARIO COMPLETO ---
+        const translations = {
+            es: {
+                "nav-about": "Sobre mí", "nav-exp": "Experiencia", "nav-skills": "Habilidades",
+                "nav-featured": "Destacado", "nav-projects": "Proyectos", "nav-certs": "Certificados", "nav-contact": "Contacto",
+                "header-subtitle": "Data Analyst | Data Scientist | Estudiante de Ingeniería en Sistemas",
+                "title-about": "Sobre mí", "content-about": "Soy Analista de Datos en formación con base en Ingeniería en Sistemas, enfocada en trabajar con datos para entender problemas reales y aportar claridad en la toma de decisiones. \n\nA lo largo de mis proyectos trabajé con Python, SQL y Power BI en análisis exploratorio, modelado de datos y visualización, desarrollando soluciones que van desde la preparación de datos hasta la generación de insights. \n\nMe interesa especialmente el análisis orientado a negocio: entender qué está pasando, por qué sucede y cómo esa información puede utilizarse para mejorar procesos o tomar decisiones más informadas. \n\nMi perfil tiene un diferencial poco común en el área técnica: durante 3 años trabajé como periodista deportiva. Esa experiencia desarrolló mi capacidad para analizar información, sintetizarla y comunicarla de forma clara. Hoy aplico esas habilidades para traducir datos en resultados comprensibles para distintos perfiles. \n\nActualmente continúo mi formación en tecnologías cloud y en inglés, con el objetivo de desarrollarme en entornos de trabajo globales.",
+                "title-exp": "Experiencia Profesional", "exp-becaria-title": "Becaria de Investigación", "exp-becaria-date": "Ago 2025 – Actualidad", "exp-ayudante-title": "Ayudante de Profesor", "exp-ayudante-date": "Abr 2023 – Nov 2023",
+                "title-skills": "Habilidades Técnicas", "skill-cat-1": "IA Generativa", "skill-cat-2": "Lenguajes & Análisis", "skill-cat-3": "Visualización", "skill-cat-4": "Seguridad",
+                "title-featured": "Proyecto destacado", "feat-project-title": "Análisis de Churn – TelecomX", "feat-project-desc": "Modelo de ML para identificar clientes con alto riesgo de abandono. Tecnologías: Python, Pandas, Scikit-Learn.", "btn-view": "Ver proyecto",
+                "title-projects": "Proyectos", "proj-elan-title": "Élan — Plataforma de aprendizaje", "proj-elan-desc": "Plataforma web para explorar recursos de aprendizaje y formación autodidacta.","proj-boca-title": "Rendimiento Boca Juniors", "proj-boca-desc": "Análisis 2014-2025.", "proj-fraude-title": "Análisis de Fraude", "proj-fraude-desc": "Detección anomalías.", "proj-lavadero-title": "Simulación Lavadero", "proj-lavadero-desc": "Eventos discretos.", "proj-medico-title": "Centro Médico", "proj-medico-desc": "Backend Spring Boot.", "proj-alura-title": "Alura Store", "proj-alura-desc": "Ventas Python.", "proj-pbi-title": "Dashboards Power BI", "proj-pbi-desc": "KPIs negocio.", "proj-pava-title": "Pone la Pava", "proj-pava-desc": "Recomendador Spotify.",
+                "title-certs": "Certificados", "title-contact": "Contacto"
+            },
+            en: {
+                "nav-about": "About Me", "nav-exp": "Experience", "nav-skills": "Skills",
+                "nav-featured": "Featured", "nav-projects": "Projects", "nav-certs": "Certificates", "nav-contact": "Contact",
+                "header-subtitle": "Data Analyst | Data Scientist | Systems Engineering Student",
+                "title-about": "About Me", "content-about": "I am a Data Analyst in training with a background in Systems Engineering, focused on leveraging data to understand real-world problems and provide clarity in decision-making.\n\nThroughout my projects, I have worked with Python, SQL, and Power BI for exploratory data analysis, data modeling, and visualization, developing solutions ranging from data preparation to insight generation.\n\nI am particularly interested in business-oriented analysis: understanding what is happening, why it is happening, and how that information can be used to improve processes or make more informed decisions.\n\nMy profile has a unique edge in the technical field: for three years, I worked as a sports journalist. That experience developed my ability to analyze, synthesize, and communicate information clearly. Today, I apply those skills to translate data into understandable results for diverse stakeholders.\n\nCurrently, I am continuing my training in cloud technologies and English, with the goal of growing in global work environments.",
+                "title-exp": "Professional Experience", "exp-becaria-title": "Research Fellow", "exp-becaria-date": "Aug 2025 – Present", "exp-ayudante-title": "Teaching Assistant", "exp-ayudante-date": "Apr 2023 – Nov 2023",
+                "title-skills": "Technical Skills", "skill-cat-1": "Generative AI", "skill-cat-2": "Languages & Analytics", "skill-cat-3": "Visualization", "skill-cat-4": "Security",
+                "title-featured": "Featured Project", "feat-project-title": "Churn Analysis – TelecomX", "feat-project-desc": "ML model to identify high-risk churn customers. Technologies: Python, Pandas, Scikit-Learn.", "btn-view": "View project",
+                "title-projects": "Projects", "proj-elan-title": "Élan — Learning Platform", "proj-elan-desc": "Web platform for exploring learning resources and self-directed education.", "proj-boca-title": "Boca Juniors Performance", "proj-boca-desc": "2014-2025 Analysis.", "proj-fraude-title": "Fraud Analysis", "proj-fraude-desc": "Anomaly detection.", "proj-lavadero-title": "Laundry Simulation", "proj-lavadero-desc": "Discrete events.", "proj-medico-title": "Medical Center", "proj-medico-desc": "Spring Boot Backend.", "proj-alura-title": "Alura Store", "proj-alura-desc": "Python Sales.", "proj-pbi-title": "Power BI Dashboards", "proj-pbi-desc": "Business KPIs.", "proj-pava-title": "Pone la Pava", "proj-pava-desc": "Spotify Recommender.",
+                "title-certs": "Certificates", "title-contact": "Contact"
+            }
+        };
+
+        // --- 2. MODO OSCURO ---
+        const btnDarkMode = document.getElementById('darkModeToggle');
+        const darkIcon = btnDarkMode.querySelector('i');
+        const toggleDarkMode = () => {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            darkIcon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        };
+        btnDarkMode.addEventListener('click', toggleDarkMode);
+        if (localStorage.getItem('theme') === 'dark') { document.body.classList.add('dark-mode'); darkIcon.className = 'fa-solid fa-sun'; }
+
+        // --- 3. IDIOMAS ---
+        const langSelect = document.getElementById('languageSelect');
+    const changeLanguage = (lang) => {
+    document.querySelectorAll("[data-section]").forEach(el => {
+        const key = el.dataset.section;
+        if(translations[lang][key]) {
+            el.innerText = translations[lang][key]; 
+        }
+    });
+    localStorage.setItem('lang', lang);
+};
+        langSelect.addEventListener('change', (e) => changeLanguage(e.target.value));
+        const savedLang = localStorage.getItem('lang') || 'es';
+        langSelect.value = savedLang; changeLanguage(savedLang);
+
+        // --- 4. SCROLL CINEMÁTICO ---
+        const container = document.getElementById('certContainer');
+        const cards = document.querySelectorAll('.cert-card');
+        let targetPos = 0; let currentPos = 0;
+        function scrollCert(dir) {
+            const step = cards[0].offsetWidth + 40;
+            targetPos = Math.max(0, Math.min(container.scrollWidth - container.clientWidth, container.scrollLeft + (dir * step)));
+            const animate = () => {
+                const diff = targetPos - currentPos;
+                if (Math.abs(diff) < 1) { container.scrollLeft = targetPos; return; }
+                currentPos += diff * 0.05;
+                container.scrollLeft = currentPos;
+                requestAnimationFrame(animate);
+            };
+            currentPos = container.scrollLeft; requestAnimationFrame(animate);
+        }
+
+        // --- 5. OBSERVER & MODAL ---
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll("section").forEach(s => observer.observe(s));
+
+        function openModal(card) { document.getElementById("certModal").style.display = "flex"; document.getElementById("imgFull").src = card.querySelector('img').src; }
+        function closeModal() { document.getElementById("certModal").style.display = "none"; }
+        window.onclick = function(e) { if (e.target == document.getElementById("certModal")) closeModal(); }
+    </script>
+</body>
+</html>
