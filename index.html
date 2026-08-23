@@ -230,6 +230,11 @@
                     <div class="cert-card" onclick="openModal(this)"><img src="certificados/datosseguridadgobernanza.png"><h3>Datos, Seguridad y Gobernanza</h3></div>
                     <div class="cert-card" onclick="openModal(this)"><img src="certificados/fundamentosyservicios.png"><h3>Fundamentos y Servicios</h3></div>
                     <div class="cert-card" onclick="openModal(this)"><img src="certificados/redesyprotocolo.png"><h3>Redes y Protocolos</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/daxus-ia.png"><h3>Inmersión IA en la Práctica</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/scrum-delivery.png"><h3>Scrum Master y Delivery Manager</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/jornadas-noa.png"><h3>Jornadas del NOA</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/kiro-codigofacilito.png"><h3>Bootcamp Agentes con Kiro</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/agil-itgrarte.png"><h3>Desarrollo Ágil con IA</h3></div>
                 </div>
                 <button class="nav-btn next-btn" onclick="scrollCert(1)"><i class="fas fa-chevron-right"></i></button>
             </div>
@@ -248,7 +253,7 @@
             </div>
         </section>
     </div>
-
+    <canvas id="cursorTrail"></canvas>
     <script>
         // --- 1. DICCIONARIO COMPLETO ---
         const translations = {
@@ -329,6 +334,53 @@
         function openModal(card) { document.getElementById("certModal").style.display = "flex"; document.getElementById("imgFull").src = card.querySelector('img').src; }
         function closeModal() { document.getElementById("certModal").style.display = "none"; }
         window.onclick = function(e) { if (e.target == document.getElementById("certModal")) closeModal(); }
+        // --- CURSOR TRAIL SUTIL ---
+        (function() {
+            const canvas = document.getElementById('cursorTrail');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            const colors = ['#ff9a9e', '#fecfef', '#ec4899'];
+
+            window.addEventListener('mousemove', (e) => {
+                // solo agrega partícula cada tanto para que sea sutil, no una lluvia
+                if (Math.random() > 0.6) return;
+                particles.push({
+                    x: e.clientX,
+                    y: e.clientY,
+                    size: Math.random() * 3 + 2,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    life: 1,
+                });
+            });
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach((p, i) => {
+                    ctx.globalAlpha = p.life;
+                    ctx.fillStyle = p.color;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    p.y -= 0.4;       // sube apenas, efecto "polvo mágico"
+                    p.life -= 0.02;   // se desvanece
+                    p.size *= 0.98;
+
+                    if (p.life <= 0) particles.splice(i, 1);
+                });
+                ctx.globalAlpha = 1;
+                requestAnimationFrame(animate);
+            }
+            animate();
+        })();
     </script>
 </body>
 </html>
