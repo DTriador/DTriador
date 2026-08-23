@@ -171,7 +171,26 @@ section#contacto h2::before { content: '07'; }
 
 /* HABILIDADES (MOVIMIENTO RECUPERADO) */
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.skills-category {
+    margin-bottom: 45px;
+}
 
+.skills-category h4 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent-color);
+    opacity: 0.85;
+    margin: 0 0 18px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(80, 51, 46, 0.1);
+}
+
+body.dark-mode .skills-category h4 {
+    border-bottom-color: rgba(252, 231, 243, 0.15);
+}
 .skill-tag {
     background: linear-gradient(90deg, #ff9a9e 0%, #fecfef 100%);
     padding: 15px; border-radius: 15px; font-weight: 600; text-align: center;

@@ -170,7 +170,7 @@
                 </div>
             </div>
             <div class="proyecto">
-                <img src="proyectos/dashboard_page1_overview.png" alt="Boca">
+                <img src="proyectos/dashboard.png" alt="Boca">
                 <div><h3 data-section="proj-boca-title">Rendimiento Boca Juniors</h3><p data-section="proj-boca-desc">Análisis 2014-2025.</p><a href="https://github.com/DTriador/Boca-Juniors-Player-Analytics-2014-2025-" target="_blank">GitHub</a></div>
             </div>
             <div class="proyecto">
@@ -219,7 +219,7 @@
                     <div class="cert-card" onclick="openModal(this)"><img src="certificados/machinelearningavanzado.png"><h3>ML Avanzado</h3></div>
                     <div class="cert-card" onclick="openModal(this)"><img src="certificados/iaaplicada.png"><h3>IA Aplicada</h3></div>
                     <div class="cert-card" onclick="openModal(this)"><img src="certificados/estadistica.png"><h3>Estadística</h3></div>
-                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/inglearn.png"><h3>Ingelearn</h3></div>
+                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/ingelearn.png"><h3>Ingelearn</h3></div>
                     <div class="cert-card" onclick="openModal(this)"><img src="certificados/inglesnivel3.png"><h3>Inglés Nivel 3</h3></div>
                     <div class="cert-card" onclick="openModal(this)"><img src="certificados/inglesA2.png"><h3>Inglés A2</h3></div>
                     <div class="cert-card" onclick="openModal(this)"><img src="certificados/italianoA2.png"><h3>Italiano A2</h3></div>
@@ -334,7 +334,7 @@
 
         function openModal(card) { document.getElementById("certModal").style.display = "flex"; document.getElementById("imgFull").src = card.querySelector('img').src; }
         function closeModal() { document.getElementById("certModal").style.display = "none"; }
-        window.onclick = function(e) { if (e.target == document.getElementById("certModal")) closeModal(); }
+        window.onclick = function(e) { if (e.target == document.getElementById("certModal")) closeModal(); };
         // --- CURSOR TRAIL SUTIL ---
         (function() {
             const canvas = document.getElementById('cursorTrail');
