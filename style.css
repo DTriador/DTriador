@@ -388,3 +388,18 @@ body.dark-mode .skills-category h4 {
 @media (max-width: 768px) {
     #cursorTrail { display: none; } /* en mobile no hay cursor, no tiene sentido */
 }
+
+/* --- IMÁGENES EN CARDS DE DESTACADOS --- */
+#destacado .card {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#destacado .card img {
+    width: calc(100% + 65px);
+    margin: -25px -30px 20px -35px;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
