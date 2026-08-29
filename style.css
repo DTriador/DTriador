@@ -171,7 +171,25 @@ section#contacto h2::before { content: '07'; }
 
 /* HABILIDADES (MOVIMIENTO RECUPERADO) */
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.skills-category {
+    margin-bottom: 45px;
+}
 
+.skills-category h4 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--primary-color);
+    margin: 0 0 18px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+body.dark-mode .skills-category h4 {
+    border-bottom-color: var(--accent-color);
+}
 .skill-tag {
     background: linear-gradient(90deg, #ff9a9e 0%, #fecfef 100%);
     padding: 15px; border-radius: 15px; font-weight: 600; text-align: center;
@@ -311,12 +329,14 @@ section#contacto h2::before { content: '07'; }
 }
 .sobre-mi-img img {
     width: 100%;
-    height: 100%;
-    object-fit: contain; 
-    max-height: 450px; 
-    transition: transform 0.4s ease;
+    height: auto;
     border-radius: 20px;
+    object-fit: cover;
+    display: block;
     animation: floatingImage 3s ease-in-out infinite;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    will-change: transform;
+    transform: translateZ(0);
 }
 /* responsive */
 @media(max-width: 768px) {
@@ -353,4 +373,18 @@ section#contacto h2::before { content: '07'; }
     transform: translateY(-15px) scale(1.03);
 
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+/* --- CURSOR TRAIL --- */
+#cursorTrail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+@media (max-width: 768px) {
+    #cursorTrail { display: none; } /* en mobile no hay cursor, no tiene sentido */
 }
