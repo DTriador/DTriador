@@ -4,404 +4,540 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daniela Triador | Data Analyst</title>
+    <meta name="description" content="Data Analyst con foco en Business Intelligence, riesgo y fraude. SQL, Python y Power BI. Disponible para trabajo remoto.">
+    <meta property="og:title" content="Daniela Triador | Data Analyst">
+    <meta property="og:description" content="Business Intelligence, riesgo y fraude. SQL, Python y Power BI.">
+    <meta property="og:type" content="website">
     <link rel="icon" href="favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="navbar" id="navbar">
-        <a href="#sobre" data-section="nav-about">Sobre mí</a>
-        <a href="#experiencia" data-section="nav-exp">Experiencia</a>
-        <a href="#habilidades" data-section="nav-skills">Habilidades</a>
-        <a href="#destacado" data-section="nav-featured">Destacado</a>
-        <a href="#proyectos" data-section="nav-projects">Proyectos</a>
-        <a href="#certificados" data-section="nav-certs">Certificados</a>
-        <a href="#contacto" data-section="nav-contact">Contacto</a>
-        
-        <div class="nav-controls">
-            <select id="languageSelect" class="lang-select">
-                <option value="es">ES</option>
-                <option value="en">EN</option>
-            </select>
-            <button id="darkModeToggle" class="dark-mode-btn">
-                <i class="fa-solid fa-moon"></i>
-            </button>
+    <nav class="navbar" aria-label="Navegación principal">
+        <div class="nav-inner">
+            <div class="nav-links">
+                <a href="#sobre" data-i18n="nav-about">Sobre mí</a>
+                <a href="#experiencia" data-i18n="nav-exp">Experiencia</a>
+                <a href="#habilidades" data-i18n="nav-skills">Habilidades</a>
+                <a href="#proyectos" data-i18n="nav-projects">Proyectos</a>
+                <a href="#certificados" data-i18n="nav-certs">Certificados</a>
+                <a href="#contacto" data-i18n="nav-contact">Contacto</a>
+            </div>
+            <div class="nav-controls">
+                <select id="languageSelect" class="lang-select" aria-label="Idioma / Language">
+                    <option value="es">ES</option>
+                    <option value="en">EN</option>
+                </select>
+                <button id="darkModeToggle" class="dark-mode-btn" type="button" aria-label="Modo oscuro / Dark mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <div id="certModal" class="modal">
-        <span class="close-modal" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="imgFull">
+    <div id="certModal" class="modal" role="dialog" aria-modal="true" aria-label="Certificado">
+        <button class="close-modal" type="button" id="closeModal" aria-label="Cerrar">&times;</button>
+        <img class="modal-content" id="imgFull" alt="">
     </div>
 
     <div class="frame">
+
         <header>
-            <h1>
-                Daniela Andrea Triador
-                <span class="data-icon">📊</span><span class="data-icon">📈</span>
-                <span class="data-icon">📉</span><span class="data-icon">🧮</span>
-                <span class="data-icon">💱</span><span class="data-icon">🔢</span>
-                <span class="data-icon">💡</span><span class="data-icon">🔍</span>
-                <span class="data-icon">📟</span><span class="data-icon">📊</span>
-                <span class="data-icon">📈</span><span class="data-icon">📉</span>
-                <span class="data-icon">🧮</span><span class="data-icon">💱</span>
-                <span class="data-icon">💡</span>
-            </h1>
-            <div class="subtitle" data-section="header-subtitle">Data Analyst | Data Scientist | Estudiante de Ingeniería en Sistemas</div>
+            <h1>Daniela Andrea Triador</h1>
+            <p class="subtitle" data-i18n="hero-role">Data Analyst | Business Intelligence, riesgo y fraude</p>
+            <p class="hero-meta" data-i18n="hero-meta">Ingeniería en Sistemas, Universidad Nacional de Chilecito · Chilecito, La Rioja, Argentina · Trabajo remoto</p>
+            <div class="hero-actions">
+                <a href="cv.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-fill"><i class="fa-solid fa-file-arrow-down"></i> <span data-i18n="btn-cv">Descargar CV</span></a>
+                <a href="https://www.linkedin.com/in/dtriador" target="_blank" rel="noopener noreferrer" class="btn"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+                <a href="https://github.com/DTriador" target="_blank" rel="noopener noreferrer" class="btn"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
         </header>
 
-    <section id="sobre">
-    <h2 data-section="title-about">Sobre mí</h2>
-
-    <div class="sobre-mi-container">
-       <div class="sobre-mi-box" data-section="content-about">
-    <p>
-        Soy Analista de Datos en formación con base en Ingeniería en Sistemas, enfocada en trabajar con datos para entender problemas reales y aportar claridad en la toma de decisiones.
-
-        A lo largo de mis proyectos trabajé con Python, SQL y Power BI en análisis exploratorio, modelado de datos y visualización, desarrollando soluciones que van desde la preparación de datos hasta la generación de insights.
-
-        Me interesa especialmente el análisis orientado a negocio: entender qué está pasando, por qué sucede y cómo esa información puede utilizarse para mejorar procesos o tomar decisiones más informadas.
-
-        Mi perfil tiene un diferencial poco común en el área técnica: durante 3 años trabajé como periodista deportiva. Esa experiencia desarrolló mi capacidad para sintetizar información y comunicarla de forma clara.
-
-        Actualmente continúo mi formación en tecnologías cloud y en inglés, con el objetivo de desarrollarme en entornos de trabajo globales.
-    </p>
-</div>
-        <div class="sobre-mi-img">
-            <img src="sobremi.png" alt="Sobre mí">
-        </div>
-    </div>
-</section>
-
-       <section id="experiencia">
-            <h2 data-section="title-exp">Experiencia Profesional</h2>
-            <div class="card-grid">
-                <!-- Item 1: Práctica Profesional Supervisada -->
-                <div class="card-exp">
-                    <h3 data-section="exp-pps-title">Práctica Profesional Supervisada</h3>
-                    <p><b>UNdeC</b></p>
-                    <p data-section="exp-pps-date">Jun 2026 – Ago 2026</p>
-                    <p class="descripcion" data-section="exp-pps-desc">
-                        Diseño y producción de 'IA en Acción', un curso asincrónico de 9 módulos sobre más de 30 herramientas de IA generativa (asistentes de chat, gestión del conocimiento, imagen, video, audio, productividad, programación asistida y educación), con guiones de video y un sistema de evaluación de 90 preguntas.
-                    </p>
+        <!-- ===== SOBRE MÍ ===== -->
+        <section id="sobre">
+            <h2 data-i18n="title-about">Sobre mí</h2>
+            <div class="about-grid">
+                <div class="card about-text">
+                    <p data-i18n="about-p1">Analista de datos con foco en Business Intelligence, análisis de riesgo y detección de fraude. Trabajo el ciclo completo del dato con Python, SQL y Power BI: limpieza, transformación, análisis exploratorio y visualización pensada para la toma de decisiones.</p>
+                    <p data-i18n="about-p2">Desarrollé proyectos de detección de anomalías financieras (con modelos de Machine Learning explicables con SHAP), modelado relacional en Oracle Cloud, predicción de churn y análisis deportivo. Mi tesis de grado, ya aprobada y con defensa en diciembre, es una plataforma EdTech con un asistente docente basado en LLMs (arquitectura multi-agente y RAG).</p>
+                    <p data-i18n="about-p3">Antes de dedicarme a los datos fui periodista deportiva durante tres años. Esa experiencia me enseñó a sintetizar información y a comunicarla con claridad a públicos no técnicos.</p>
                 </div>
-
-                <!-- Item 2: Beca de Investigación -->
-                <div class="card-exp">
-                    <h3 data-section="exp-becaria-title">Becaria de Investigación</h3>
-                    <p><b>UNdeC</b></p>
-                    <p data-section="exp-becaria-date">Ago 2025 – Mar 2026</p>
-                    <p class="descripcion" data-section="exp-becaria-desc">
-                        Desarrollo de un curso de manipulación de herramientas de IA y soluciones tecnológicas aplicadas a proyectos académicos universitarios.
-                    </p>
-                </div>
-
-                <!-- Item 3: Ayudante de Profesor -->
-                <div class="card-exp">
-                    <h3 data-section="exp-ayudante-title">Ayudante de Profesor</h3>
-                    <p><b>Argentina Programa 4.0</b></p>
-                    <p data-section="exp-ayudante-date">Abr 2023 – Nov 2023</p>
-                    <p class="descripcion" data-section="exp-ayudante-desc">
-                        Mentoría técnica, soporte pedagógico y resolución de consultas prácticas en lógica de programación y análisis de datos con Python.
-                    </p>
+                <div class="card">
+                    <dl class="facts">
+                        <dt data-i18n="fact-mode-l">Modalidad</dt>
+                        <dd data-i18n="fact-mode-v">Remota · disponibilidad inmediata</dd>
+                        <dt data-i18n="fact-loc-l">Ubicación</dt>
+                        <dd data-i18n="fact-loc-v">Chilecito, La Rioja, Argentina</dd>
+                        <dt data-i18n="fact-edu-l">Formación</dt>
+                        <dd data-i18n="fact-edu-v">Ingeniería en Sistemas, UNdeC (egreso: dic. 2026)</dd>
+                        <dt data-i18n="fact-lang-l">Idiomas</dt>
+                        <dd data-i18n="fact-lang-v">Español (nativo) · Inglés: lectura técnica avanzada, conversación en progreso (A2 → B1) · Italiano A2</dd>
+                        <dt data-i18n="fact-stack-l">Stack principal</dt>
+                        <dd>Python, SQL (PostgreSQL, Oracle), Power BI</dd>
+                    </dl>
                 </div>
             </div>
         </section>
 
+        <!-- ===== EXPERIENCIA ===== -->
+        <section id="experiencia">
+            <h2 data-i18n="title-exp">Experiencia</h2>
+            <div class="exp-list">
+
+                <article class="card">
+                    <div class="exp-head">
+                        <h3 data-i18n="exp1-role">Practicante PPS: capacitación virtual con IA</h3>
+                        <span class="exp-date" data-i18n="exp1-date">Jun 2026 – Ago 2026</span>
+                    </div>
+                    <p class="exp-org">Universidad Nacional de Chilecito</p>
+                    <ul>
+                        <li data-i18n="exp1-b1">Diseñé y produje “IA en Acción”, un curso asincrónico de 9 módulos sobre más de 30 herramientas de IA generativa, con guiones de video y un sistema de evaluación de 90 preguntas.</li>
+                        <li data-i18n="exp1-b2">Configuré aulas virtuales con cuestionarios automáticos y certificados digitales en la plataforma institucional E-ducativa.</li>
+                        <li data-i18n="exp1-b3">Desarrollé una estructura reutilizable para futuras capacitaciones virtuales de la universidad.</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <div class="exp-head">
+                        <h3 data-i18n="exp2-role">Becaria de Investigación (Beca UNdeC 4.0)</h3>
+                        <span class="exp-date" data-i18n="exp2-date">Ago 2025 – Abr 2026</span>
+                    </div>
+                    <p class="exp-org">Universidad Nacional de Chilecito</p>
+                    <ul>
+                        <li data-i18n="exp2-b1">Investigué y sistematicé el uso de herramientas de IA generativa para producir contenido educativo.</li>
+                        <li data-i18n="exp2-b2">Diseñé un curso asincrónico para docentes, con marcos de evaluación, rúbricas y video generado con IA.</li>
+                        <li data-i18n="exp2-b3">Elaboré documentación técnica y recomendaciones para implementar servicios internos de contenido basados en IA.</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <div class="exp-head">
+                        <h3 data-i18n="exp3-role">Ayudante de Cátedra: Analista de Datos Jr. con Python</h3>
+                        <span class="exp-date" data-i18n="exp3-date">Abr 2023 – Nov 2023</span>
+                    </div>
+                    <p class="exp-org">Argentina Programa 4.0</p>
+                    <ul>
+                        <li data-i18n="exp3-b1">Acompañé a más de 50 estudiantes en Python y análisis de datos y reduje un 40 % el tiempo promedio de resolución de consultas.</li>
+                        <li data-i18n="exp3-b2">Diagnostiqué y resolví más de 120 incidencias en entornos de análisis (Jupyter, Colab) con un SLA de 24 horas.</li>
+                        <li data-i18n="exp3-b3">Reforcé los contenidos de limpieza de datos, EDA y visualización, y mejoré la documentación técnica del curso.</li>
+                    </ul>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ===== HABILIDADES ===== -->
         <section id="habilidades">
-            <h2 data-section="title-skills">Habilidades Técnicas</h2>
-            
-            <div class="skills-category">
-                <h4 data-section="skill-cat-1">IA Generativa (Especialización)</h4>
-                <div class="skills-grid">
-                    <div class="skill-tag">HeyGen / Sora</div><div class="skill-tag">RunwayML / Veed</div>
-                    <div class="skill-tag">Clip Drop / Gamma</div><div class="skill-tag">MidJourney / Tome</div>
-                    <div class="skill-tag">Canva AI / Beautiful.ai</div>
-                </div>
-            </div>
+            <h2 data-i18n="title-skills">Habilidades técnicas</h2>
+            <div class="skills-grid">
 
-            <div class="skills-category">
-                <h4 data-section="skill-cat-2">Lenguajes & Análisis</h4>
-                <div class="skills-grid">
-                    <div class="skill-tag">Python</div><div class="skill-tag">SQL</div>
-                    <div class="skill-tag">Java & C</div><div class="skill-tag">Pandas & NumPy</div>
-                    <div class="skill-tag">Machine Learning</div><div class="skill-tag">Scikit-Learn</div>
+                <div class="card">
+                    <h3 data-i18n="sk1-title">Análisis de datos</h3>
+                    <div class="chips">
+                        <span class="chip">Python</span><span class="chip">SQL</span>
+                        <span class="chip">Pandas</span><span class="chip">NumPy</span>
+                        <span class="chip">Scikit-learn</span><span class="chip">Machine Learning</span>
+                        <span class="chip">SHAP</span>
+                        <span class="chip" data-i18n="sk-clean">Limpieza de datos y EDA</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skills-category">
-                <h4 data-section="skill-cat-3">Visualización & Herramientas</h4>
-                <div class="skills-grid">
-                    <div class="skill-tag">Power BI</div><div class="skill-tag">Matplotlib / Seaborn</div>
-                    <div class="skill-tag">SQL Server / Oracle</div><div class="skill-tag">Excel / Sheets</div>
-                    <div class="skill-tag">Git / GitHub / GitLab</div><div class="skill-tag">Jupyter / Colab</div>
-                    <div class="skill-tag">Airflow / ETL</div>
+                <div class="card">
+                    <h3 data-i18n="sk2-title">BI y visualización</h3>
+                    <div class="chips">
+                        <span class="chip">Power BI</span><span class="chip">DAX</span>
+                        <span class="chip">Data storytelling</span><span class="chip">Matplotlib</span>
+                        <span class="chip">Seaborn</span><span class="chip">Excel</span>
+                        <span class="chip">Google Sheets</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skills-category">
-                <h4 data-section="skill-cat-4">Seguridad & Infraestructura</h4>
-                <div class="skills-grid">
-                    <div class="skill-tag">Ciberseguridad</div><div class="skill-tag">Gestión de Riesgos</div>
-                    <div class="skill-tag">Linux (NDG Cisco)</div>
+                <div class="card">
+                    <h3 data-i18n="sk3-title">Bases de datos y ETL</h3>
+                    <div class="chips">
+                        <span class="chip">PostgreSQL</span><span class="chip">Oracle Cloud</span>
+                        <span class="chip">SQL Server</span>
+                        <span class="chip" data-i18n="sk-model">Modelado relacional</span>
+                        <span class="chip">ETL con Python</span>
+                        <span class="chip">Airflow (básico)</span><span class="chip">N8N</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skills-category">
-                <h4 data-section="skill-cat-5">Gestión y Planificación de Proyectos</h4>
-                <div class="skills-grid">
-                    <div class="skill-tag">Microsoft Project</div>
-                    <div class="skill-tag">Gestión de Proyectos</div>
+                <div class="card">
+                    <h3 data-i18n="sk4-title">IA y automatización</h3>
+                    <div class="chips">
+                        <span class="chip">LLMs</span><span class="chip">RAG</span>
+                        <span class="chip" data-i18n="sk-multi">Arquitectura multi-agente</span>
+                        <span class="chip">Prompt engineering</span>
+                        <span class="chip" data-i18n="sk-content">Contenido con IA generativa</span>
+                    </div>
                 </div>
+
+                <div class="card">
+                    <h3 data-i18n="sk5-title">Herramientas y desarrollo</h3>
+                    <div class="chips">
+                        <span class="chip">Git</span><span class="chip">GitHub</span>
+                        <span class="chip">GitLab</span><span class="chip">Jupyter</span>
+                        <span class="chip">Google Colab</span><span class="chip">Java</span>
+                        <span class="chip">Linux</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 data-i18n="sk6-title">Gestión y seguridad</h3>
+                    <div class="chips">
+                        <span class="chip">Scrum</span>
+                        <span class="chip" data-i18n="sk-pm">Gestión de proyectos</span>
+                        <span class="chip">Microsoft Project</span>
+                        <span class="chip" data-i18n="sk-risk">Gestión de riesgos</span>
+                        <span class="chip" data-i18n="sk-cyber">Ciberseguridad</span>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-       <section id="destacado">
-            <h2 data-section="title-featured">Proyectos destacados</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <img src="proyectos/churn.png" alt="Análisis de Churn TelecomX">
-                    <h3 data-section="feat-project-title">Análisis de Churn – TelecomX</h3>
-                    <p data-section="feat-project-desc">Modelo de ML para identificar clientes con alto riesgo de abandono. Tecnologías: Python, Pandas, Scikit-Learn.</p>
-                    <a href="https://github.com/DTriador/Challenge_Alura" target="_blank" class="btn-shine" data-section="btn-view">Ver proyecto</a>
-                </div>
-                <div class="card">
-                    <img src="proyectos/fraude.png" alt="Dashboard de detección de fraude bancario">
-                    <h3 data-section="feat-project2-title">Detección de Fraude Bancario con ML + Power BI</h3>
-                    <p data-section="feat-project2-desc">Random Forest con optimización de threshold por costo de negocio, corrección de data leakage documentada, explicabilidad con SHAP y dashboard interactivo en Power BI.</p>
-                    <a href="https://github.com/DTriador/fraud-detection-bank" target="_blank" class="btn-shine" data-section="btn-view">Ver proyecto</a>
-                </div>
-            </div>
-        </section>
-
+        <!-- ===== PROYECTOS ===== -->
         <section id="proyectos">
-            <h2 data-section="title-projects">Proyectos</h2>
-            <div class="proyecto">
-                <img src="proyectos/elan.png" alt="Élan - Plataforma de aprendizaje">
-                <div>
-                    <h3 data-section="proj-elan-title">Élan — Plataforma de aprendizaje</h3>
-                    <p data-section="proj-elan-desc">Plataforma web para explorar recursos de aprendizaje y formación autodidacta.</p>
-                    <a href="https://plataformaelan.netlify.app/#home" target="_blank" rel="noopener noreferrer">Ver plataforma</a>
-                </div>
+            <h2 data-i18n="title-projects">Proyectos</h2>
+
+            <h3 class="subsection" data-i18n="proj-main-title">Análisis de datos y machine learning</h3>
+            <div class="project-grid">
+
+                <article class="card project">
+                    <img src="proyectos/fraude.png" alt="Dashboard de detección de fraude bancario en Power BI" loading="lazy">
+                    <div class="project-body">
+                        <h4 data-i18n="pf-title">Detección de fraude bancario con ML y Power BI</h4>
+                        <p data-i18n="pf-desc">Modelo Random Forest que trata el umbral de clasificación como una decisión de negocio: con el umbral óptimo corregido (0,21), el costo total baja un 18,8 % frente al umbral por defecto. Documenta y corrige un caso de data leakage, explica las alertas con SHAP y suma un dashboard en Power BI.</p>
+                        <div class="tags"><span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">SHAP</span><span class="tag">Power BI</span></div>
+                        <a class="project-link" href="https://github.com/DTriador/fraud-detection-bank" target="_blank" rel="noopener noreferrer" data-i18n="link-repo">Ver repositorio</a>
+                    </div>
+                </article>
+
+                <article class="card project">
+                    <img src="proyectos/boca.png" alt="Dashboard de rendimiento de jugadores de Boca Juniors" loading="lazy">
+                    <div class="project-body">
+                        <h4 data-i18n="pb-title">Rendimiento de jugadores de Boca Juniors, 2014–2025</h4>
+                        <p data-i18n="pb-desc">Pipeline completo sobre datos de Kaggle: ranking de jugadores por performance score, clustering de perfiles y un modelo Random Forest para estimar goles, con dashboard interactivo en Power BI.</p>
+                        <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">Power BI</span></div>
+                        <a class="project-link" href="https://github.com/DTriador/Boca-Juniors-Player-Analytics-2014-2025-" target="_blank" rel="noopener noreferrer" data-i18n="link-repo">Ver repositorio</a>
+                    </div>
+                </article>
+
+                <article class="card project">
+                    <img src="proyectos/dashboard.png" alt="Dashboard de análisis forense de fraude en tarjetas de crédito" loading="lazy">
+                    <div class="project-body">
+                        <h4 data-i18n="pa-title">Análisis forense de fraude en tarjetas de crédito</h4>
+                        <p data-i18n="pa-desc">Preprocesamiento de un gran volumen de transacciones y dashboard interactivo para priorizar alertas. Hallazgos: el fraude online concentra el mayor volumen, el de puntos de venta físicos tiene mayor monto por evento y los ataques se concentran entre las 22:00 y las 03:00 h.</p>
+                        <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Google Sheets</span></div>
+                        <a class="project-link" href="https://github.com/DTriador/Analisis-de-fraude-financiero" target="_blank" rel="noopener noreferrer" data-i18n="link-repo">Ver repositorio</a>
+                    </div>
+                </article>
+
+                <article class="card project">
+                    <img src="proyectos/churn.png" alt="Análisis de churn de clientes de TelecomX" loading="lazy">
+                    <div class="project-body">
+                        <h4 data-i18n="pc-title">Predicción de churn: TelecomX</h4>
+                        <p data-i18n="pc-desc">Análisis exploratorio y modelo predictivo de evasión de clientes: limpieza de datos, variables derivadas, visualizaciones e identificación de segmentos de alto riesgo para estrategias de retención.</p>
+                        <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">Seaborn</span></div>
+                        <a class="project-link" href="https://github.com/DTriador/Challenge_Alura" target="_blank" rel="noopener noreferrer" data-i18n="link-repo">Ver repositorio</a>
+                    </div>
+                </article>
+
+                <article class="card project project-wip">
+                    <div class="wip-panel" aria-hidden="true"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="project-body">
+                        <span class="badge" data-i18n="status-wip">En desarrollo</span>
+                        <h4 data-i18n="po-title">Production Intelligence Argentina: análisis de producción de petróleo y gas</h4>
+                        <p data-i18n="po-desc">Análisis de la producción por pozo con datos públicos de la Secretaría de Energía (cerca de un millón de registros mensuales solo en 2025): pipeline ETL en Python, base de datos en PostgreSQL y dashboard en Tableau. El alcance contempla la disponibilidad de los pozos y los cambios de operadora.</p>
+                        <div class="tags"><span class="tag">Python</span><span class="tag">PostgreSQL</span><span class="tag">Tableau</span></div>
+                    </div>
+                </article>
+
             </div>
-            <div class="proyecto">
-                <img src="proyectos/boca.png" alt="Boca">
-                <div><h3 data-section="proj-boca-title">Rendimiento Boca Juniors</h3><p data-section="proj-boca-desc">Análisis 2014-2025.</p><a href="https://github.com/DTriador/Boca-Juniors-Player-Analytics-2014-2025-" target="_blank">GitHub</a></div>
-            </div>
-            <div class="proyecto">
-                <img src="proyectos/dashboard.png" alt="Fraude">
-                <div><h3 data-section="proj-fraude-title">Análisis de Fraude</h3><p data-section="proj-fraude-desc">Detección anomalías.</p><a href="https://github.com/DTriador/Analisis-de-fraude-financiero" target="_blank">GitHub</a></div>
-            </div>
-            <div class="proyecto">
-                <img src="proyectos/lavadero.png" alt="Lavadero">
-                <div><h3 data-section="proj-lavadero-title">Simulación Lavadero</h3><p data-section="proj-lavadero-desc">Eventos discretos.</p><a href="https://github.com/DTriador/AutomatizacionLavadero" target="_blank">GitHub</a></div>
-            </div>
-            <div class="proyecto">
-                <img src="proyectos/billetera_oracle.png" alt="Oracle Database">
-             <div>
-             <h3 data-section="proj-wallet-title">Arquitectura de Billetera Virtual</h3>
-            <p data-section="proj-wallet-desc">Modelado relacional y despliegue en Oracle Cloud para gestión financiera.</p>
-            <a href="https://github.com/DTriador/IntegradorBDII" target="_blank">GitHub</a>
-             </div>
-            </div>
-            <div class="proyecto">
-                <img src="proyectos/consultorio.png" alt="Java">
-                <div><h3 data-section="proj-medico-title">Centro Médico</h3><p data-section="proj-medico-desc">Backend Spring Boot.</p><a href="https://gitlab.com/t8871/consultorio" target="_blank">GitLab</a></div>
-            </div>
-            <div class="proyecto">
-                <img src="proyectos/alura.png" alt="Store">
-                <div><h3 data-section="proj-alura-title">Alura Store</h3><p data-section="proj-alura-desc">Ventas Python.</p><a href="https://github.com/DTriador/Alura_Store" target="_blank">GitHub</a></div>
-            </div>
-            <div class="proyecto">
-                <img src="proyectos/powerbi.png" alt="PBI">
-                <div><h3 data-section="proj-pbi-title">Dashboards Power BI</h3><p data-section="proj-pbi-desc">KPIs negocio.</p><a href="https://drive.google.com/drive/folders/1dqAxC-t4SA1rNaNZHWFqTGjucgwpaBeq" target="_blank">Ver</a></div>
-            </div>
-            <div class="proyecto">
-                <img src="proyectos/ponepava.png" alt="Pava">
-                <div><h3 data-section="proj-pava-title">Pone la Pava</h3><p data-section="proj-pava-desc">Recomendador Spotify API.</p><a href="https://github.com/DTriador/ponelapava" target="_blank">GitHub</a></div>
+
+            <h3 class="subsection subsection-gap" data-i18n="proj-other-title">Otros proyectos</h3>
+            <div class="project-list">
+
+                <article class="card project-compact">
+                    <img src="proyectos/billetera_oracle.png" alt="Base de datos de la billetera virtual en Oracle" loading="lazy">
+                    <div>
+                        <h4 data-i18n="pw-title">Arquitectura de billetera virtual</h4>
+                        <p data-i18n="pw-desc">Modelo entidad-relación y base de datos transaccional desplegada en Oracle Cloud, con acceso desde Python para insertar, consultar y filtrar usuarios, contactos y transacciones.</p>
+                        <div class="tags"><span class="tag">Oracle Cloud</span><span class="tag">SQL</span><span class="tag">Python</span></div>
+                        <a class="project-link" href="https://github.com/DTriador/IntegradorBDII" target="_blank" rel="noopener noreferrer" data-i18n="link-repo">Ver repositorio</a>
+                    </div>
+                </article>
+
+                <article class="card project-compact">
+                    <img src="proyectos/lavadero.png" alt="Simulación de un lavadero de autos y camiones" loading="lazy">
+                    <div>
+                        <h4 data-i18n="pl-title">Simulación de un lavadero multimodal</h4>
+                        <p data-i18n="pl-desc">Simulación de eventos discretos: con 4 puestos la utilización llegó al 95,25 % y se perdieron 18 vehículos; al ampliar a 6 puestos no se pierden clientes y la utilización baja al 86 %.</p>
+                        <div class="tags"><span class="tag">Python</span><span class="tag">SimPy</span><span class="tag">Matplotlib</span></div>
+                        <a class="project-link" href="https://github.com/DTriador/AutomatizacionLavadero" target="_blank" rel="noopener noreferrer" data-i18n="link-repo">Ver repositorio</a>
+                    </div>
+                </article>
+
+                <article class="card project-compact">
+                    <img src="proyectos/alura.png" alt="Análisis de ventas de AluraStore" loading="lazy">
+                    <div>
+                        <h4 data-i18n="pal-title">Alura Store: comparación de tiendas</h4>
+                        <p data-i18n="pal-desc">Comparación de cuatro tiendas (ingresos, categorías, calificaciones y costo de envío) para decidir dónde conviene empezar a vender.</p>
+                        <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Matplotlib</span></div>
+                        <a class="project-link" href="https://github.com/DTriador/Alura_Store" target="_blank" rel="noopener noreferrer" data-i18n="link-repo">Ver repositorio</a>
+                    </div>
+                </article>
+
+                <article class="card project-compact">
+                    <img src="proyectos/ponepava.png" alt="Recomendador musical con la API de Spotify" loading="lazy">
+                    <div>
+                        <h4 data-i18n="ppv-title">Pone la Pava: recomendador musical</h4>
+                        <p data-i18n="ppv-desc">Resumen de hábitos de escucha al estilo Spotify Wrapped, disponible todo el año, construido sobre la API de Spotify.</p>
+                        <div class="tags"><span class="tag">Python</span><span class="tag">Spotipy</span><span class="tag">Pandas</span></div>
+                        <a class="project-link" href="https://github.com/DTriador/ponelapava" target="_blank" rel="noopener noreferrer" data-i18n="link-repo">Ver repositorio</a>
+                    </div>
+                </article>
+
+                <article class="card project-compact">
+                    <img src="proyectos/powerbi.png" alt="Dashboards de KPIs en Power BI" loading="lazy">
+                    <div>
+                        <h4 data-i18n="ppb-title">Dashboards de KPIs en Power BI</h4>
+                        <p data-i18n="ppb-desc">Dashboards interactivos de seguimiento de KPIs de negocio, con medidas en DAX y principios de data storytelling.</p>
+                        <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">SQL</span></div>
+                        <a class="project-link" href="https://drive.google.com/drive/folders/1dqAxC-t4SA1rNaNZHWFqTGjucgwpaBeq" target="_blank" rel="noopener noreferrer" data-i18n="link-dash">Ver dashboards</a>
+                    </div>
+                </article>
+
+                <article class="card project-compact">
+                    <img src="proyectos/elan.png" alt="Plataforma Élan" loading="lazy">
+                    <div>
+                        <h4 data-i18n="pe-title">Élan: plataforma de aprendizaje</h4>
+                        <p data-i18n="pe-desc">Plataforma web para explorar recursos de aprendizaje y formación autodidacta.</p>
+                        <a class="project-link" href="https://plataformaelan.netlify.app/#home" target="_blank" rel="noopener noreferrer" data-i18n="link-platform">Ver plataforma</a>
+                    </div>
+                </article>
+
+                <article class="card project-compact">
+                    <img src="proyectos/consultorio.png" alt="Backend del centro médico" loading="lazy">
+                    <div>
+                        <h4 data-i18n="pm-title">Centro médico: backend</h4>
+                        <p data-i18n="pm-desc">Backend para la gestión de un centro médico, desarrollado con Spring Boot.</p>
+                        <div class="tags"><span class="tag">Java</span><span class="tag">Spring Boot</span></div>
+                        <a class="project-link" href="https://gitlab.com/t8871/consultorio" target="_blank" rel="noopener noreferrer" data-i18n="link-repo">Ver repositorio</a>
+                    </div>
+                </article>
+
             </div>
         </section>
 
+        <!-- ===== CERTIFICADOS ===== -->
         <section id="certificados">
-            <h2 data-section="title-certs">Certificados</h2>
+            <h2 data-i18n="title-certs">Certificados</h2>
             <div class="certificados-wrapper">
-                <button class="nav-btn prev-btn" onclick="scrollCert(-1)"><i class="fas fa-chevron-left"></i></button>
+                <button class="nav-btn prev-btn" type="button" id="certPrev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
                 <div class="certificados-container" id="certContainer">
-                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/riojafutura.png" alt="Certificado Rioja Futura 2026"><h3>Rioja Futura 2026</h3></div>
-                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/powerbi.png"><h3>Power BI</h3></div>
-                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/dataanalytics.png"><h3>Data Analytics</h3></div>
-                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/datascience.png"><h3>Data Science</h3></div>
-                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/sqlintermedio.png"><h3>SQL Intermedio</h3></div>
-                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/machinelearningavanzado.png"><h3>ML Avanzado</h3></div>
-                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/iaaplicada.png"><h3>IA Aplicada</h3></div>
-                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/estadistica.png"><h3>Estadística</h3></div>
-                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/ingelearn.png"><h3>Ingelearn</h3></div>
-                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/inglesnivel3.png"><h3>Inglés Nivel 3</h3></div>
-                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/inglesA2.png"><h3>Inglés A2</h3></div>
-                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/italianoA2.png"><h3>Italiano A2</h3></div>
-                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/certificado.png"><h3>Gestión de Tiempo</h3></div>
-                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/kiro.png"><h3>Agentes con Kiro</h3></div>
-                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/seguridad-mujeres.png"><h3>Ciberseguridad para Mujeres</h3></div>
-                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/agilconia.png"><h3>Ágil con IA</h3></div>
-                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/datosseguridadgobernanza.png"><h3>Datos, Seguridad y Gobernanza</h3></div>
-                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/fundamentosyservicios.png"><h3>Fundamentos y Servicios</h3></div>
-                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/redesyprotocolo.png"><h3>Redes y Protocolos</h3></div>
-                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/daxus-ia.png"><h3>Inmersión IA en la Práctica</h3></div>
-                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/scrum-delivery.png"><h3>Scrum Master y Delivery Manager</h3></div>
-                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/jornadas-noa.png"><h3>Jornadas del NOA</h3></div>
-                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/kiro-codigofacilito.png"><h3>Bootcamp Agentes con Kiro</h3></div>
-                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/agil-itgrarte.png"><h3>Desarrollo Ágil con IA</h3></div>
-                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/argentinaprograma.png"><h3>Ayudante de profesor - Argentina Programa 4.0</h3></div>
-                    <div class="cert-card" onclick="openModal(this)"><img src="certificados/gestionproyectos.png"><h3>Gestion de Proyectos (MS Proyect)</h3></div>
+                    <!-- Datos y BI -->
+                    <button class="cert-card" type="button"><img src="certificados/powerbi.png" alt="Certificado de Power BI" loading="lazy"><span>Power BI</span></button>
+                    <button class="cert-card" type="button"><img src="certificados/dataanalytics.png" alt="Certificado de Data Analytics" loading="lazy"><span>Data Analytics</span></button>
+                    <button class="cert-card" type="button"><img src="certificados/datascience.png" alt="Certificado de Data Science" loading="lazy"><span>Data Science</span></button>
+                    <button class="cert-card" type="button"><img src="certificados/sqlintermedio.png" alt="Certificado de SQL Intermedio" loading="lazy"><span>SQL Intermedio</span></button>
+                    <button class="cert-card" type="button"><img src="certificados/machinelearningavanzado.png" alt="Certificado de Machine Learning avanzado" loading="lazy"><span>Machine Learning avanzado</span></button>
+                    <button class="cert-card" type="button"><img src="certificados/estadistica.png" alt="Certificado de Estadística" loading="lazy"><span>Estadística</span></button>
+                    <button class="cert-card" type="button"><img src="certificados/focus.png" alt="Certificado FinOps Certified FOCUS Analyst" loading="lazy"><span>FinOps Certified FOCUS Analyst</span></button>
+                    <button class="cert-card" type="button"><img src="certificados/datosseguridadgobernanza.png" alt="Certificado de Datos, Seguridad y Gobernanza" loading="lazy"><span>Datos, Seguridad y Gobernanza</span></button>
+                    <!-- IA -->
+                    <button class="cert-card" type="button"><img src="certificados/iaaplicada.png" alt="Certificado de IA aplicada" loading="lazy"><span>IA aplicada</span></button>
+                    <button class="cert-card" type="button"><img src="certificados/daxus-ia.png" alt="Certificado Inmersión IA en la Práctica" loading="lazy"><span>Inmersión IA en la Práctica</span></button>
+                    <button class="cert-card" type="button"><img src="certificados/kiro.png" alt="Certificado de Agentes con Kiro" loading="lazy"><span>Agentes con Kiro</span></button>
+                    <button class="cert-card" type="button"><img src="certificados/kiro-codigofacilito.png" alt="Certificado del bootcamp de Agentes con Kiro" loading="lazy"><span>Bootcamp Agentes con Kiro</span></button>
+                    <button class="cert-card" type="button"><img src="certificados/agilconia.png" alt="Certificado de Ágil con IA" loading="lazy"><span>Ágil con IA</span></button>
+                    <button class="cert-card" type="button"><img src="certificados/agil-itgrarte.png" alt="Certificado de Desarrollo Ágil con IA" loading="lazy"><span>Desarrollo Ágil con IA</span></button>
+                    <!-- Cloud, redes y seguridad -->
+                    <button class="cert-card" type="button"><img src="certificados/fundamentosyservicios.png" alt="Certificado de Fundamentos y Servicios" loading="lazy"><span>Fundamentos y Servicios</span></button>
+                    <button class="cert-card" type="button"><img src="certificados/redesyprotocolo.png" alt="Certificado de Redes y Protocolos" loading="lazy"><span>Redes y Protocolos</span></button>
+                    <button class="cert-card" type="button"><img src="certificados/seguridad-mujeres.png" alt="Certificado de Ciberseguridad para Mujeres" loading="lazy"><span>Ciberseguridad para Mujeres</span></button>
+                    <!-- Gestión -->
+                    <button class="cert-card" type="button"><img src="certificados/scrum-delivery.png" alt="Certificado de Scrum Master y Delivery Manager" loading="lazy"><span>Scrum Master y Delivery Manager</span></button>
+                    <button class="cert-card" type="button"><img src="certificados/gestionproyectos.png" alt="Certificado de Gestión de Proyectos con MS Project" loading="lazy"><span>Gestión de Proyectos (MS Project)</span></button>
+                    <button class="cert-card" type="button"><img src="certificados/certificado.png" alt="Certificado de Gestión del Tiempo" loading="lazy"><span>Gestión del Tiempo</span></button>
+                    <button class="cert-card" type="button"><img src="certificados/ayudantecatedra.png" alt="Certificado de ayudante de cátedra, Argentina Programa 4.0" loading="lazy"><span>Ayudante de cátedra, Argentina Programa 4.0</span></button>
+                    <!-- Otros e idiomas -->
+                    <button class="cert-card" type="button"><img src="certificados/riojafutura.png" alt="Certificado Rioja Futura 2026" loading="lazy"><span>Rioja Futura 2026</span></button>
+                    <button class="cert-card" type="button"><img src="certificados/jornadas-noa.png" alt="Certificado de las Jornadas del NOA" loading="lazy"><span>Jornadas del NOA</span></button>
+                    <button class="cert-card" type="button"><img src="certificados/ingelearn.png" alt="Certificado de Ingelearn" loading="lazy"><span>Ingelearn</span></button>
+                    <button class="cert-card" type="button"><img src="certificados/inglesnivel3.png" alt="Certificado de Inglés Nivel 3" loading="lazy"><span>Inglés Nivel 3</span></button>
+                    <button class="cert-card" type="button"><img src="certificados/inglesA2.png" alt="Certificado de Inglés A2" loading="lazy"><span>Inglés A2</span></button>
+                    <button class="cert-card" type="button"><img src="certificados/italianoA2.png" alt="Certificado de Italiano A2" loading="lazy"><span>Italiano A2</span></button>
                 </div>
-                <button class="nav-btn next-btn" onclick="scrollCert(1)"><i class="fas fa-chevron-right"></i></button>
+                <button class="nav-btn next-btn" type="button" id="certNext" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
             </div>
-            <div class="dots-container" id="dotsContainer"></div>
         </section>
 
+        <!-- ===== CONTACTO ===== -->
         <section id="contacto">
-            <h2 data-section="title-contact">Contacto</h2>
+            <h2 data-i18n="title-contact">Contacto</h2>
             <div class="contacto-container">
-                <div class="contacto-list-horizontal">
+                <p data-i18n="contact-text">Estoy disponible para trabajo remoto. Podés escribirme por cualquiera de estos canales.</p>
+                <div class="contacto-list">
                     <a href="mailto:danielatriador92@gmail.com" class="contacto-item"><i class="fa-regular fa-envelope"></i> Email</a>
-                    <a href="https://www.linkedin.com/in/dtriador" target="_blank" class="contacto-item"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
-                    <a href="https://github.com/DTriador" target="_blank" class="contacto-item"><i class="fa-brands fa-github"></i> GitHub</a>
-                    <a href="cv.pdf" target="_blank" class="contacto-item"><i class="fa-solid fa-file-arrow-down"></i> CV</a>
+                    <a href="https://www.linkedin.com/in/dtriador" target="_blank" rel="noopener noreferrer" class="contacto-item"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+                    <a href="https://github.com/DTriador" target="_blank" rel="noopener noreferrer" class="contacto-item"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <a href="cv.pdf" target="_blank" rel="noopener noreferrer" class="contacto-item"><i class="fa-solid fa-file-arrow-down"></i> CV</a>
                 </div>
             </div>
         </section>
+
+        <footer>© 2026 Daniela Andrea Triador</footer>
     </div>
-    <canvas id="cursorTrail"></canvas>
+
     <script>
-        // --- 1. DICCIONARIO COMPLETO ---
-        const translations = {
-            es: {
-                "nav-about": "Sobre mí", "nav-exp": "Experiencia", "nav-skills": "Habilidades",
-                "nav-featured": "Destacado", "nav-projects": "Proyectos", "nav-certs": "Certificados", "nav-contact": "Contacto",
-                "header-subtitle": "Data Analyst | Data Scientist | Estudiante de Ingeniería en Sistemas",
-                "title-about": "Sobre mí", "content-about": "Soy Analista de Datos en formación con base en Ingeniería en Sistemas, enfocada en trabajar con datos para entender problemas reales y aportar claridad en la toma de decisiones. \n\nA lo largo de mis proyectos trabajé con Python, SQL y Power BI en análisis exploratorio, modelado de datos y visualización, desarrollando soluciones que van desde la preparación de datos hasta la generación de insights. \n\nMe interesa especialmente el análisis orientado a negocio: entender qué está pasando, por qué sucede y cómo esa información puede utilizarse para mejorar procesos o tomar decisiones más informadas. \n\nMi perfil tiene un diferencial poco común en el área técnica: durante 3 años trabajé como periodista deportiva. Esa experiencia desarrolló mi capacidad para analizar información, sintetizarla y comunicarla de forma clara. Hoy aplico esas habilidades para traducir datos en resultados comprensibles para distintos perfiles. \n\nActualmente continúo mi formación en tecnologías cloud y en inglés, con el objetivo de desarrollarme en entornos de trabajo globales.",
-                "title-exp": "Experiencia Profesional",
-                "exp-pps-title": "Práctica Profesional Supervisada", "exp-pps-date": "Jun 2026 – Ago 2026", "exp-pps-desc": "Diseño y producción de 'IA en Acción', un curso asincrónico de 9 módulos sobre más de 30 herramientas de IA generativa (asistentes de chat, gestión del conocimiento, imagen, video, audio, productividad, programación asistida y educación), con guiones de video y un sistema de evaluación de 90 preguntas.",
-                "exp-becaria-title": "Becaria de Investigación", "exp-becaria-date": "Ago 2025 – Abr 2026", "exp-ayudante-title": "Ayudante de Profesor", "exp-ayudante-date": "Abr 2023 – Nov 2023","title-skills": "Habilidades Técnicas", "skill-cat-1": "IA Generativa", "skill-cat-2": "Lenguajes & Análisis", "skill-cat-3": "Visualización", "skill-cat-4": "Seguridad","skill-cat-5": "Gestión y Planificación de Proyectos",
-                "title-featured": "Proyecto destacado", "feat-project-title": "Análisis de Churn – TelecomX", "feat-project-desc": "Modelo de ML para identificar clientes con alto riesgo de abandono. Tecnologías: Python, Pandas, Scikit-Learn.", "btn-view": "Ver proyecto", "feat-project2-title": "Detección de Fraude Bancario con ML + Power BI", "feat-project2-desc": "Random Forest con optimización de threshold por costo de negocio, corrección de data leakage documentada, explicabilidad con SHAP y dashboard interactivo en Power BI.",
-                "title-projects": "Proyectos", "proj-elan-title": "Élan — Plataforma de aprendizaje", "proj-elan-desc": "Plataforma web para explorar recursos de aprendizaje y formación autodidacta.","proj-boca-title": "Rendimiento Boca Juniors", "proj-boca-desc": "Análisis 2014-2025.", "proj-fraude-title": "Análisis de Fraude", "proj-fraude-desc": "Detección anomalías.", "proj-lavadero-title": "Simulación Lavadero", "proj-lavadero-desc": "Eventos discretos.", "proj-medico-title": "Centro Médico", "proj-medico-desc": "Backend Spring Boot.", "proj-alura-title": "Alura Store", "proj-alura-desc": "Ventas Python.", "proj-pbi-title": "Dashboards Power BI", "proj-pbi-desc": "KPIs negocio.", "proj-pava-title": "Pone la Pava", "proj-pava-desc": "Recomendador Spotify.",
-                "title-certs": "Certificados", "title-contact": "Contacto"
-            },
-            en: {
-                "nav-about": "About Me", "nav-exp": "Experience", "nav-skills": "Skills",
-                "nav-featured": "Featured", "nav-projects": "Projects", "nav-certs": "Certificates", "nav-contact": "Contact",
-                "header-subtitle": "Data Analyst | Data Scientist | Systems Engineering Student",
-                "title-about": "About Me", "content-about": "I am a Data Analyst in training with a background in Systems Engineering, focused on leveraging data to understand real-world problems and provide clarity in decision-making.\n\nThroughout my projects, I have worked with Python, SQL, and Power BI for exploratory data analysis, data modeling, and visualization, developing solutions ranging from data preparation to insight generation.\n\nI am particularly interested in business-oriented analysis: understanding what is happening, why it is happening, and how that information can be used to improve processes or make more informed decisions.\n\nMy profile has a unique edge in the technical field: for three years, I worked as a sports journalist. That experience developed my ability to analyze, synthesize, and communicate information clearly. Today, I apply those skills to translate data into understandable results for diverse stakeholders.\n\nCurrently, I am continuing my training in cloud technologies and English, with the goal of growing in global work environments.",
-                "title-exp": "Professional Experience", "exp-pps-title": "Supervised Professional Practice", "exp-pps-date": "Jun 2026 – Aug 2026", "exp-pps-desc": "Designed and produced 'AI in Action', a 9-module asynchronous course covering 30+ generative AI tools (chat assistants, knowledge management, image, video, audio, productivity, AI-assisted coding, and education), including video scripts and a 90-question assessment system.","exp-becaria-title": "Research Fellow", "exp-becaria-date": "Aug 2025 – Apr 2026", "exp-ayudante-title": "Teaching Assistant", "exp-ayudante-date": "Apr 2023 – Nov 2023",
-                "title-skills": "Technical Skills", "skill-cat-1": "Generative AI", "skill-cat-2": "Languages & Analytics", "skill-cat-3": "Visualization", "skill-cat-4": "Security", "skill-cat-5": "Project Management & Planning",
-                "title-featured": "Featured Project", "feat-project-title": "Churn Analysis – TelecomX", "feat-project-desc": "ML model to identify high-risk churn customers. Technologies: Python, Pandas, Scikit-Learn.", "btn-view": "View project", "feat-project2-title": "Bank Fraud Detection with ML + Power BI", "feat-project2-desc": "Random Forest with business-cost threshold optimization, documented data leakage correction, SHAP explainability, and an interactive Power BI dashboard.",
-                "title-projects": "Projects", "proj-elan-title": "Élan — Learning Platform", "proj-elan-desc": "Web platform for exploring learning resources and self-directed education.", "proj-boca-title": "Boca Juniors Performance", "proj-boca-desc": "2014-2025 Analysis.", "proj-fraude-title": "Fraud Analysis", "proj-fraude-desc": "Anomaly detection.", "proj-lavadero-title": "Laundry Simulation", "proj-lavadero-desc": "Discrete events.", "proj-medico-title": "Medical Center", "proj-medico-desc": "Spring Boot Backend.", "proj-alura-title": "Alura Store", "proj-alura-desc": "Python Sales.", "proj-pbi-title": "Power BI Dashboards", "proj-pbi-desc": "Business KPIs.", "proj-pava-title": "Pone la Pava", "proj-pava-desc": "Spotify Recommender.",
-                "title-certs": "Certificates", "title-contact": "Contact"
-            }
+        /* ---------- 1. Textos en inglés (el español sale del propio HTML) ---------- */
+        const EN = {
+            "nav-about": "About me", "nav-exp": "Experience", "nav-skills": "Skills",
+            "nav-projects": "Projects", "nav-certs": "Certificates", "nav-contact": "Contact",
+
+            "hero-role": "Data Analyst | Business Intelligence, risk and fraud",
+            "hero-meta": "Systems Engineering, National University of Chilecito (graduating December 2026) · Chilecito, Argentina · Remote work",
+            "btn-cv": "Download CV",
+
+            "title-about": "About me",
+            "about-p1": "Data analyst focused on Business Intelligence, risk analysis and fraud detection. I work across the full data cycle with Python, SQL and Power BI: cleaning, transformation, exploratory analysis and visualization built for decision-making.",
+            "about-p2": "I have built projects on financial anomaly detection (with Machine Learning models explained through SHAP), relational modeling on Oracle Cloud, churn prediction and sports analytics. My degree thesis, already approved and to be defended in December, is an EdTech platform with a teaching assistant based on LLMs (multi-agent architecture and RAG).",
+            "about-p3": "Before moving into data I worked as a sports journalist for three years. That experience taught me to synthesize information and communicate it clearly to non-technical audiences.",
+            "fact-mode-l": "Work mode", "fact-mode-v": "Remote · available immediately",
+            "fact-loc-l": "Location", "fact-loc-v": "Chilecito, La Rioja, Argentina",
+            "fact-edu-l": "Education", "fact-edu-v": "Systems Engineering, UNdeC (graduating Dec. 2026)",
+            "fact-lang-l": "Languages", "fact-lang-v": "Spanish (native) · English: advanced technical reading, conversation in progress (A2 → B1) · Italian A2",
+            "fact-stack-l": "Main stack",
+
+            "title-exp": "Experience",
+            "exp1-role": "Supervised Professional Practice: virtual training with AI", "exp1-date": "Jun 2026 – Aug 2026",
+            "exp1-b1": "Designed and produced “AI in Action”, a 9-module asynchronous course on more than 30 generative AI tools, with video scripts and a 90-question assessment system.",
+            "exp1-b2": "Set up virtual classrooms with automatic quizzes and digital certificates on the institutional E-ducativa platform.",
+            "exp1-b3": "Built a reusable structure for the university’s future virtual training programs.",
+            "exp2-role": "Research Fellow (UNdeC 4.0 Fellowship)", "exp2-date": "Aug 2025 – Apr 2026",
+            "exp2-b1": "Researched and systematized the use of generative AI tools to produce educational content.",
+            "exp2-b2": "Designed an asynchronous course for teachers, with assessment frameworks, rubrics and AI-generated video.",
+            "exp2-b3": "Wrote technical documentation and recommendations for implementing internal AI-based content services.",
+            "exp3-role": "Teaching Assistant: Junior Data Analyst with Python", "exp3-date": "Apr 2023 – Nov 2023",
+            "exp3-b1": "Supported more than 50 students in Python and data analysis, cutting average query resolution time by 40%.",
+            "exp3-b2": "Diagnosed and resolved more than 120 incidents in analysis environments (Jupyter, Colab) under a 24-hour SLA.",
+            "exp3-b3": "Strengthened course content on data cleaning, EDA and visualization, and improved the technical documentation.",
+
+            "title-skills": "Technical skills",
+            "sk1-title": "Data analysis", "sk2-title": "BI and visualization", "sk3-title": "Databases and ETL",
+            "sk4-title": "AI and automation", "sk5-title": "Tools and development", "sk6-title": "Management and security",
+            "sk-clean": "Data cleaning and EDA", "sk-model": "Relational modeling", "sk-multi": "Multi-agent architecture",
+            "sk-content": "Generative AI content",
+            "sk-pm": "Project management", "sk-risk": "Risk management", "sk-cyber": "Cybersecurity",
+
+            "title-projects": "Projects",
+            "proj-main-title": "Data analysis and machine learning",
+            "proj-other-title": "Other projects",
+            "status-wip": "In progress",
+            "link-repo": "View repository", "link-platform": "View platform", "link-dash": "View dashboards",
+
+            "pf-title": "Bank fraud detection with ML and Power BI",
+            "pf-desc": "Random Forest model that treats the classification threshold as a business decision: with the corrected optimal threshold (0.21), total cost drops 18.8% compared with the default threshold. It documents and fixes a data leakage case, explains alerts with SHAP and adds a Power BI dashboard.",
+            "pb-title": "Boca Juniors player performance, 2014–2025",
+            "pb-desc": "End-to-end pipeline on Kaggle data: player ranking by performance score, profile clustering and a Random Forest model to estimate goals, with an interactive Power BI dashboard.",
+            "pa-title": "Forensic analysis of credit card fraud",
+            "pa-desc": "Preprocessing of a large transaction volume and an interactive dashboard to prioritize alerts. Findings: online fraud accounts for the highest volume, in-store fraud has a higher amount per event, and attacks cluster between 10 p.m. and 3 a.m.",
+            "pc-title": "Churn prediction: TelecomX",
+            "pc-desc": "Exploratory analysis and predictive model of customer churn: data cleaning, derived variables, visualizations and identification of high-risk segments for retention strategies.",
+            "po-title": "Production Intelligence Argentina: oil and gas production analysis",
+            "po-desc": "Well-level production analysis using public data from Argentina’s Energy Secretariat (nearly one million monthly records in 2025 alone): ETL pipeline in Python, PostgreSQL database and Tableau dashboard. Scope covers well availability and operator changes.",
+
+            "pw-title": "Virtual wallet architecture",
+            "pw-desc": "Entity-relationship model and transactional database deployed on Oracle Cloud, with Python access to insert, query and filter users, contacts and transactions.",
+            "pl-title": "Multimodal car wash simulation",
+            "pl-desc": "Discrete-event simulation: with 4 bays utilization reached 95.25% and 18 vehicles were lost; expanding to 6 bays loses no customers and utilization drops to 86%.",
+            "pal-title": "Alura Store: store comparison",
+            "pal-desc": "Comparison of four stores (revenue, categories, ratings and shipping cost) to decide where to start selling.",
+            "ppv-title": "Pone la Pava: music recommender",
+            "ppv-desc": "Listening-habits summary in the style of Spotify Wrapped, available all year round, built on the Spotify API.",
+            "ppb-title": "KPI dashboards in Power BI",
+            "ppb-desc": "Interactive business KPI dashboards with DAX measures and data storytelling principles.",
+            "pe-title": "Élan: learning platform",
+            "pe-desc": "Web platform to explore learning resources and self-directed education.",
+            "pm-title": "Medical center: backend",
+            "pm-desc": "Backend for managing a medical center, built with Spring Boot.",
+
+            "title-certs": "Certificates",
+            "title-contact": "Contact",
+            "contact-text": "I am available for remote work. You can reach me through any of these channels."
         };
 
-        // --- 2. MODO OSCURO ---
-        const btnDarkMode = document.getElementById('darkModeToggle');
-        const darkIcon = btnDarkMode.querySelector('i');
-        const toggleDarkMode = () => {
-            document.body.classList.toggle('dark-mode');
-            const isDark = document.body.classList.contains('dark-mode');
-            darkIcon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        };
-        btnDarkMode.addEventListener('click', toggleDarkMode);
-        if (localStorage.getItem('theme') === 'dark') { document.body.classList.add('dark-mode'); darkIcon.className = 'fa-solid fa-sun'; }
+        /* ---------- 2. Cambio de idioma ---------- */
+        const i18nEls = Array.from(document.querySelectorAll('[data-i18n]'));
+        const ES = {};
+        i18nEls.forEach(el => { ES[el.dataset.i18n] = el.textContent; });
 
-        // --- 3. IDIOMAS ---
         const langSelect = document.getElementById('languageSelect');
-    const changeLanguage = (lang) => {
-    document.querySelectorAll("[data-section]").forEach(el => {
-        const key = el.dataset.section;
-        if(translations[lang][key]) {
-            el.innerText = translations[lang][key]; 
-        }
-    });
-    localStorage.setItem('lang', lang);
-};
-        langSelect.addEventListener('change', (e) => changeLanguage(e.target.value));
-        const savedLang = localStorage.getItem('lang') || 'es';
-        langSelect.value = savedLang; changeLanguage(savedLang);
-
-        // --- 4. SCROLL CINEMÁTICO ---
-        const container = document.getElementById('certContainer');
-        const cards = document.querySelectorAll('.cert-card');
-        let targetPos = 0; let currentPos = 0;
-        function scrollCert(dir) {
-            const step = cards[0].offsetWidth + 40;
-            targetPos = Math.max(0, Math.min(container.scrollWidth - container.clientWidth, container.scrollLeft + (dir * step)));
-            const animate = () => {
-                const diff = targetPos - currentPos;
-                if (Math.abs(diff) < 1) { container.scrollLeft = targetPos; return; }
-                currentPos += diff * 0.05;
-                container.scrollLeft = currentPos;
-                requestAnimationFrame(animate);
-            };
-            currentPos = container.scrollLeft; requestAnimationFrame(animate);
-        }
-
-        // --- 5. OBSERVER & MODAL ---
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
-        }, { threshold: 0.1 });
-        document.querySelectorAll("section").forEach(s => observer.observe(s));
-
-        function openModal(card) { document.getElementById("certModal").style.display = "flex"; document.getElementById("imgFull").src = card.querySelector('img').src; }
-        function closeModal() { document.getElementById("certModal").style.display = "none"; }
-        window.onclick = function(e) { if (e.target == document.getElementById("certModal")) closeModal(); };
-        // --- CURSOR TRAIL SUTIL ---
-        (function() {
-            const canvas = document.getElementById('cursorTrail');
-            const ctx = canvas.getContext('2d');
-            let particles = [];
-
-            function resize() {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            }
-            resize();
-            window.addEventListener('resize', resize);
-
-            const colors = ['#ff9a9e', '#fecfef', '#ec4899'];
-
-            window.addEventListener('mousemove', (e) => {
-                // solo agrega partícula cada tanto para que sea sutil, no una lluvia
-                if (Math.random() > 0.6) return;
-                particles.push({
-                    x: e.clientX,
-                    y: e.clientY,
-                    size: Math.random() * 3 + 2,
-                    color: colors[Math.floor(Math.random() * colors.length)],
-                    life: 1,
-                });
+        function setLanguage(lang) {
+            const dict = lang === 'en' ? EN : ES;
+            i18nEls.forEach(el => {
+                const value = dict[el.dataset.i18n];
+                if (value !== undefined) el.textContent = value;
             });
+            document.documentElement.lang = lang;
+            try { localStorage.setItem('lang', lang); } catch (e) {}
+        }
+        langSelect.addEventListener('change', e => setLanguage(e.target.value));
+        let savedLang = 'es';
+        try { savedLang = localStorage.getItem('lang') || 'es'; } catch (e) {}
+        langSelect.value = savedLang;
+        if (savedLang !== 'es') setLanguage(savedLang);
 
-            function animate() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                particles.forEach((p, i) => {
-                    ctx.globalAlpha = p.life;
-                    ctx.fillStyle = p.color;
-                    ctx.beginPath();
-                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-                    ctx.fill();
+        /* ---------- 3. Modo oscuro ---------- */
+        const darkBtn = document.getElementById('darkModeToggle');
+        const darkIcon = darkBtn.querySelector('i');
+        function applyTheme(isDark) {
+            document.body.classList.toggle('dark-mode', isDark);
+            darkIcon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+            try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch (e) {}
+        }
+        darkBtn.addEventListener('click', () => applyTheme(!document.body.classList.contains('dark-mode')));
+        try { if (localStorage.getItem('theme') === 'dark') applyTheme(true); } catch (e) {}
 
-                    p.y -= 0.4;       // sube apenas, efecto "polvo mágico"
-                    p.life -= 0.02;   // se desvanece
-                    p.size *= 0.98;
+        /* ---------- 4. Carrusel de certificados ---------- */
+        const certContainer = document.getElementById('certContainer');
+        function scrollCerts(dir) {
+            const card = certContainer.querySelector('.cert-card');
+            certContainer.scrollBy({ left: dir * (card.offsetWidth + 20) * 2, behavior: 'smooth' });
+        }
+        document.getElementById('certPrev').addEventListener('click', () => scrollCerts(-1));
+        document.getElementById('certNext').addEventListener('click', () => scrollCerts(1));
 
-                    if (p.life <= 0) particles.splice(i, 1);
-                });
-                ctx.globalAlpha = 1;
-                requestAnimationFrame(animate);
-            }
-            animate();
-        })();
+        /* ---------- 5. Modal de certificados ---------- */
+        const modal = document.getElementById('certModal');
+        const modalImg = document.getElementById('imgFull');
+        function closeModal() { modal.classList.remove('open'); modalImg.src = ''; }
+        certContainer.querySelectorAll('.cert-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const img = card.querySelector('img');
+                modalImg.src = img.src;
+                modalImg.alt = img.alt;
+                modal.classList.add('open');
+            });
+        });
+        document.getElementById('closeModal').addEventListener('click', closeModal);
+        modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+        /* ---------- 6. Resaltado del menú según la sección visible ---------- */
+        const links = document.querySelectorAll('.nav-links a');
+        const spy = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + entry.target.id));
+                }
+            });
+        }, { rootMargin: '-40% 0px -55% 0px' });
+        document.querySelectorAll('section[id]').forEach(s => spy.observe(s));
     </script>
 </body>
 </html>
